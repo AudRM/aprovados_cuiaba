@@ -13,6 +13,7 @@ import pandas as pd
 # Criação do Base para uso no modelo declarativo
 Base = declarative_base()
 
+
 class TabelaUsuario(Base):
     """
     Classe que representa a tabela 'usuarios' no banco de dados.
@@ -25,7 +26,8 @@ class TabelaUsuario(Base):
     senha = Column(String(255), nullable=False)  # Idealmente, já armazenar aqui a senha 'hasheada'
     email = Column(String(255), unique=True, nullable=False)
     telefone = Column(String(50), nullable=True)
-    grupo = Column(String(50), nullable=True)
+    grupo = Column(String(50), nullable=False)
+    formacao_academica = Column(String(50), nullable=True)
     data_criacao = Column(DateTime, default=datetime.now, nullable=False)
     data_ultima_modificacao = Column(
         DateTime,
@@ -33,7 +35,7 @@ class TabelaUsuario(Base):
         onupdate=datetime.now,
         nullable=False
     )
-    opcao = Column(String(50), nullable=True)
+    opcao = Column(String(50), nullable=False)
     role = Column(String(25), default='usuario')
 
 
@@ -58,6 +60,11 @@ class TabelaGrupos(Base):
     grupo = Column(String(50), primary_key=True, index=True)
     qtde_vagas = Column(Integer, nullable = False)
     link = Column(String(255), nullable=False)
+
+
+
+
+# Dano primeiro input de aprovados
 
 
 

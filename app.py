@@ -4,17 +4,10 @@ from contas import Conta
 from grupos import Grupo
 from usuarios import Usuario
 import pandas as pd 
-import openai 
-from dotenv import load_dotenv, find_dotenv
-import json 
 
 # Inicialização do banco de dados e objetos principais
 db = Database()
 conta_manager = Conta(db=db)
-
-
-# Esconde a variável da API - Permite o Client iniciar sem passar pro Client
-_ = load_dotenv(find_dotenv())
 
 
 import os
@@ -25,8 +18,9 @@ def criar_conta():
     with st.form("Criar Conta"):
         n_inscr = st.text_input("Número de Inscrição")
         senha = st.text_input("Senha", type="password")
-        email = st.text_input("E-mail")
-        telefone = st.text_input("Telefone")
+        email = st.text_input("E-mail [Opcional]")
+        telefone = st.text_input("Telefone [Opcional]")
+        formacao_academica = st.text_input("Formação Acadêmica [Opcional]")
         opcao_selecionada = st.selectbox("Opção", ["Não vou assumir", "Vou assumir", "Estou indeciso"])
         documento = st.file_uploader("Envie uma imagem do documento", type=["png", "jpg", "jpeg"])
 
@@ -61,7 +55,7 @@ def criar_conta():
                     f.write(documento.getbuffer())
 
                 # Inserir dados no banco
-                resultado = conta_manager.criarConta(n_inscr=n_inscr, senha=senha, email=email, opcao=opcao, telefone=telefone)
+                resultado = conta_manager.criarConta(n_inscr=n_inscr, senha=senha, email=email, opcao=opcao, telefone=telefone, formacao_academica=formacao_academica)
 
                 if resultado['sucesso']:
                     st.query_params = ''  # Limpa mensagens anteriores
@@ -110,21 +104,71 @@ def pagina_principal():
     conta = st.session_state.get('conta')
 
     if conta:
-        menu = st.sidebar.selectbox("Menu", ["Ver Estatísticas", "Gerenciar Dados", "Sair"])
+        lista_menu = ["Ver Estatísticas", "Gerenciar Dados", "Sair"]
+        if conta.role == 'superusuario':
+            lista_menu.insert(2, 'Administrar Banco de Dados')
 
+        menu = st.sidebar.selectbox("Menu", lista_menu)
         if menu == "Ver Estatísticas":
             verificar_estatisticas(conta)
+
         elif menu == "Gerenciar Dados":
             gerenciar_dados_usuario(conta)
+
         elif menu == "Sair":
             st.session_state['logado'] = False
             st.session_state['conta'] = None
             st.query_params = ''  # Limpa mensagens anteriores
             st.rerun()
+
+        elif menu == 'Administrar Banco de Dados':
+            inserir_dados_aprovados()
+    
+    
     else:
         st.warning("Erro: Conta não encontrada. Faça login novamente.")
         st.session_state['logado'] = False
         st.rerun()
+
+def inserir_dados_aprovados():
+    st.subheader('Administração de Dados')
+
+    documento = st.file_uploader("Envie a lista de aprovados (CSV)", type=["csv"])
+
+    if documento is not None:
+        # Lê o CSV como DataFrame
+        df = pd.read_csv(documento)
+        
+        # Contador para as linhas adicionadas
+        linhas_adicionadas = 0
+
+        # Itera sobre cada linha do DataFrame
+        for _, row in df.iterrows():
+            # Exemplo: assumimos que existe uma coluna 'n_inscr' (número de inscrição)
+            # e uma coluna 'nome' no CSV. Ajuste conforme seu schema real.
+            numero_inscricao = row['n_inscr']
+            nome = row['nome']
+            posicao = row['posicao']
+            grupo = row['grupo']
+
+            # Verifica se já existe no banco
+            registro_existente = db.retornarValor(
+                TabelaAprovados,
+                filter_dict={'n_inscr': numero_inscricao}
+            )
+
+            if not registro_existente:
+                # Se não existir, insere
+                dados_para_inserir = {
+                    'n_inscr': numero_inscricao,
+                    'nome': nome
+                    # Coloque aqui as outras colunas, se necessário
+                }
+                db.inserirValor(TabelaAprovados, dados_para_inserir)
+                linhas_adicionadas += 1
+
+        st.success(f"Processo concluído! {linhas_adicionadas} linha(s) adicionada(s) ao banco.")
+
 
 def verificar_estatisticas(conta):
 

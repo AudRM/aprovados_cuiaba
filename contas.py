@@ -22,7 +22,7 @@ class Conta:
         self.n_inscr = None 
 
     
-    def criarConta(self, n_inscr: str, senha: str, email: str, telefone: str, opcao: str) -> dict:
+    def criarConta(self, n_inscr: str, senha: str, email: str, telefone: str, opcao: str, formacao_academica: str = None) -> dict:
         if self._existe_cadastro_previo(n_inscr):
             return {
                     'função': 'criarConta', 
@@ -40,7 +40,7 @@ class Conta:
 
             senha_criptografada = hash_password(senha)
 
-            self._adicionar_conta(nome, posicao, senha_criptografada, email, telefone, opcao, n_inscr, grupo)
+            self._adicionar_conta(nome, posicao, senha_criptografada, email, telefone, opcao, n_inscr, grupo, formacao_academica)
             return {
                     'função': 'criarConta', 
                     'data': datetime.now(), 
@@ -105,7 +105,8 @@ class Conta:
                          telefone: str, 
                          opcao: str, 
                          n_inscr: str, 
-                         grupo: str) -> None:
+                         grupo: str,
+                         formacao_academica: str) -> None:
         data_dict = {
                      'nome': nome,
                      'posicao': posicao,
@@ -114,7 +115,8 @@ class Conta:
                      'telefone': telefone,
                      'opcao': opcao,
                      'n_inscr': n_inscr, 
-                     'grupo': grupo
+                     'grupo': grupo,
+                     'formacao_academica': formacao_academica
                      }
         
         self.db.inserirDados(TabelaUsuario, data_dict)
