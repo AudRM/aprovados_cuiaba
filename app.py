@@ -105,7 +105,7 @@ def pagina_principal():
 
     if conta:
         lista_menu = ["Ver Estatísticas", "Gerenciar Dados", "Sair"]
-        if conta.role == 'superusuario':
+        if conta.role == 'superuser':
             lista_menu.insert(2, 'Administrar Banco de Dados')
 
         menu = st.sidebar.selectbox("Menu", lista_menu)
