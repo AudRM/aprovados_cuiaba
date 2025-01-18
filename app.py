@@ -122,7 +122,7 @@ def pagina_principal():
             st.rerun()
 
         elif menu == 'Administrar Banco de Dados':
-            inserir_dados_aprovados()
+            administrar_web_app()
     
     
     else:
@@ -130,7 +130,84 @@ def pagina_principal():
         st.session_state['logado'] = False
         st.rerun()
 
-def inserir_dados_aprovados():
+
+
+import streamlit as st
+from database import Database, TabelaUsuario
+import pandas as pd
+import os
+import datetime
+
+def administrar_web_app():
+    st.subheader('Painel de Administração - Superusuário')
+
+    db = Database()
+
+    # Exibir todos os usuários cadastrados
+    st.write("### Usuários Registrados")
+    usuarios = db.retornarTabela(TabelaUsuario)
+
+    if usuarios.empty:
+        st.warning("Nenhum usuário registrado.")
+        return
+
+    st.dataframe(usuarios)
+
+    # Recuperar informações detalhadas de um usuário
+    st.write("### Recuperar Informações do Usuário")
+    n_inscr = st.text_input("Digite o Número de Inscrição do Usuário")
+    if st.button("Buscar Informações"):
+        usuario_info = db.retornarValor(TabelaUsuario, {"n_inscr": n_inscr})
+        if usuario_info:
+            st.json(usuario_info[0])
+        else:
+            st.error("Usuário não encontrado.")
+
+    # Resetar senha (deletar conta do usuário)
+    st.write("### Resetar Conta do Usuário")
+    n_inscr_reset = st.text_input("Número de Inscrição para Resetar Conta")
+    if st.button("Resetar Conta"):
+        if n_inscr_reset:
+            with db.get_session() as session:
+                user_to_delete = session.query(TabelaUsuario).filter_by(n_inscr=n_inscr_reset).one_or_none()
+                if user_to_delete:
+                    session.delete(user_to_delete)
+                    session.commit()
+                    st.success("Conta deletada com sucesso!")
+                else:
+                    st.error("Usuário não encontrado.")
+        else:
+            st.error("Por favor, forneça um número de inscrição válido.")
+
+    # Verificar arquivo do usuário
+    st.write("### Verificar Arquivo do Usuário")
+    n_inscr_arquivo = st.text_input("Número de Inscrição para Verificar Arquivo")
+    if st.button("Ver Arquivo"):
+        pasta_destino = "documentos_auditoria"
+        arquivos = [f for f in os.listdir(pasta_destino) if n_inscr_arquivo in f]
+        if arquivos:
+            st.success(f"Arquivo encontrado: {arquivos[0]}")
+            caminho_arquivo = os.path.join(pasta_destino, arquivos[0])
+            with open(caminho_arquivo, "rb") as f:
+                st.download_button(label="Baixar Arquivo", data=f, file_name=arquivos[0])
+        else:
+            st.error("Nenhum arquivo encontrado para este usuário.")
+
+    # Exportar informações de usuários
+    st.write("### Exportar Usuários Cadastrados")
+    formato = st.selectbox("Escolha o formato de exportação", ["CSV", "Excel"])
+    if st.button("Exportar"):
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        if formato == "CSV":
+            caminho_arquivo = f"usuarios_exportados_{timestamp}.csv"
+            usuarios.to_csv(caminho_arquivo, index=False)
+        else:
+            caminho_arquivo = f"usuarios_exportados_{timestamp}.xlsx"
+            usuarios.to_excel(caminho_arquivo, index=False)
+
+        with open(caminho_arquivo, "rb") as f:
+            st.download_button(label="Baixar Arquivo Exportado", data=f, file_name=os.path.basename(caminho_arquivo))
+
     st.subheader('Administração de Dados')
 
     documento = st.file_uploader("Envie a lista de aprovados (CSV)", type=["csv"])
@@ -169,6 +246,51 @@ def inserir_dados_aprovados():
 
         st.success(f"Processo concluído! {linhas_adicionadas} linha(s) adicionada(s) ao banco.")
 
+
+# def administrar_web_app():
+#     st.subheader('Administração de Dados')
+
+#     documento = st.file_uploader("Envie a lista de aprovados (CSV)", type=["csv"])
+
+#     if documento is not None:
+#         # Lê o CSV como DataFrame
+#         df = pd.read_csv(documento)
+        
+#         # Contador para as linhas adicionadas
+#         linhas_adicionadas = 0
+
+#         # Itera sobre cada linha do DataFrame
+#         for _, row in df.iterrows():
+#             # Exemplo: assumimos que existe uma coluna 'n_inscr' (número de inscrição)
+#             # e uma coluna 'nome' no CSV. Ajuste conforme seu schema real.
+#             numero_inscricao = row['n_inscr']
+#             nome = row['nome']
+#             posicao = row['posicao']
+#             grupo = row['grupo']
+
+#             # Verifica se já existe no banco
+#             registro_existente = db.retornarValor(
+#                 TabelaAprovados,
+#                 filter_dict={'n_inscr': numero_inscricao}
+#             )
+
+#             if not registro_existente:
+#                 # Se não existir, insere
+#                 dados_para_inserir = {
+#                     'n_inscr': numero_inscricao,
+#                     'nome': nome
+#                     # Coloque aqui as outras colunas, se necessário
+#                 }
+#                 db.inserirValor(TabelaAprovados, dados_para_inserir)
+#                 linhas_adicionadas += 1
+
+#         st.success(f"Processo concluído! {linhas_adicionadas} linha(s) adicionada(s) ao banco.")
+
+#     st.subheader('Administração de Usuários')
+
+#     usuarios = db.retornarTabela(TabelaUsuario)
+
+#     st.data_frame()
 
 def verificar_estatisticas(conta):
 
