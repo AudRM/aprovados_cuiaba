@@ -1,0 +1,231 @@
+import streamlit as st
+from database import Database, TabelaAprovados, TabelaGrupos, TabelaUsuario
+from contas import Conta
+from grupos import Grupo
+from usuarios import Usuario
+import pandas as pd 
+import openai 
+from dotenv import load_dotenv, find_dotenv
+import json 
+
+# Inicialização do banco de dados e objetos principais
+db = Database()
+conta_manager = Conta(db=db)
+
+
+# Esconde a variável da API - Permite o Client iniciar sem passar pro Client
+_ = load_dotenv(find_dotenv())
+
+
+import os
+import datetime
+
+def criar_conta():
+    st.subheader("Criar Conta")
+    with st.form("Criar Conta"):
+        n_inscr = st.text_input("Número de Inscrição")
+        senha = st.text_input("Senha", type="password")
+        email = st.text_input("E-mail")
+        telefone = st.text_input("Telefone")
+        opcao_selecionada = st.selectbox("Opção", ["Não vou assumir", "Vou assumir", "Estou indeciso"])
+        documento = st.file_uploader("Envie uma imagem do documento", type=["png", "jpg", "jpeg"])
+
+        # Mapear opção selecionada para o valor a ser inserido no banco de dados
+        opcao = {
+            "Não vou assumir": "Não vai assumir",
+            "Vou assumir": "Vai assumir",
+            "Estou indeciso": "Indeciso"
+        }[opcao_selecionada]
+
+        submit = st.form_submit_button("Criar")
+
+        if submit:
+            # Pega o nome do candidato no banco pela inscrição:
+            dados_candidato = db.retornarValor(TabelaAprovados, filter_dict={'n_inscr': n_inscr})
+            if not dados_candidato:
+                st.error("Número de inscrição não encontrado no banco.")
+                return
+
+            if documento:
+                # Salvar o documento para auditoria
+                pasta_destino = "documentos_auditoria"
+                if not os.path.exists(pasta_destino):
+                    os.makedirs(pasta_destino)
+
+                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                extensao = documento.name.split('.')[-1]
+                nome_arquivo = f"{n_inscr}_{timestamp}.{extensao}"
+                caminho_arquivo = os.path.join(pasta_destino, nome_arquivo)
+
+                with open(caminho_arquivo, "wb") as f:
+                    f.write(documento.getbuffer())
+
+                # Inserir dados no banco
+                resultado = conta_manager.criarConta(n_inscr=n_inscr, senha=senha, email=email, opcao=opcao, telefone=telefone)
+
+                if resultado['sucesso']:
+                    st.query_params = ''  # Limpa mensagens anteriores
+                    st.success("Cadastro criado com sucesso")
+                else:
+                    st.error("Erro ao salvar os dados no banco.")
+            else:
+                st.error("Por favor, envie uma imagem do documento.")
+
+
+            
+def login():
+    st.subheader("Login")
+    with st.form("Acessar Conta"):
+        n_inscr = st.text_input("Número de Inscrição")
+        senha = st.text_input("Senha", type="password")
+        submit = st.form_submit_button("Acessar")
+
+        if submit:
+            resultado = conta_manager.acessarConta(n_inscr, senha)
+            if resultado['sucesso']:
+                st.session_state['conta'] = resultado['resultado']
+                st.session_state['logado'] = True
+                st.query_params = ''  # Limpa mensagens anteriores
+                st.success("Acesso realizado com sucesso!")
+                st.rerun()
+            else:
+                st.error(resultado['resultado'])
+
+def pagina_login():
+    st.title("Bem-vindo ao Sistema de Gestão de Candidatos")
+
+    if 'logado' not in st.session_state:
+        st.session_state['logado'] = False
+
+    opcao = st.radio("Escolha uma opção:", ["Login", "Criar Conta"])
+
+    if opcao == "Criar Conta":
+        criar_conta()
+    elif opcao == "Login":
+        login()
+
+def pagina_principal():
+    st.title("Painel do Usuário")
+
+    conta = st.session_state.get('conta')
+
+    if conta:
+        menu = st.sidebar.selectbox("Menu", ["Ver Estatísticas", "Gerenciar Dados", "Sair"])
+
+        if menu == "Ver Estatísticas":
+            verificar_estatisticas(conta)
+        elif menu == "Gerenciar Dados":
+            gerenciar_dados_usuario(conta)
+        elif menu == "Sair":
+            st.session_state['logado'] = False
+            st.session_state['conta'] = None
+            st.query_params = ''  # Limpa mensagens anteriores
+            st.rerun()
+    else:
+        st.warning("Erro: Conta não encontrada. Faça login novamente.")
+        st.session_state['logado'] = False
+        st.rerun()
+
+def verificar_estatisticas(conta):
+
+    st.subheader("Dados Gerais")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.metric(label='Grupo', value=conta.grupo)
+    
+    with col2:
+        st.metric(label='Posição', value=conta.posicao)
+
+
+    st.subheader("Estatísticas do Grupo")
+    grupo = Grupo(grupo=conta.grupo, db=db)
+
+    # Dados principais
+    usuarios_frente = db.retornarListaUsuariosNaFrente(conta.grupo, conta.posicao)
+    aprovados_na_frente = db.retornarTabela(TabelaAprovados)
+    aprovados_na_frente = aprovados_na_frente[(aprovados_na_frente['grupo']==conta.grupo) & (aprovados_na_frente['posicao'] < conta.posicao)]
+    total_aprovados_grupo = len(aprovados_na_frente)
+    
+    total_usuarios_frente = len(usuarios_frente)
+
+
+    # Métricas específicas
+    if total_usuarios_frente > 0:
+        assumir = usuarios_frente[usuarios_frente['opcao'] == "Vai assumir"]
+        indecisos = usuarios_frente[usuarios_frente['opcao'] == "Indeciso"]
+        nao_assumir = usuarios_frente[usuarios_frente['opcao'] == "Não vai assumir"]
+
+        ultimas_atualizacoes = usuarios_frente[usuarios_frente['data_ultima_modificacao'] >= pd.Timestamp.now() - pd.Timedelta(days=1)]
+
+    
+        percentual_frente = (total_usuarios_frente / total_aprovados_grupo) * 100 if total_aprovados_grupo > 0 else 0
+
+        # Divisão em colunas para melhorar aparência
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.metric(label="Usuários que irão assumir na minha frente", value=len(assumir))
+            st.metric(label="Atualizações no último dia", value=len(ultimas_atualizacoes))
+        
+        with col2:
+            st.metric(label="Usuários indecisos na minha frente", value=len(indecisos))
+            
+            st.metric(label="Usuários que não vão assumir na minha frente", value=len(nao_assumir))
+
+        st.metric(label="Percentual de usuários na minha frente já cadastrados", value=f"{percentual_frente:.2f}%")
+    
+    elif total_aprovados_grupo == 0:
+        st.text("Porra, mané, tu é brabão mesmo, hein? Parabéns.")
+
+    else:
+        # Divisão em colunas para melhorar aparência
+        st.text('Nenhum candidato à sua frente foi cadastrado. Aguarde.')
+
+        st.metric(label="Percentual de usuários na minha frente", value=f"{percentual_frente:.2f}%") 
+
+    # Mensagem e link do grupo
+    mensagem_grupo = grupo.mostrarMensagens()
+    link_grupo = grupo.mostrarLink()
+
+    st.write("### Mensagem do Grupo")
+    st.text(mensagem_grupo['resultado'] if mensagem_grupo['sucesso'] else "Erro ao carregar mensagem")
+
+    st.text_input("Link do Grupo", link_grupo['resultado'] if link_grupo['sucesso'] else "Erro ao carregar link", disabled=True)
+
+
+def gerenciar_dados_usuario(conta):
+    st.subheader("Gerenciamento de Dados do Usuário")
+    with st.form("Atualizar Dados"):
+        novo_email = st.text_input("Novo E-mail", value=conta.email)
+        novo_telefone = st.text_input("Novo Telefone", value=conta.telefone)
+        nova_opcao_selecionada = st.selectbox("Nova Opção", ["Não vou assumir", "Vou assumir", "Estou indeciso"], index=["Não vai assumir", "Vai assumir", "Indeciso"].index(conta.opcao))
+
+        # Mapear nova opção selecionada para o valor a ser inserido no banco de dados
+        nova_opcao = {
+            "Não vou assumir": "Não vai assumir",
+            "Vou assumir": "Vai assumir",
+            "Estou indeciso": "Indeciso"
+        }[nova_opcao_selecionada]
+
+        submit = st.form_submit_button("Atualizar")
+
+        if submit:
+            mudancas = {
+                'email': novo_email,
+                'telefone': novo_telefone,
+                'opcao': nova_opcao
+            }
+            resultado = conta.mudarDados(db=db, mudanca=mudancas)
+            if resultado['sucesso']:
+                st.success("Dados atualizados com sucesso!")
+                st.query_params = ''  # Limpa mensagens anteriores
+            else:
+                st.error(resultado['resultado'])
+
+# Navegação entre páginas
+if 'logado' not in st.session_state or not st.session_state['logado']:
+    pagina_login()
+else:
+    pagina_principal()
