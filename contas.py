@@ -20,6 +20,7 @@ class Conta:
         self.db = db 
         self.dataAcesso = datetime.now()
         self.n_inscr = None 
+        self.conta = 'usuario'
 
     
     def criarConta(self, n_inscr: str, senha: str, email: str, telefone: str, opcao: str, formacao_academica: str = None) -> dict:
@@ -81,6 +82,8 @@ class Conta:
         else:
             role = dados['role']
             conta_usuario = self.CLASSES[role](**dados)
+
+            self.role = role
             return {
                     'função': 'acessarConta', 
                     'data': datetime.now(), 

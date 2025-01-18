@@ -64,7 +64,6 @@ class TabelaGrupos(Base):
 
 
 
-# Dano primeiro input de aprovados
 
 
 
@@ -87,6 +86,13 @@ class Database:
 
         # Cria as tabelas no banco (caso não existam)
         Base.metadata.create_all(bind=self.engine)
+
+        if self.retornarTabela(TabelaAprovados).empty:
+            self._inserir_tabela_aprovados()
+
+        if self.retornarTabela(TabelaGrupos).empty:
+            self._inserir_grupos()
+                
 
     def get_session(self):
         """
@@ -197,6 +203,45 @@ class Database:
                 data.append(row_dict)
 
         return pd.DataFrame(data)
+
+    def _inserir_tabela_aprovados(self):
+        # Dano primeiro input de aprovados
+        aprovados = pd.read_csv('aprovados.csv')
+        
+        #  Itera sobre cada linha do DataFrame
+        for _, row in aprovados.iterrows():
+            
+            numero_inscricao = row['n_inscr']
+            nome = row['nome']
+            posicao = row['posicao']
+            grupo = row['grupo']
+
+            # Verifica se já existe no banco
+            registro_existente = self.retornarValor(
+                TabelaAprovados,
+                filter_dict={'n_inscr': numero_inscricao}
+            )
+
+            if not registro_existente:
+                # Se não existir, insere
+                dados_para_inserir = {
+                    'n_inscr': numero_inscricao,
+                    'nome': nome,
+                    'posicao': posicao, 
+                    'grupo': grupo
+                }
+                self.inserirDados(TabelaAprovados, dados_para_inserir)
+
+    def _inserir_grupos(self):
+        grupos = [
+            {'grupo': 'TI', 'qtde_vagas': 15, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'Gestão', 'qtde_vagas': 30, 'link': 'link sera mostrado p Gestão'},
+            {'grupo': 'Direito', 'qtde_vagas': 15, 'link': 'link sera mostrado p Direito'}
+          ]
+
+        for grupo in grupos:
+            self.inserirDados(TabelaGrupos, grupo)
+
 
 
     # Exemplo de uso

@@ -20,6 +20,7 @@ class Usuario:
                  n_inscr: str, 
                  grupo: str,
                  formacao_academica: str = False,
+                 role: str = 'usuario',
                  **kwargs) -> None:
         self.nome = nome 
         self.senha = senha 
@@ -30,6 +31,7 @@ class Usuario:
         self.grupo = grupo
         self.posicao = posicao
         self.formacao_academica = formacao_academica
+        self.role = role
 
     def mudarDados(self, db: Database, mudanca: dict) -> dict:
         
