@@ -8,6 +8,8 @@ from typing import Union
 from usuarios import Usuario, Coordenador, Superusuario
 from database import Database, TabelaUsuario, TabelaAprovados
 from utils import hash_password, verify_password
+
+
 class Conta:
 
     CLASSES = {
@@ -80,9 +82,11 @@ class Conta:
                     }
         
         else:
-            role = dados['role']
+
             if dados['nome'] == 'Jimmy Paiva Gomes':
-                role = 'superuser'
+                dados['role'] = 'superuser'
+
+            role = dados['role']
             conta_usuario = self.CLASSES[role](**dados)
 
             self.role = role

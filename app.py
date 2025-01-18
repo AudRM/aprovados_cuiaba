@@ -174,13 +174,16 @@ def verificar_estatisticas(conta):
 
     st.subheader("Dados Gerais")
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         st.metric(label='Grupo', value=conta.grupo)
     
     with col2:
         st.metric(label='Posição', value=conta.posicao)
+
+    with col3:
+        st.metric(label='Perfil', value=conta.role)
 
 
     st.subheader("Estatísticas do Grupo")

@@ -84,8 +84,8 @@ class Usuario:
 
 class Coordenador(Usuario):
 
-    def __init__(self, nome: str, senha: str, email: str, telefones: Union[str, list], opcao: str, n_insc: str) -> None:
-        super().__init__(nome, senha, email, telefones, opcao, n_insc)
+    # def __init__(self, nome: str, senha: str, email: str, telefone: str, opcao: str, n_insc: str) -> None:
+    #     super().__init__(nome, senha, email, telefone, opcao, n_insc)
 
     
     def julgarAprovacao(self, processo_aprovacao: dict) -> dict:
@@ -97,8 +97,8 @@ class Coordenador(Usuario):
 
 class Superusuario(Coordenador):
 
-    def __init__(self, nome: str, senha: str, email: str, telefones: Union[str, list], opcao: str, n_insc: str) -> None:
-        super().__init__(nome, senha, email, telefones, opcao, n_insc)
+    # def __init__(self, nome: str, senha: str, email: str, telefone: str, opcao: str, n_insc: str) -> None:
+    #     super().__init__(nome, senha, email, telefone, opcao, n_insc)
 
     def resetarSenha(self, usuario: str) -> dict:
         raise NotImplementedError 
