@@ -20,6 +20,7 @@ def verificar_estatisticas(conta, db):
     grupo = Grupo(grupo=conta.grupo, db=db)
 
     usuarios_frente = db.retornarListaUsuariosNaFrente(conta.grupo, conta.posicao, conta.cota)
+    
     aprovados_na_frente = db.retornarTabela(TabelaAprovados)
     aprovados_na_frente = aprovados_na_frente[
         (aprovados_na_frente['grupo'] == conta.grupo) & 
@@ -60,6 +61,7 @@ def verificar_estatisticas(conta, db):
 
     elif total_aprovados_grupo == 0:
         st.text("Porra, mané, tu é brabão mesmo, hein? Parabéns.")
+        
     else:
         st.text('Nenhum candidato à sua frente foi cadastrado. Aguarde.')
         st.metric(label="Percentual de usuários na minha frente", value=f"{percentual_frente:.2f}%")
@@ -70,9 +72,12 @@ def verificar_estatisticas(conta, db):
 
     
     # Retirar usuários na frente que não vã assumir OU que não tenham se cadastrado ainda
+    
     if not usuarios.empty:
-        nao_vao_assumir = usuarios[usuarios['opcao']=="Não vai assumir"]['n_inscr'].qnique()
-
+        try:
+            nao_vao_assumir = usuarios[usuarios['opcao']=="Não vai assumir"]['n_inscr'].unique()
+        except:
+            nao_vao_assumir = ['aaaaa', 'bbbbb']
     else:
         nao_vao_assumir = ['aaaaa', 'bbbbb']
 
