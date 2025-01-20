@@ -1,4 +1,6 @@
 import bcrypt
+from cryptography.fernet import Fernet
+
 
 # Função para gerar o hash da senha
 def hash_password(password: str) -> str:
@@ -11,3 +13,31 @@ def hash_password(password: str) -> str:
 def verify_password(password: str, hashed_password: str) -> bool:
     # Verifica se a senha corresponde ao hash armazenado
     return bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+
+
+def encriptar_arquivo(conteudo_arquivo: bytes, chave: bytes) -> bytes:
+    """
+    Recebe o conteúdo do arquivo em bytes e retorna
+    o conteúdo criptografado.
+    """
+    f = Fernet(chave)
+    return f.encrypt(conteudo_arquivo)
+
+def decriptar_arquivo(conteudo_criptografado: bytes, chave: bytes) -> bytes:
+    """
+    Recebe o conteúdo criptografado em bytes e retorna
+    o conteúdo original, decriptado.
+    """
+    f = Fernet(chave)
+    return f.decrypt(conteudo_criptografado)
+
+
+def carregar_chave_criptografia(caminho_chave="chave_fernet.key"):
+    """
+    Carrega a chave de um arquivo local.
+    Em produção, idealmente buscar de um local seguro, 
+    em vez de mantê-la em arquivo no repositório.
+    """
+    with open(caminho_chave, "rb") as f:
+        chave = f.read()
+    return chave
