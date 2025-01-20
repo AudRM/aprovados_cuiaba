@@ -241,15 +241,15 @@ class Database:
         grupos = [
             {'grupo': 'TI_RAIZ', 'cota': 'AC', 'qtde_vagas': 1, 'link': 'link sera mostrado p TI'},
             {'grupo': 'TI', 'cota': 'AC', 'qtde_vagas': 12, 'link': 'link sera mostrado p TI'},
-            {'grupo': 'TI', 'cota': 'Afro', 'qtde_vagas': 4, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'TI', 'cota': 'Racial', 'qtde_vagas': 4, 'link': 'link sera mostrado p TI'},
             {'grupo': 'TI', 'cota': 'PCD', 'qtde_vagas': 4, 'link': 'link sera mostrado p TI'},
 
             {'grupo': 'Gestão', 'cota': 'AC', 'qtde_vagas': 16, 'link': 'link sera mostrado p TI'},
-            {'grupo': 'Gestão', 'cota': 'Afro', 'qtde_vagas': 5, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'Gestão', 'cota': 'Racial', 'qtde_vagas': 5, 'link': 'link sera mostrado p TI'},
             {'grupo': 'Gestão', 'cota': 'PCD', 'qtde_vagas': 5, 'link': 'link sera mostrado p TI'},
 
             {'grupo': 'Direito', 'cota': 'AC', 'qtde_vagas': 8, 'link': 'link sera mostrado p Gestão'},
-            {'grupo': 'Direito', 'cota': 'Afro', 'qtde_vagas': 4, 'link': 'link sera mostrado p Direito'},
+            {'grupo': 'Direito', 'cota': 'Racial', 'qtde_vagas': 4, 'link': 'link sera mostrado p Direito'},
             {'grupo': 'Direito', 'cota': 'PCD', 'qtde_vagas': 4, 'link': 'link sera mostrado p Direito'}
           ]
 

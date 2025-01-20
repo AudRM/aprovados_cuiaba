@@ -6,6 +6,7 @@ import os
 import datetime
 from database import Database, TabelaUsuario
 from utils import carregar_chave_criptografia, decriptar_arquivo
+from sqlalchemy import text
 
 def administrar_web_app(db: Database):
     st.subheader('Painel de Administração - Superusuário')
@@ -129,3 +130,37 @@ def administrar_web_app(db: Database):
                     {"role": novo_role}
                 )
                 st.success(f"Role atualizado para '{novo_role}' com sucesso!")
+
+    # ---------------------------------------------------------
+    # 6. Modificar banco de dados 
+    # ---------------------------------------------------------
+
+    st.write("### Execução Direta de Comandos SQL")
+
+    sql_command = st.text_area(
+        "Digite o comando SQL (ex.: SELECT, UPDATE, DELETE, CREATE, etc.):",
+        height=150
+    )
+    
+    if st.button("Executar Comando SQL"):
+        if not sql_command.strip():
+            st.error("Por favor, digite um comando SQL válido.")
+        else:
+            with db.get_session() as session:
+                try:
+                    # Usamos a engine ou a session para executar
+                    result = session.execute(text(sql_command))
+                    session.commit()
+
+                    # Se for um SELECT, podemos exibir o resultado
+                    if sql_command.strip().lower().startswith("select"):
+                        rows = result.fetchall()
+                        if rows:
+                            st.write("Resultado:")
+                            st.write(rows)
+                        else:
+                            st.info("Nenhuma linha retornada ou SELECT sem resultados.")
+                    else:
+                        st.success("Comando SQL executado com sucesso!")
+                except Exception as e:
+                    st.error(f"Erro ao executar comando: {e}")

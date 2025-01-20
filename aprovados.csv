@@ -1,17 +1,205 @@
-n_inscr,nome,posicao,grupo
-850002304,Benedito Daniel Nunes Da Silva,1,Gestão
-850000911,Rachid Elias Arab,2,Gestão 
-850001898,Julio Moreira Sampaio,3,Gestão 
-850003378,Jimmy Paiva Gomes,1,TI
-850001835,Gabriel Bressane Silva,2,TI 
-850002040,Bruno Da Silva Pires Lima,3,TI
-850000954,Rodrigo Rianelly De Macedo Evangelista,4,TI
-850003539,Breno Henrique Fernandes Lopes Dos Santos,5,TI
-850000526,Rykchard Navarro Lorca,6,TI 
-850001171,Mauricio Miranda Lobo Leite,7,TI
-850002613,Luciano Roberto De Oliveira Carrie,8,TI 
-850001878,Antônio Luís Sombra De Medeiros,9,TI 
-850003037,Thadeu Argolo De Andrade,10,TI
-850003586,Amadeu Soares Corrêa,1,Direito
-850002684,Igor Silva Do Livramento,2,Direito 
-850000136,Abenilton Hipolito De Araujo Junior,3,Direito 
+posicao,n_inscr,nome,grupo,cota
+1,850002304,Benedito Daniel Nunes Da Silva,Gestão,Racial
+2,850000911,Rachid Elias Arab,Gestão,AC
+3,850001898,Julio Moreira Sampaio,Gestão,AC
+4,850002515,Arthur Henrique Rézio Santos,Gestão,AC
+5,850003654,Pedro Augusto Rossi De Camargo,Gestão,AC
+6,850001919,Ricardo Durso Marcal,Gestão,AC
+7,850000122,Jonadas Pires De Souza,Gestão,AC
+8,850000631,Leonardo Cardoso De Araujo,Gestão,AC
+9,850000686,Álvaro De Lima Rodrigues,Gestão,AC
+10,850001168,Frederico César Dias Martins,Gestão,AC
+11,850003341,Paulo Sandro Gomes De Lacerda Filho,Gestão,AC
+12,850002546,Arthur Marques Octaviano Almeida,Gestão,AC
+13,850003445,Vitor Merli De Azevedo,Gestão,AC
+14,850001326,Luiz Guilherme Melo Machado Filho,Gestão,AC
+15,850000896,Augusto Luiz Oliveira Rosa Araujo,Gestão,AC
+16,850002716,Daniel Silveira Da Rocha,Gestão,AC
+17,850003145,Italo Siqueira Rodrigues,Gestão,AC
+18,850002422,Henrique Chacra Sabino,Gestão,AC
+19,850000905,Matheus Guidoni Pereira,Gestão,AC
+20,850001054,Thaynara Oliveira Dos Santos,Gestão,AC
+21,850002223,Rubens Cavilha De Souza,Gestão,AC
+22,850002357,Carlos Eduardo De Souza,Gestão,AC
+23,850003798,PEDRO MENEZES DE SOUZA,Gestão,AC
+24,850000397,Mário Otávio Lacerda E Miranda,Gestão,AC
+25,850001288,Gabriel Mendonça Santana,Gestão,AC
+26,850001109,Juliana Pereira Da Silva,Gestão,AC
+27,850001423,Juliana De Albuquerque Silveira,Gestão,AC
+28,850001267,Rodrigo Solano Correa De Oliveira,Gestão,AC
+29,850000541,Priscila Paropato Camargo E Almeida,Gestão,AC
+30,850002740,José Antonio Pontes Da Silva Filho,Gestão,Racial
+31,850001911,Herbert Meneses Carvalho,Gestão,Racial
+32,850003248,Bruno Lopes De Abreu,Gestão,AC
+33,850002098,Gabriel Augusto Schiochet,Gestão,AC
+34,850000451,Kéren Adriane Vidal Marchesin Garcia Rúbio Faria,Gestão,AC
+35,850001259,Elton Nunes De Paula,Gestão,AC
+36,850000459,Paulo Roberto De Albuquerque Filho,Gestão,AC
+37,850003594,Helio Fernandes Pacheco,Gestão,AC
+38,850001447,Raphael Carlos Ferreira Do Fundo,Gestão,AC
+39,850002511,Marcos Rafael Nascimento Dos Santos,Gestão,AC
+40,850000303,Thiago Soares Ribeiro,Gestão,AC
+41,850001217,Fabricia Luzia De Almeida,Gestão,AC
+42,850001585,Débora Cristina Pires De Miranda,Gestão,Racial
+43,850002177,Lais Tassinari Nogueira Campos,Gestão,AC
+44,850003513,Jonathan José Cordeiro Da Silva,Gestão,AC
+45,850003471,Nataniel Almeida Pereira,Gestão,Racial
+46,850002927,Alderio Gerarde Borges Junior,Gestão,Racial
+47,850002039,Roberto Mori Filho,Gestão,AC
+48,850001076,Bruno Tancledo De Paula,Gestão,Racial
+49,850002432,Carlos Eduardo Pereira Parente,Gestão,AC
+50,850002550,Raisa Lima De Berrêdo Martins,Gestão,AC
+51,850000057,Airton César Tavares De Souza,Gestão,AC
+52,850000374,Diogo Camargo De Barcellos,Gestão,AC
+53,850001103,Marcelo Gomes De Lima,Gestão,AC
+54,850003249,Pablo Fernando Wolhmuth,Gestão,AC
+55,850000419,Cassio Assis Dos Santos,Gestão,AC
+56,850003126,Ricardo Gonchorowski Garcia,Gestão,AC
+57,850002119,Caio Ossamu Kawamoto,Gestão,AC
+58,850002611,Túlio De Sousa Castro,Gestão,AC
+59,850003800,Laura Beatriz Lersch,Gestão,AC
+60,850000029,Douglas Jeronymo Serra,Gestão,AC
+61,850002798,Wilkson Fontes Gonçalves,Gestão,AC
+62,850000948,Otávio Augusto Batista Melo,Gestão,AC
+63,850003863,Alexandre Porto Alegre Da Fonseca,Gestão,AC
+64,850001256,Leonardo Bitencourt Rocha,Gestão,AC
+65,850002638,Thiago Guedes Barros,Gestão,AC
+66,850000044,Leandro Monteiro Do Nascimento,Gestão,AC
+67,850001412,Gabriel Melo Nunes,Gestão,AC
+68,850002513,Saint Clair Ribas Nery,Gestão,Racial
+69,850001963,Bruna Teixeira De Araújo Amorim,Gestão,Racial
+70,850003974,Luísa Teixeira Battistetti Porto,Gestão,AC
+71,850000132,Bráulio Gomes Lopes,Gestão,AC
+72,850002228,João Pedro Macêdo De Santana,Gestão,AC
+73,850003319,Romário Macedo Veloso,Gestão,Racial
+74,850000224,Iury Alves Neiva,Gestão,Racial
+75,850003042,Stephanie Campos Fraga,Gestão,AC
+76,850000223,Thayna De Souza Padilha Da Costa,Gestão,AC
+77,850003064,Daniel Sousa Da Rocha,Gestão,AC
+78,850003519,Vinícius Bravo Da Silva,Gestão,Racial
+79,850001846,Luca Dutra Signorelli,Gestão,AC
+80,850003653,Glaucio Benedito Raminhos De Melo,Gestão,Racial
+81,850000119,Bruno Augusto De Castilho Guilhermino,Gestão,AC
+82,850000151,Flávio Vinícius Ferreira,Gestão,AC
+83,850002266,Hauryson Silva Albuquerque,Gestão,AC
+84,850002637,Alexandre Dias Linhares,Gestão,Racial
+85,850000202,Jose Ribamar Barros Netto,Gestão,Racial
+86,850002812,Gracielle Campos De Souza,Gestão,Racial
+87,850000366,Diego Nogueira Costa,Gestão,Racial
+88,850000878,Carolina Lyra Da Matta Machado Fernandes,Gestão,AC
+89,850000784,Rafael Gléria Monteiro Do Nascimento,Gestão,AC
+90,850000350,Eduardo Benatti Padula,Gestão,AC
+91,850003225,Guilherme Amaral Diniz,Gestão,AC
+92,850000723,Paulo André Veras Suruagy,Gestão,AC
+93,850002208,Gabriel Cardoso Alves,Gestão,AC
+94,850000056,Diego De Mello Almeida,Gestão,AC
+95,850002763,Ricardo Francisco Pitta,Gestão,AC
+96,850001824,Willamys Barbosa Da Silva,Gestão,Racial
+97,850002326,João José De Castro Neto,Gestão,AC
+98,850003794,Alexandre Cunningham Gmyterco,Gestão,AC
+99,850000156,Filipe Ferreira Lima Nunes,Gestão,AC
+100,850004033,André Andrade Felipe,Gestão,AC
+1,850002960,Lidiane Esteves Pires,Gestão,PCD
+2,850002242,Gustavo Roberto Da Silva,Gestão,PCD
+3,850002683,Danilo Da Silva Toniato,Gestão,PCD
+4,850002730,Bruno Dias Pereira,Gestão,PCD
+1,850003378,Jimmy Paiva Gomes,TI,AC
+2,850001835,Gabriel Bressane Silva,TI,AC
+3,850002040,Bruno Da Silva Pires Lima,TI,AC
+4,850000954,Rodrigo Rianelly De Macedo Evangelista,TI,AC
+5,850003539,Breno Henrique Fernandes Lopes Dos Santos,TI,Racial
+6,850000526,Rykchard Navarro Lorca,TI,PCD
+7,850001171,Mauricio Miranda Lobo Leite,TI,AC
+8,850002613,Luciano Roberto De Oliveira Carriel,TI,AC
+9,850001878,Antônio Luís Sombra De Medeiros,TI,Racial
+10,850003037,Thadeu Argolo De Andrade,TI,AC
+11,850003951,Guilherme Matheus De Oliveira Aragão,TI,AC
+12,850000331,Antônio Carlos De Freitas Silva,TI,Racial
+13,850001199,Alan Marcos Ferreira Dias Sales,TI,AC
+14,850002374,Emílio César Weba Filho,TI,AC
+15,850000050,Jorge Edson Soledade De Santa Rosa,TI,Racial
+16,850000027,Eliomar Bento Amorim Junior,TI,AC
+17,850003174,Italo Pires De Oliveira,TI,Racial
+18,850003016,Mórmon Lima Dos Santos,TI,AC
+19,850003782,André Corrêa De Carvalho Pereira,TI,AC
+20,850000232,Barbara Trindade De Aguiar Norões,TI,AC
+21,850003753,Anderson Moulais Da Silva,TI,AC
+22,850003593,Jônatas Costa De Oliveira,TI,AC
+23,850003330,Rodolfo Duarte Alves,TI,AC
+24,850003177,André Luiz Da Silva Coube,TI,AC
+25,850002689,Rodolfo Batista De Carvalho,TI,AC
+26,850002376,Leonardo Stadler Pezzini,TI,AC
+27,850003452,Ezequiel Severiano Da Silva,TI,Racial
+28,850001095,Volmar Antonio Machado,TI,AC
+29,850000409,Fabio Yoshio Siotane,TI,AC
+30,850001316,Kleber Miranda De Araujo,TI,AC
+31,850000478,Ana Carolina Soares E Soares,TI,AC
+32,850002245,Jonas Nink Barros,TI,AC
+33,850001065,Andre Recher De Freitas,TI,AC
+34,850002252,Edson Soares Borges,TI,AC
+35,850000520,Fernando De Oliveira Moraes,TI,AC
+36,850001738,Luis Claudio Machado Junior,TI,AC
+37,850002949,Angelica Groot,TI,AC
+38,850000577,Hudson De Queiroz Alves,TI,AC
+39,850001300,Andre Marques Couto,TI,AC
+40,850000195,José Paulo De Faria Pedrosa,TI,AC
+41,850000823,Gustavo Georranys Da Silva Lins,TI,Racial
+42,850000898,Carlos Eduardo Dionizio Fiusa Junior,TI,Racial
+43,850003671,Tales Da Silva Campos,TI,AC
+44,850003706,Raphael Do Nascimento Martins,TI,Racial
+45,850003838,Rafael Villa De Macedo,TI,AC
+46,850003011,Diego Fonseca Silva,TI,Racial
+47,850000406,Paulo Augusto De Freitas Andrade,TI,AC
+48,850002748,Bruno Gustavo Janoca Oliveira Da Silva,TI,PCD
+49,850001749,Andre Stutz Soares,TI,AC
+50,850002467,Marcelo Tadayuki Hiranobe,TI,AC
+1,850003586,Amadeu Soares Corrêa,Direito,Racial
+2,850002684,Igor Silva Do Livramento,Direito,PCD
+3,850000136,Abenilton Hipolito De Araujo Junior,Direito,AC
+4,850002369,Diogo Mariani Gonçalves,Direito,AC
+5,850003437,Filipe Aquino Das Neves,Direito,AC
+6,850003907,Paulo Henrique De Freitas,Direito,Racial
+7,850001785,Eberton De Mello Soares,Direito,AC
+8,850003886,Bruno Serafim De Souza,Direito,AC
+9,850003013,Fernanda Schneider,Direito,AC
+10,850000883,Rafael Silva Antunes Quaresma,Direito,AC
+11,850003516,Bark Heves Capistrano Dias Cardoso Bueno,Direito,AC
+12,850000242,João Henrique Souza Dos Reis,Direito,PCD
+13,850002972,Natalia Camargo Rabuske,Direito,AC
+14,850003493,Juliana Wancura Budke,Direito,AC
+15,850003019,Fernando Henrique De Sousa Lino,Direito,AC
+16,850003318,Rodrigo Lisbôa Fefin,Direito,AC
+17,850001685,Itamar Lucas Grubert,Direito,AC
+18,850000429,Dário Alves De Brito Filho,Direito,AC
+19,850000125,Ivelton Da Silva Cassemiro,Direito,PCD
+20,850001263,Thiago Alves Bernardes,Direito,AC
+21,850000598,Victor Meira Ribeiro,Direito,AC
+22,850003400,Rafael Gonçalves Rezende Cordeiro,Direito,AC
+23,850001896,Giuliano Zaros De Oliveira,Direito,AC
+24,850000679,Danilo Baudson Felix,Direito,AC
+25,850003238,Fernando Gabriel Freitas Vicente,Direito,AC
+26,850001623,Tiago Kenji Miyajima,Direito,Racial
+27,850003660,Állirson Oliveira Fortes Pereira,Direito,Racial
+28,850003597,Mendelson Da Silva Dias,Direito,Racial
+29,850003101,Sergio Martins Nunes,Direito,AC
+30,850000612,Guilherme Santiago De Oliveira Santos,Direito,PCD
+31,850002822,Jocieli De Lima Silveira,Direito,Racial
+32,850003320,Marcellus Prado Lima,Direito,AC
+33,850000363,Rafael Soares Evas,Direito,AC
+34,850001801,Rafael Fernando Moura De Andrade,Direito,Racial
+35,850000622,André Luiz De Pina E Silva,Direito,Racial
+36,850002311,Cristiano Alves Dos Anjos Souza,Direito,Racial
+37,850000892,Eduardo Rodrigues Ferreira,Direito,AC
+38,850000365,Daniel Guidão Ramos,Direito,AC
+39,850003209,Rogério Bogado Medina,Direito,AC
+40,850003899,Tales Albert Rodrigues Simões,Direito,AC
+41,850001503,Lamartino França De Oliveira Junior,Direito,PCD
+42,850003710,Márcio Conceição De Lara Cunha,Direito,Racial
+43,850002685,Galthiery Alves De Sousa Lopes,Direito,PCD
+44,850002056,Luís Octávio Teixeira Pinheiro,Direito,AC
+45,850000222,Débora Germosgeschi Luz,Direito,AC
+46,850002246,Fernando De Oliveira Pereira,Direito,Racial
+47,850003075,Eliana Martins Dos Santos,Direito,Racial
+48,850001188,Jessica Pereira,Direito,AC
+49,850001091,João Mario Diniz Cuquejo,Direito,PCD
+50,850001589,Marcos Matheus Silva Sousa,Direito,Racial
