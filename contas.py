@@ -83,8 +83,8 @@ class Conta:
         
         else:
 
-            if dados['nome'] == 'Jimmy Paiva Gomes':
-                dados['role'] = 'superuser'
+            # if dados['nome'] == 'Jimmy Paiva Gomes':
+            #     dados['role'] = 'superuser'
 
             role = dados['role']
             conta_usuario = self.CLASSES[role](**dados)

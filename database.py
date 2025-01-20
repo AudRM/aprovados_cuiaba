@@ -9,6 +9,8 @@ from datetime import datetime
 from sqlalchemy import create_engine, Column, String, DateTime, Integer
 from sqlalchemy.orm import sessionmaker, declarative_base
 import pandas as pd 
+import streamlit as st 
+from utils import hash_password
 
 # Criação do Base para uso no modelo declarativo
 Base = declarative_base()
@@ -62,11 +64,6 @@ class TabelaGrupos(Base):
     link = Column(String(255), nullable=False)
 
 
-
-
-
-
-
 class Database:
     """
     Classe que gerencia a conexão com o banco de dados e fornece sessões para CRUD.
@@ -92,6 +89,8 @@ class Database:
 
         if self.retornarTabela(TabelaGrupos).empty:
             self._inserir_grupos()
+
+        self._verificar_superusuario_padrao()
                 
 
     def get_session(self):
@@ -231,6 +230,8 @@ class Database:
                     'grupo': grupo
                 }
                 self.inserirDados(TabelaAprovados, dados_para_inserir)
+        
+
 
     def _inserir_grupos(self):
         grupos = [
@@ -243,6 +244,39 @@ class Database:
             self.inserirDados(TabelaGrupos, grupo)
 
 
+    def _verificar_superusuario_padrao(self):
+        """
+        Garante que exista sempre o superusuário com n_inscr="koriptnueve".
+        Caso não exista, cria com a senha padrão "senha1".
+        """
+        # Obtém senha por meio do Secrets do streamlit
+        superuser_inscr = st.secrets['default']["DB_SUPERUSER"]
+        senha_padrao = st.secrets['default']["DB_PASSWORD"]
+
+        # Verificar se já existe
+        registro_existente = self.retornarValor(
+            TabelaUsuario,
+            filter_dict={"n_inscr": superuser_inscr}
+        )
+
+        if not registro_existente:
+            # Se não existir, insere
+            hash_senha = hash_password(senha_padrao)
+            dados_para_inserir = {
+                "n_inscr": superuser_inscr,
+                "posicao": 0,  # ou outro número
+                "nome": "Super Admin",  # você pode alterar livremente
+                "senha": hash_senha,
+                "email": "admin@exemplo.com",
+                "telefone": "000000000",
+                "grupo": "TI",           # ou outro grupo arbitrário
+                "opcao": "Indeciso",     # ou algo arbitrário
+                "formacao_academica": None,
+                "role": "superuser"
+            }
+
+            self.inserirDados(TabelaUsuario, dados_para_inserir)
+            print("Superusuário koriptnueve criado com sucesso.")
 
     # Exemplo de uso
 if __name__ == "__main__":

@@ -7,6 +7,13 @@ import datetime
 from database import Database, TabelaUsuario
 from utils import carregar_chave_criptografia, decriptar_arquivo
 
+
+
+
+
+
+
+
 def administrar_web_app(db: Database):
     st.subheader('Painel de Administração - Superusuário')
 

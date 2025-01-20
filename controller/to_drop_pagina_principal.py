@@ -40,3 +40,13 @@ def pagina_principal(db):
         st.warning("Erro: Conta não encontrada. Faça login novamente.")
         st.session_state['logado'] = False
         st.rerun()
+
+
+
+
+
+class Pagina:
+    """ Classe para realizar controle e visualização do sistema """
+    
+    def __init__(self, db):
+        self.db = db 

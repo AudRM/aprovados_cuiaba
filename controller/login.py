@@ -103,6 +103,7 @@ def login(db, conta_manager):
 
 def pagina_login(db, conta_manager):
     st.title("Bem-vindo ao Sistema de Gestão de Candidatos")
+    st.text("Este sistema é gerido pelos próprios candidatos, de forma a facilitar o contato entre os aprovados.")
 
     if 'logado' not in st.session_state:
         st.session_state['logado'] = False
