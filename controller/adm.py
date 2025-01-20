@@ -7,28 +7,24 @@ import datetime
 from database import Database, TabelaUsuario
 from utils import carregar_chave_criptografia, decriptar_arquivo
 
-
-
-
-
-
-
-
 def administrar_web_app(db: Database):
     st.subheader('Painel de Administração - Superusuário')
 
-    # Exibir todos os usuários cadastrados
+    # ---------------------------------------------------------
+    # 1. Exibir todos os usuários cadastrados
+    # ---------------------------------------------------------
     st.write("### Usuários Registrados")
     usuarios = db.retornarTabela(TabelaUsuario)
-
     if usuarios.empty:
         st.warning("Nenhum usuário registrado.")
     else:
         st.dataframe(usuarios)
 
-    # Recuperar informações detalhadas de um usuário
+    # ---------------------------------------------------------
+    # 2. Recuperar informações detalhadas de um usuário
+    # ---------------------------------------------------------
     st.write("### Recuperar Informações do Usuário")
-    n_inscr = st.text_input("Digite o Número de Inscrição do Usuário")
+    n_inscr = st.text_input("Digite o Número de Inscrição do Usuário", key="info_user_input")
     if st.button("Buscar Informações"):
         usuario_info = db.retornarValor(TabelaUsuario, {"n_inscr": n_inscr})
         if usuario_info:
@@ -36,9 +32,11 @@ def administrar_web_app(db: Database):
         else:
             st.error("Usuário não encontrado.")
 
-    # Resetar conta do usuário
+    # ---------------------------------------------------------
+    # 3. Resetar conta do usuário (deletar registro)
+    # ---------------------------------------------------------
     st.write("### Resetar Conta do Usuário")
-    n_inscr_reset = st.text_input("Número de Inscrição para Resetar Conta")
+    n_inscr_reset = st.text_input("Número de Inscrição para Resetar Conta", key="reset_user_input")
     if st.button("Resetar Conta"):
         if n_inscr_reset:
             with db.get_session() as session:
@@ -52,9 +50,11 @@ def administrar_web_app(db: Database):
         else:
             st.error("Por favor, forneça um número de inscrição válido.")
 
-    # Verificar arquivo do usuário
+    # ---------------------------------------------------------
+    # 4. Verificar arquivo do usuário (descriptografar e baixar)
+    # ---------------------------------------------------------
     st.write("### Verificar Arquivo do Usuário")
-    n_inscr_arquivo = st.text_input("Número de Inscrição para Verificar Arquivo")
+    n_inscr_arquivo = st.text_input("Número de Inscrição para Verificar Arquivo", key="arquivo_user_input")
     if st.button("Ver Arquivo"):
         pasta_destino = "documentos_auditoria"
         if not os.path.exists(pasta_destino):
@@ -64,7 +64,6 @@ def administrar_web_app(db: Database):
         arquivos = [f for f in os.listdir(pasta_destino) if n_inscr_arquivo in f]
         if arquivos:
             st.success(f"Arquivo(s) encontrado(s): {arquivos}")
-            # Escolhe o primeiro ou pode exibir um selectbox com todos
             arquivo_escolhido = arquivos[0]
             caminho_arquivo = os.path.join(pasta_destino, arquivo_escolhido)
 
@@ -88,9 +87,11 @@ def administrar_web_app(db: Database):
         else:
             st.error("Nenhum arquivo encontrado para este usuário.")
 
-    # Exportar informações de usuários
+    # ---------------------------------------------------------
+    # 5. Exportar informações de usuários (CSV ou Excel)
+    # ---------------------------------------------------------
     st.write("### Exportar Usuários Cadastrados")
-    formato = st.selectbox("Escolha o formato de exportação", ["CSV", "Excel"])
+    formato = st.selectbox("Escolha o formato de exportação", ["CSV", "Excel"], key="export_format")
     if st.button("Exportar"):
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         if formato == "CSV":
@@ -106,3 +107,25 @@ def administrar_web_app(db: Database):
                 data=f, 
                 file_name=os.path.basename(caminho_arquivo)
             )
+
+    # ---------------------------------------------------------
+    # 6. Atribuir Role (usuario / coordenador / superuser)
+    # ---------------------------------------------------------
+    st.write("### Atribuir Role a um Usuário")
+    n_inscr_role = st.text_input("Número de Inscrição do usuário para mudar a role", key="role_user_input")
+    novo_role = st.selectbox("Novo Role", ["usuario", "coordenador", "superuser"], key="role_selectbox")
+    if st.button("Atribuir Role"):
+        if not n_inscr_role:
+            st.error("Por favor, informe o número de inscrição do usuário.")
+        else:
+            user_record = db.retornarValor(TabelaUsuario, {"n_inscr": n_inscr_role})
+            if not user_record:
+                st.error("Usuário não encontrado.")
+            else:
+                # Realiza a atualização no banco
+                db.atualizarTabela(
+                    TabelaUsuario, 
+                    {"n_inscr": n_inscr_role}, 
+                    {"role": novo_role}
+                )
+                st.success(f"Role atualizado para '{novo_role}' com sucesso!")
