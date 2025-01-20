@@ -66,15 +66,29 @@ def verificar_estatisticas(conta, db):
 
 
     usuarios = db.retornarListaUsuariosNaFrente(conta.grupo, conta.posicao, conta.cota)
+    
+
+    
+    # Retirar usuários na frente que não vã assumir OU que não tenham se cadastrado ainda
+    if not usuarios.empty:
+        nao_vao_assumir = usuarios[usuarios['opcao']=="Não vai assumir"]
+
+    total_aprov = db.retornarTabela(TabelaAprovados)
+    total_aprov = total_aprov[
+            (total_aprov['grupo']==conta.grupo)&
+            (total_aprov['cota']==conta.cota)&
+            (total_aprov['posicao']<conta.posicao)
+            ]
+    total_aprov = total_aprov[~total_aprov['n_inscr'].isin(nao_vao_assumir['n_insc'].unique())]
+
+
     # Achar limite de CR para o grupo/cota
     tabela_grupo = db.retornarTabela(TabelaGrupos)
     tamanho_CR = tabela_grupo[(tabela_grupo['cota']==conta.cota) & (tabela_grupo['grupo']==conta.grupo)]['qtde_vagas'].values
 
-    # Retirar usuários na frente que não vã assumir
-    if not usuarios.empty:
-        usuarios = usuarios[usuarios['opcao']!="Não vai assumir"]
+    
 
-    if usuarios.size < tamanho_CR:  # Se tiver menos usuários à frente que vagas
+    if total_aprov.size < tamanho_CR:  # Se tiver menos usuários à frente que vagas
     
         mensagem_grupo = grupo.mostrarMensagens()
         link_grupo = grupo.mostrarLink()
