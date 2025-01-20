@@ -1,6 +1,6 @@
 import bcrypt
 from cryptography.fernet import Fernet
-
+import streamlit as st
 
 # Função para gerar o hash da senha
 def hash_password(password: str) -> str:
@@ -38,6 +38,5 @@ def carregar_chave_criptografia(caminho_chave="chave_fernet.key"):
     Em produção, idealmente buscar de um local seguro, 
     em vez de mantê-la em arquivo no repositório.
     """
-    with open(caminho_chave, "rb") as f:
-        chave = f.read()
+    chave = st.secrets['default']['FERNEY_KEY']
     return chave

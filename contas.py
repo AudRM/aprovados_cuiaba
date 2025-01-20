@@ -40,10 +40,10 @@ class Conta:
             nome = dados_aprovacao['nome']
             posicao = dados_aprovacao['posicao']
             grupo = dados_aprovacao['grupo']
-
+            cota = dados_aprovacao['cota']
             senha_criptografada = hash_password(senha)
 
-            self._adicionar_conta(nome, posicao, senha_criptografada, email, telefone, opcao, n_inscr, grupo, formacao_academica)
+            self._adicionar_conta(nome, posicao, senha_criptografada, email, telefone, opcao, n_inscr, grupo, formacao_academica, cota)
             return {
                     'função': 'criarConta', 
                     'data': datetime.now(), 
@@ -107,25 +107,29 @@ class Conta:
         return self.db.retornarValor(TabelaAprovados, {'n_inscr': n_inscr})[0]
     
     def _adicionar_conta(self, 
-                         nome: str, 
-                         posicao: int, 
-                         senha: str, 
-                         email: str, 
-                         telefone: str, 
-                         opcao: str, 
-                         n_inscr: str, 
-                         grupo: str,
-                         formacao_academica: str) -> None:
+                     nome: str, 
+                     posicao: int, 
+                     senha: str, 
+                     email: str, 
+                     telefone: str, 
+                     opcao: str, 
+                     n_inscr: str, 
+                     grupo: str,
+                     formacao_academica: str,
+                     cota: str = "AC"
+                    ) -> None:
+
         data_dict = {
-                     'nome': nome,
-                     'posicao': posicao,
-                     'senha': senha,
-                     'email': email,
-                     'telefone': telefone,
-                     'opcao': opcao,
-                     'n_inscr': n_inscr, 
-                     'grupo': grupo,
-                     'formacao_academica': formacao_academica
-                     }
+            'nome': nome,
+            'posicao': posicao,
+            'senha': senha,
+            'email': email,
+            'telefone': telefone,
+            'opcao': opcao,
+            'n_inscr': n_inscr,
+            'grupo': grupo,
+            'formacao_academica': formacao_academica,
+            'cota': cota  # <-- Novo
+        }
         
         self.db.inserirDados(TabelaUsuario, data_dict)

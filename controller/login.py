@@ -11,6 +11,7 @@ import os
 import datetime
 from database import TabelaAprovados
 from utils import carregar_chave_criptografia, encriptar_arquivo
+from data_p_config.textos import TEXTO_DOCUMENTAÇÃO,TEXTO_PROPOSITO_WEBAPP
 
 def criar_conta(db, conta_manager):
     st.subheader("Criar Conta")
@@ -21,8 +22,7 @@ def criar_conta(db, conta_manager):
         telefone = st.text_input("Telefone [Opcional]")
         formacao_academica = st.text_input("Formação Acadêmica [Opcional]")
         opcao_selecionada = st.selectbox("Opção", ["Não vou assumir", "Vou assumir", "Estou indeciso"])
-        documento = st.file_uploader("Envie uma imagem do documento", type=["png", "jpg", "jpeg"])
-
+        
         # Mapeia a opção
         opcao = {
             "Não vou assumir": "Não vai assumir",
@@ -30,8 +30,12 @@ def criar_conta(db, conta_manager):
             "Estou indeciso": "Indeciso"
         }[opcao_selecionada]
 
-        submit = st.form_submit_button("Criar")
+        
 
+        st.text(TEXTO_DOCUMENTAÇÃO)
+        documento = st.file_uploader("Envie uma imagem do documento", type=["png", "jpg", "jpeg"])
+
+        submit = st.form_submit_button("Criar")
         if submit:
             # 1. Verifica se a inscrição existe no TabelaAprovados
             dados_candidato = db.retornarValor(TabelaAprovados, filter_dict={'n_inscr': n_inscr})
@@ -101,16 +105,18 @@ def login(db, conta_manager):
                 st.error(resultado['resultado'])
 
 
-def pagina_login(db, conta_manager):
-    st.title("Bem-vindo ao Sistema de Gestão de Candidatos")
-    st.text("Este sistema é gerido pelos próprios candidatos, de forma a facilitar o contato entre os aprovados.")
+# def pagina_login(db, conta_manager):
+#     st.title("Bem-vindo ao Sistema de Gestão de Candidatos")
+#     # st.text("Este sistema é gerido pelos próprios candidatos, de forma a facilitar o contato entre os aprovados.")
+    
+#     st.text(TEXTO_PROPOSITO_WEBAPP)
 
-    if 'logado' not in st.session_state:
-        st.session_state['logado'] = False
+#     if 'logado' not in st.session_state:
+#         st.session_state['logado'] = False
 
-    opcao = st.radio("Escolha uma opção:", ["Login", "Criar Conta"])
+#     opcao = st.radio("Escolha uma opção:", ["Login", "Criar Conta"])
 
-    if opcao == "Criar Conta":
-        criar_conta(db, conta_manager)
-    elif opcao == "Login":
-        login(db, conta_manager)
+#     if opcao == "Criar Conta":
+#         criar_conta(db, conta_manager)
+#     elif opcao == "Login":
+#         login(db, conta_manager)

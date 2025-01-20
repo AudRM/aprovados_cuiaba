@@ -7,7 +7,9 @@ from controller.login import login, criar_conta
 from controller.estatisticas import verificar_estatisticas
 from controller.dados_usuarios import gerenciar_dados_usuario
 from controller.adm import administrar_web_app
-
+from controller.estatisticas_grupo_coordenador import estatisticas_de_grupo_coordenador
+from controller.controle_grupo import controle_de_grupo
+from data_p_config.textos import TEXTO_PROPOSITO_WEBAPP
 
 class Pagina:
     """
@@ -38,7 +40,7 @@ class Pagina:
         Exibe a tela de login ou de criar conta.
         """
         st.title("Bem-vindo ao Sistema de Gestão de Candidatos")
-
+        st.text(TEXTO_PROPOSITO_WEBAPP)
         opcao = st.radio("Escolha uma opção:", ["Login", "Criar Conta"])
 
         if opcao == "Criar Conta":
@@ -60,16 +62,22 @@ class Pagina:
 
         # Mostra menu lateral ou superior, dependendo da sua preferência
         if conta.role == 'superuser':
-            opcoes_menu = ["Ver Estatísticas (Usuário)", 
-                           "Estatísticas de Grupo (Coordenador)", 
-                           "Administração (Superuser)", 
-                           "Gerenciar Dados de Usuário",
-                           "Sair"]
+            opcoes_menu = [
+                "Ver Estatísticas (Usuário)",
+                "Estatísticas de Grupo (Coordenador)",
+                "Controle de Grupo",       # NOVA OPÇÃO
+                "Administração (Superuser)",
+                "Gerenciar Dados de Usuário",
+                "Sair"
+            ]
         elif conta.role == 'coordenador':
-            opcoes_menu = ["Ver Estatísticas (Usuário)", 
-                           "Estatísticas de Grupo (Coordenador)",
-                           "Gerenciar Dados de Usuário",
-                           "Sair"]
+            opcoes_menu = [
+                "Ver Estatísticas (Usuário)",
+                "Estatísticas de Grupo (Coordenador)",
+                "Controle de Grupo",       # NOVA OPÇÃO
+                "Gerenciar Dados de Usuário",
+                "Sair"
+            ]
         else:
             # role == 'usuario'
             opcoes_menu = ["Ver Estatísticas (Usuário)",
@@ -85,10 +93,7 @@ class Pagina:
         # Estatísticas de grupo (coordenador / superuser)
         elif escolha == "Estatísticas de Grupo (Coordenador)":
             if conta.role in ['coordenador', 'superuser']:
-                st.subheader("Estatísticas de Grupo")
-                st.info("Funcionalidade em desenvolvimento...")
-                # Poderia chamar aqui uma função do seu Módulo de estatísticas 
-                # para coordenadores, caso já tivesse implementada.
+                estatisticas_de_grupo_coordenador(conta, self.db)
             else:
                 st.error("Você não tem permissão para esta seção.")
 
@@ -102,6 +107,13 @@ class Pagina:
         # Gerenciamento de dados do próprio usuário (mudar email, telefone, etc.)
         elif escolha == "Gerenciar Dados de Usuário":
             gerenciar_dados_usuario(conta, self.db)
+
+        if escolha == "Controle de Grupo":
+            if conta.role in ['coordenador', 'superuser']:
+                from controller.controle_grupo import controle_de_grupo
+                controle_de_grupo(conta, self.db)
+            else:
+                st.warning("Você não tem permissão para este recurso.")
 
         # Sair
         elif escolha == "Sair":

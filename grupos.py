@@ -6,6 +6,7 @@ Classe para abstrair conjunto de atividades de grupos
 import pandas as pd 
 from datetime import datetime 
 from database import Database, TabelaAprovados, TabelaUsuario, TabelaGrupos
+from data_p_config.textos import TEXTO_PARABENS 
 
 class Grupo:
 
@@ -38,7 +39,7 @@ class Grupo:
 
 
     def mostrarMensagens(self) -> dict:
-        msg = None
+        msg = TEXTO_PARABENS
         return {
                 'função': 'mostrarMensagens', 
                 'data': datetime.now(), 

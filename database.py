@@ -39,6 +39,7 @@ class TabelaUsuario(Base):
     )
     opcao = Column(String(50), nullable=False)
     role = Column(String(25), default='usuario')
+    cota = Column(String(15), default='AC')
 
 
 class TabelaAprovados(Base):
@@ -51,7 +52,7 @@ class TabelaAprovados(Base):
     posicao = Column(Integer, nullable = False)
     nome = Column(String(255), nullable=False)
     grupo = Column(String(50), nullable= False)
-    
+    cota = Column(String(15), nullable=False, default='AC')
 
 class TabelaGrupos(Base):
     """
@@ -62,6 +63,7 @@ class TabelaGrupos(Base):
     grupo = Column(String(50), primary_key=True, index=True)
     qtde_vagas = Column(Integer, nullable = False)
     link = Column(String(255), nullable=False)
+    cota = Column(String(15), primary_key=True, nullable=False, default='AC')
 
 
 class Database:
@@ -180,7 +182,7 @@ class Database:
         return data
 
 
-    def retornarListaUsuariosNaFrente(self, grupo: str, posicao: int) -> pd.DataFrame:
+    def retornarListaUsuariosNaFrente(self, grupo: str, posicao: int, cota: str) -> pd.DataFrame:
         """
         Retorna todos os registros da tabela 'usuarios' que estejam na frente de uma determinada inscrição para um certo grupo
         """
@@ -190,6 +192,7 @@ class Database:
                 session.query(TabelaUsuario)
                 .filter(TabelaUsuario.grupo == grupo)       #
                 .filter(TabelaUsuario.posicao < posicao)
+                .filter(TabelaUsuario.cota == cota)
                 .all()
             )
 
@@ -204,30 +207,31 @@ class Database:
         return pd.DataFrame(data)
 
     def _inserir_tabela_aprovados(self):
-        # Dano primeiro input de aprovados
-        aprovados = pd.read_csv('aprovados.csv')
-        
-        #  Itera sobre cada linha do DataFrame
+        aprovados = pd.read_csv('aprovados.csv')  # Certifique-se de ter a coluna "cota"
+
         for _, row in aprovados.iterrows():
-            
             numero_inscricao = row['n_inscr']
             nome = row['nome']
             posicao = row['posicao']
             grupo = row['grupo']
 
-            # Verifica se já existe no banco
+            # Se o CSV tiver a coluna "cota", usar:
+            if 'cota' in row:
+                cota = row['cota']
+            else:
+                cota = "AC"  # default
+
             registro_existente = self.retornarValor(
                 TabelaAprovados,
                 filter_dict={'n_inscr': numero_inscricao}
             )
-
             if not registro_existente:
-                # Se não existir, insere
                 dados_para_inserir = {
                     'n_inscr': numero_inscricao,
                     'nome': nome,
-                    'posicao': posicao, 
-                    'grupo': grupo
+                    'posicao': posicao,
+                    'grupo': grupo,
+                    'cota': cota  # <-- Novo
                 }
                 self.inserirDados(TabelaAprovados, dados_para_inserir)
         
@@ -235,9 +239,18 @@ class Database:
 
     def _inserir_grupos(self):
         grupos = [
-            {'grupo': 'TI', 'qtde_vagas': 15, 'link': 'link sera mostrado p TI'},
-            {'grupo': 'Gestão', 'qtde_vagas': 30, 'link': 'link sera mostrado p Gestão'},
-            {'grupo': 'Direito', 'qtde_vagas': 15, 'link': 'link sera mostrado p Direito'}
+            {'grupo': 'TI_RAIZ', 'cota': 'AC', 'qtde_vagas': 1, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'TI', 'cota': 'AC', 'qtde_vagas': 12, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'TI', 'cota': 'Afro', 'qtde_vagas': 4, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'TI', 'cota': 'PCD', 'qtde_vagas': 4, 'link': 'link sera mostrado p TI'},
+
+            {'grupo': 'Gestão', 'cota': 'AC', 'qtde_vagas': 16, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'Gestão', 'cota': 'Afro', 'qtde_vagas': 5, 'link': 'link sera mostrado p TI'},
+            {'grupo': 'Gestão', 'cota': 'PCD', 'qtde_vagas': 5, 'link': 'link sera mostrado p TI'},
+
+            {'grupo': 'Direito', 'cota': 'AC', 'qtde_vagas': 8, 'link': 'link sera mostrado p Gestão'},
+            {'grupo': 'Direito', 'cota': 'Afro', 'qtde_vagas': 4, 'link': 'link sera mostrado p Direito'},
+            {'grupo': 'Direito', 'cota': 'PCD', 'qtde_vagas': 4, 'link': 'link sera mostrado p Direito'}
           ]
 
         for grupo in grupos:
@@ -265,11 +278,11 @@ class Database:
             dados_para_inserir = {
                 "n_inscr": superuser_inscr,
                 "posicao": 0,  # ou outro número
-                "nome": "Super Admin",  # você pode alterar livremente
+                "nome": "SuperAdminPorrudão",  # você pode alterar livremente
                 "senha": hash_senha,
-                "email": "admin@exemplo.com",
+                "email": "procure_e_me_ache@exemplo.com",
                 "telefone": "000000000",
-                "grupo": "TI",           # ou outro grupo arbitrário
+                "grupo": "TI_RAIZ",           # ou outro grupo arbitrário
                 "opcao": "Indeciso",     # ou algo arbitrário
                 "formacao_academica": None,
                 "role": "superuser"

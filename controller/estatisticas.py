@@ -3,7 +3,7 @@
 import streamlit as st
 import pandas as pd
 from grupos import Grupo
-from database import TabelaAprovados
+from database import TabelaAprovados, TabelaGrupos, TabelaUsuario
 
 def verificar_estatisticas(conta, db):
     st.subheader("Dados Gerais")
@@ -19,11 +19,12 @@ def verificar_estatisticas(conta, db):
     st.subheader("Estatísticas do Grupo")
     grupo = Grupo(grupo=conta.grupo, db=db)
 
-    usuarios_frente = db.retornarListaUsuariosNaFrente(conta.grupo, conta.posicao)
+    usuarios_frente = db.retornarListaUsuariosNaFrente(conta.grupo, conta.posicao, conta.cota)
     aprovados_na_frente = db.retornarTabela(TabelaAprovados)
     aprovados_na_frente = aprovados_na_frente[
         (aprovados_na_frente['grupo'] == conta.grupo) & 
-        (aprovados_na_frente['posicao'] < conta.posicao)
+        (aprovados_na_frente['posicao'] < conta.posicao) &
+        (aprovados_na_frente['cota'] == conta.cota)
     ]
     total_aprovados_grupo = len(aprovados_na_frente)
     total_usuarios_frente = len(usuarios_frente)
@@ -63,16 +64,34 @@ def verificar_estatisticas(conta, db):
         st.text('Nenhum candidato à sua frente foi cadastrado. Aguarde.')
         st.metric(label="Percentual de usuários na minha frente", value=f"{percentual_frente:.2f}%")
 
-    mensagem_grupo = grupo.mostrarMensagens()
-    link_grupo = grupo.mostrarLink()
 
-    st.write("### Mensagem do Grupo")
-    if mensagem_grupo['sucesso']:
-        st.text(mensagem_grupo['resultado'])
-    else:
-        st.error("Erro ao carregar mensagem")
+    usuarios = db.retornarListaUsuariosNaFrente(conta.grupo, conta.posicao, conta.cota)
+    # Achar limite de CR para o grupo/cota
+    tabela_grupo = db.retornarTabela(TabelaGrupos)
+    tamanho_CR = tabela_grupo[(tabela_grupo['cota']==conta.cota) & (tabela_grupo['grupo']==conta.grupo)]['qtde_vagas'].values
 
-    if link_grupo['sucesso']:
-        st.text_input("Link do Grupo", link_grupo['resultado'], disabled=True)
+    # Retirar usuários na frente que não vã assumir
+    if not usuarios.empty:
+        usuarios = usuarios[usuarios['opcao']!="Não vai assumir"]
+
+    if usuarios.size < tamanho_CR:  # Se tiver menos usuários à frente que vagas
+    
+        mensagem_grupo = grupo.mostrarMensagens()
+        link_grupo = grupo.mostrarLink()
+
+        st.write("### Mensagem do Grupo")
+        if mensagem_grupo['sucesso']:
+            st.text(mensagem_grupo['resultado'])
+        else:
+            st.error("Erro ao carregar mensagem")
+
+        if link_grupo['sucesso']:
+            st.text_input("Link do Grupo", link_grupo['resultado'], disabled=True)
+        else:
+            st.error("Erro ao carregar link")
+    
     else:
-        st.error("Erro ao carregar link")
+        st.write("### Mensagem do Grupo")
+        st.text("Infelizmente ainda não chegou a sua vez para ser inserido no Grupo do CR de Cuiabá. Mas calma! Aguarde os outros aprovados confirmarem que não vão assumir ou aumentar a quantidade de vagas!")
+        
+
