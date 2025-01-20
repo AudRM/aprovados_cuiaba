@@ -54,7 +54,7 @@ def verificar_estatisticas(conta, db):
             st.metric(label="Usuários que não vão assumir na minha frente", value=len(nao_assumir))
 
         st.metric(
-            label="Percentual de usuários na minha frente já cadastrados",
+            label="Percentual de usuários já cadastrados",
             value=f"{percentual_frente:.2f}%"
         )
 
@@ -71,10 +71,10 @@ def verificar_estatisticas(conta, db):
     
     # Retirar usuários na frente que não vã assumir OU que não tenham se cadastrado ainda
     if not usuarios.empty:
-        nao_vao_assumir = usuarios[usuarios['opcao']=="Não vai assumir"]
+        nao_vao_assumir = usuarios[usuarios['opcao']=="Não vai assumir"]['n_inscr'].qnique()
 
     else:
-        nao_vao_assumir = usuarios
+        nao_vao_assumir = ['aaaaa', 'bbbbb']
 
     total_aprov = db.retornarTabela(TabelaAprovados)
     total_aprov = total_aprov[
@@ -82,7 +82,7 @@ def verificar_estatisticas(conta, db):
             (total_aprov['cota']==conta.cota)&
             (total_aprov['posicao']<conta.posicao)
             ]
-    total_aprov = total_aprov[~total_aprov['n_inscr'].isin(nao_vao_assumir['n_inscr'].unique())]
+    total_aprov = total_aprov[~total_aprov['n_inscr'].isin(nao_vao_assumir)]
 
 
     # Achar limite de CR para o grupo/cota
