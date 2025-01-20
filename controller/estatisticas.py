@@ -75,14 +75,14 @@ def verificar_estatisticas(conta, db):
 
     else:
         nao_vao_assumir = usuarios
-        
+
     total_aprov = db.retornarTabela(TabelaAprovados)
     total_aprov = total_aprov[
             (total_aprov['grupo']==conta.grupo)&
             (total_aprov['cota']==conta.cota)&
             (total_aprov['posicao']<conta.posicao)
             ]
-    total_aprov = total_aprov[~total_aprov['n_inscr'].isin(nao_vao_assumir['n_insc'].unique())]
+    total_aprov = total_aprov[~total_aprov['n_inscr'].isin(nao_vao_assumir['n_inscr'].unique())]
 
 
     # Achar limite de CR para o grupo/cota
