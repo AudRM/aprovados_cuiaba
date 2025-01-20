@@ -130,7 +130,7 @@ def estatisticas_de_grupo_coordenador(conta, db):
                 st.image(
                     conteudo_decriptado, 
                     caption="Documento do usuário", 
-                    use_column_width=True
+                    use_container_width=True
                 )
 
                 # 2) Oferecer para baixar

@@ -39,7 +39,7 @@ class Pagina:
         """
         Exibe a tela de login ou de criar conta.
         """
-        st.title("Bem-vindo ao Sistema de Gestão de Candidatos")
+        st.title("Bem-vindo ao Sistema de Gestão de Aprovados ISS Cuiabá")
         st.text(TEXTO_PROPOSITO_WEBAPP)
         opcao = st.radio("Escolha uma opção:", ["Login", "Criar Conta"])
 
