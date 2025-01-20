@@ -38,5 +38,5 @@ def carregar_chave_criptografia(caminho_chave="chave_fernet.key"):
     Em produção, idealmente buscar de um local seguro, 
     em vez de mantê-la em arquivo no repositório.
     """
-    chave = st.secrets['default']['FERNEY_KEY']
+    chave = st.secrets['FERNEY_KEY']
     return chave

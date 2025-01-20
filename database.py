@@ -263,8 +263,8 @@ class Database:
         Caso não exista, cria com a senha padrão "senha1".
         """
         # Obtém senha por meio do Secrets do streamlit
-        superuser_inscr = st.secrets['default']["DB_SUPERUSER"]
-        senha_padrao = st.secrets['default']["DB_PASSWORD"]
+        superuser_inscr = st.secrets["DB_SUPERUSER"]
+        senha_padrao = st.secrets["DB_PASSWORD"]
 
         # Verificar se já existe
         registro_existente = self.retornarValor(
