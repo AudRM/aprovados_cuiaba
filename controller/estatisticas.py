@@ -73,6 +73,9 @@ def verificar_estatisticas(conta, db):
     if not usuarios.empty:
         nao_vao_assumir = usuarios[usuarios['opcao']=="Não vai assumir"]
 
+    else:
+        nao_vao_assumir = usuarios
+        
     total_aprov = db.retornarTabela(TabelaAprovados)
     total_aprov = total_aprov[
             (total_aprov['grupo']==conta.grupo)&
