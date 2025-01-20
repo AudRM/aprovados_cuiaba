@@ -96,7 +96,7 @@ def verificar_estatisticas(conta, db):
 
     
 
-    if total_aprov.size < tamanho_CR:  # Se tiver menos usuários à frente que vagas
+    if total_aprov.shape[0] < tamanho_CR:  # Se tiver menos usuários à frente que vagas
     
         mensagem_grupo = grupo.mostrarMensagens()
         link_grupo = grupo.mostrarLink()
