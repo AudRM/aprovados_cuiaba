@@ -34,7 +34,7 @@ def administrar_web_app(db: Database):
             st.error("Usuário não encontrado.")
 
     # ---------------------------------------------------------
-    # 3. Resetar conta do usuário (deletar registro)
+    # 2. Resetar conta do usuário (deletar registro e arquivo)
     # ---------------------------------------------------------
     st.write("### Resetar Conta do Usuário")
     n_inscr_reset = st.text_input("Número de Inscrição para Resetar Conta", key="reset_user_input")
@@ -43,9 +43,23 @@ def administrar_web_app(db: Database):
             with db.get_session() as session:
                 user_to_delete = session.query(TabelaUsuario).filter_by(n_inscr=n_inscr_reset).one_or_none()
                 if user_to_delete:
+                    # Excluir o usuário do banco de dados
                     session.delete(user_to_delete)
                     session.commit()
-                    st.success("Conta deletada com sucesso!")
+
+                    # Excluir arquivos relacionados ao usuário
+                    pasta_destino = "documentos_auditoria"
+                    if os.path.exists(pasta_destino):
+                        arquivos = [f for f in os.listdir(pasta_destino) if n_inscr_reset in f]
+                        for arquivo in arquivos:
+                            caminho_arquivo = os.path.join(pasta_destino, arquivo)
+                            try:
+                                os.remove(caminho_arquivo)
+                                st.info(f"Arquivo {arquivo} excluído.")
+                            except Exception as e:
+                                st.error(f"Erro ao excluir o arquivo {arquivo}: {e}")
+
+                    st.success("Conta e arquivos associados deletados com sucesso!")
                 else:
                     st.error("Usuário não encontrado.")
         else:

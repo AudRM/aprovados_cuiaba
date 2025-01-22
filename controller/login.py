@@ -13,6 +13,8 @@ from database import TabelaAprovados
 from utils import carregar_chave_criptografia, encriptar_arquivo
 from data_p_config.textos import TEXTO_DOCUMENTAÇÃO,TEXTO_PROPOSITO_WEBAPP
 
+
+
 def criar_conta(db, conta_manager):
     st.subheader("Criar Conta")
     with st.form("Criar Conta"):

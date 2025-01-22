@@ -1,6 +1,8 @@
 import bcrypt
 from cryptography.fernet import Fernet
 import streamlit as st
+import validators
+
 
 # Função para gerar o hash da senha
 def hash_password(password: str) -> str:
@@ -40,3 +42,9 @@ def carregar_chave_criptografia(caminho_chave="chave_fernet.key"):
     """
     chave = st.secrets['FERNEY_KEY']
     return chave
+
+
+
+
+def is_valid_link(url):
+    return validators.url(url)

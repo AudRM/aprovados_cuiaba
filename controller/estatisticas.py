@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 from grupos import Grupo
 from database import TabelaAprovados, TabelaGrupos, TabelaUsuario
+from utils import is_valid_link
 
 def verificar_estatisticas(conta, db):
     st.subheader("Dados Gerais")
@@ -60,7 +61,7 @@ def verificar_estatisticas(conta, db):
         )
 
     elif total_aprovados_grupo == 0:
-        st.text("Porra, mané, tu é brabão mesmo, hein? Parabéns.")
+        st.text("Porra, mané, tu é brabão mesmo, hein? Parabéns! Não há NENHUM candidato na sua frente em relação à sua cota/grupo! Só aguarde e a nomeação chegará!")
         
     else:
         st.text('Nenhum candidato à sua frente foi cadastrado. Aguarde.')
@@ -108,7 +109,12 @@ def verificar_estatisticas(conta, db):
             st.error("Erro ao carregar mensagem")
 
         if link_grupo['sucesso']:
-            st.text_input("Link do Grupo", link_grupo['resultado'], disabled=True)
+
+            # Validar link de grupo
+            if is_valid_link(link_grupo['resultado']):
+                st.markdown(f"[Link do Grupo]({link_grupo['resultado']})", unsafe_allow_html=True)
+            else:
+                st.text('Link do grupo ainda não disponível.')
         else:
             st.error("Erro ao carregar link")
     

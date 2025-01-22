@@ -39,10 +39,24 @@ class Pagina:
         """
         Exibe a tela de login ou de criar conta.
         """
+        # Estilo CSS para o quadro
+        st.markdown("""
+        <style>
+            .custom-container {
+                border: 2px solid #4CAF50; /* Cor do quadro */
+                border-radius: 10px; /* Bordas arredondadas */
+                padding: 20px; /* Espaçamento interno */
+                margin: 10px; /* Margem externa */
+                background-color: #f9f9f9; /* Fundo claro */
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+            }
+        </style>
+        """, unsafe_allow_html=True)
         st.title("Bem-vindo ao Sistema de Gestão de Aprovados ISS Cuiabá")
         st.text(TEXTO_PROPOSITO_WEBAPP)
         opcao = st.radio("Escolha uma opção:", ["Login", "Criar Conta"])
 
+        
         if opcao == "Criar Conta":
             criar_conta(self.db, self.conta_manager)
         elif opcao == "Login":
