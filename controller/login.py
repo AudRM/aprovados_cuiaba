@@ -28,7 +28,7 @@ def criar_conta(db, conta_manager):
         if not opcao_selecionada:
             opcao_selecionada = 'Não vou assumir'
 
-            
+
         # Valida as entradas opcionais
         email = email if email.strip() else "Não informado"
         telefone = telefone if telefone.strip() else "Não informado"
@@ -48,6 +48,7 @@ def criar_conta(db, conta_manager):
 
         submit = st.form_submit_button("Criar")
         if submit:
+            
             # 1. Verifica se a inscrição existe no TabelaAprovados
             dados_candidato = db.retornarValor(TabelaAprovados, filter_dict={'n_inscr': n_inscr})
             if not dados_candidato:
@@ -83,21 +84,23 @@ def criar_conta(db, conta_manager):
             with open(caminho_arquivo, "wb") as f:
                 f.write(conteudo_criptografado)
 
+            try:
+                # 6. Cria a conta no banco (senha hasheada, etc.)
+                resultado = conta_manager.criarConta(
+                    n_inscr=n_inscr, 
+                    senha=senha,
+                    email=email,
+                    telefone=telefone,
+                    formacao_academica=formacao_academica,
+                    opcao=opcao
+                )
 
-            # 6. Cria a conta no banco (senha hasheada, etc.)
-            resultado = conta_manager.criarConta(
-                n_inscr=n_inscr, 
-                senha=senha,
-                email=email,
-                telefone=telefone,
-                formacao_academica=formacao_academica,
-                opcao=opcao
-            )
-
-            if resultado['sucesso']:
-                st.success("Cadastro criado com sucesso!")
-            else:
-                st.error("Erro ao salvar os dados no banco.")
+                if resultado['sucesso']:
+                    st.success("Cadastro criado com sucesso!")
+                else:
+                    st.error("Erro ao salvar os dados no banco.")
+            except:
+                st.error("Erro ao criar a conta. Por favor, contate o administrador do sistema no número (21) 99992-6802!")
 
 def login(db, conta_manager):
     st.subheader("Login")
