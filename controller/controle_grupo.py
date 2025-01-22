@@ -14,7 +14,7 @@ def controle_de_grupo(conta, db):
     st.subheader("Atualizar Vagas e Link por Cota")
 
     # 1. Selecionar a cota
-    opcoes_cota = ["AC", "Raça", "PCD"]
+    opcoes_cota = ["AC", "Racial", "PCD"]
     cota_escolhida = st.selectbox("Escolha a cota", opcoes_cota)
 
     # 2. Buscar registro na TabelaGrupos (grupo = conta.grupo, cota = cota_escolhida)
