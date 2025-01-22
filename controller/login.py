@@ -25,6 +25,10 @@ def criar_conta(db, conta_manager):
         formacao_academica = st.text_input("Formação Acadêmica [Opcional]")
         opcao_selecionada = st.selectbox("Opção", ["Não vou assumir", "Vou assumir", "Estou indeciso"])
         
+        if not opcao_selecionada:
+            opcao_selecionada = 'Não vou assumir'
+
+            
         # Valida as entradas opcionais
         email = email if email.strip() else "Não informado"
         telefone = telefone if telefone.strip() else "Não informado"
