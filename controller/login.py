@@ -30,9 +30,9 @@ def criar_conta(db, conta_manager):
 
 
         # Valida as entradas opcionais
-        email = email if email.strip() else "Não informado"
-        telefone = telefone if telefone.strip() else "Não informado"
-        formacao_academica = formacao_academica if formacao_academica.strip() else "Não informado"
+        email = email if email else "Não informado"
+        telefone = telefone if telefone else "Não informado"
+        formacao_academica = formacao_academica if formacao_academica else "Não informado"
 
         # Mapeia a opção
         opcao = {
