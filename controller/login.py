@@ -23,6 +23,11 @@ def criar_conta(db, conta_manager):
         formacao_academica = st.text_input("Formação Acadêmica [Opcional]")
         opcao_selecionada = st.selectbox("Opção", ["Não vou assumir", "Vou assumir", "Estou indeciso"])
         
+        # Valida as entradas opcionais
+        email = email if email.strip() else "Não informado"
+        telefone = telefone if telefone.strip() else "Não informado"
+        formacao_academica = formacao_academica if formacao_academica.strip() else "Não informado"
+
         # Mapeia a opção
         opcao = {
             "Não vou assumir": "Não vai assumir",
@@ -71,6 +76,7 @@ def criar_conta(db, conta_manager):
 
             with open(caminho_arquivo, "wb") as f:
                 f.write(conteudo_criptografado)
+
 
             # 6. Cria a conta no banco (senha hasheada, etc.)
             resultado = conta_manager.criarConta(
