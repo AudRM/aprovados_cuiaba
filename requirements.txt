@@ -47,4 +47,4 @@ watchdog==6.0.0
 zope.interface==7.2
 cryptography
 validators
-psycopg2
+psycopg2-binary
