@@ -51,7 +51,7 @@ class Mensageria:
                 self.db.inserirDados(TabelaMensagens, nova_msg)
 
         # 2) Após criar, chamamos a lógica de envio via WhatsApp
-        self._enviar_para_whatsapp(grupos, cotas, posicao_min, posicao_max, conteudo)
+        # self._enviar_para_whatsapp(grupos, cotas, posicao_min, posicao_max, conteudo)
 
 
     def listar_mensagens(self):
