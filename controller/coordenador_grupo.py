@@ -151,6 +151,7 @@ def criar_mensagem(db, usuario_logado):
 
         # Seleção múltipla de grupos
         df_grupos = db.retornarTabela(TabelaGrupos)
+        df_grupos = df_grupos[df_grupos['grupo']!='TI_RAIZ']    # Ocultando o TI_RAIZ
         lista_grupos = sorted(df_grupos["grupo"].unique().tolist())
 
         # Mesmo se for coordenador, deixamos escolher todos
