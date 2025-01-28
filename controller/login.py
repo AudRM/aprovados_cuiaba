@@ -100,8 +100,9 @@ def criar_conta(db, conta_manager):
                 else:
                     st.error("Erro ao salvar os dados no banco.")
             except Exception as e:
-                print('Erro!!!!', e)
+                
                 st.error("Erro ao criar a conta. Por favor, contate o administrador do sistema no número (21) 99992-6802!")
+                raise
 
 
 
