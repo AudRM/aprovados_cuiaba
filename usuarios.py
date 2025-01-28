@@ -6,12 +6,13 @@ Classes para controlar usuários
 import sqlalchemy 
 import pandas as pd 
 from typing import Union
-from database import Database, TabelaUsuario
+from database import Database, TabelaUsuario, retornarListaUsuariosNaFrente
 from datetime import datetime 
 
 class Usuario:
 
-    def __init__(self, nome: str, 
+    def __init__(self, 
+                 nome: str, 
                  posicao: int, 
                  senha: str, 
                  email: str, 
@@ -19,10 +20,12 @@ class Usuario:
                  opcao: str, 
                  n_inscr: str, 
                  grupo: str,
-                 formacao_academica: str = False,
-                 role: str = 'usuario',
-                 cota: str = 'AC',
-                 **kwargs) -> None:
+                 formacao_academica: str,
+                 role: str,
+                 cota: str,
+                 opcao_contato: str,
+                 **kwargs
+                 ) -> None:
         self.nome = nome 
         self.senha = senha 
         self.email = email 
@@ -33,7 +36,13 @@ class Usuario:
         self.posicao = posicao
         self.formacao_academica = formacao_academica
         self.role = role
-        self.cota = cota
+        self.cota = cota,
+
+        # Há um bug aqui que desconheço como resolver. Forcei a correção.
+        if isinstance(self.cota, tuple):
+            self.cota = self.cota[0]
+
+        self.opcao_contato = opcao_contato
 
     def mudarDados(self, db: Database, mudanca: dict) -> dict:
         
@@ -68,7 +77,7 @@ class Usuario:
         
 
     def verOpcoes(self, db: Database) -> dict:
-        lista_opcoes = db.retornarListaUsuariosNaFrente(grupo=self.grupo, posicao=self.posicao)
+        lista_opcoes = retornarListaUsuariosNaFrente(db=db, grupo=self.grupo, posicao=self.posicao)
         lista_opcoes = lista_opcoes.groupby(['opcao'])['n_inscr'].count() 
 
         return  {

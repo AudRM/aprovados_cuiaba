@@ -11,13 +11,19 @@ st.set_page_config(
 )
 
 
-def main():
+# Decorar com cache_resource para executar apenas uma vez por sessão
+@st.cache_resource
+def get_database():
     db = Database()
-    conta_manager = Conta(db=db)
-    
+    db.create_all_tables_once()
+    return db
+
+
+def main():
+    db = get_database()         # Database inicializado apenas 1x
+    conta_manager = Conta(db)
     pagina = Pagina(db, conta_manager)
     pagina.exibir()
-    
 
 if __name__ == "__main__":
     main()

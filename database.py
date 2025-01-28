@@ -6,7 +6,7 @@ Classes para realizar conexões com banco de dados
 
 import os
 from datetime import datetime
-from sqlalchemy import create_engine, Column, String, DateTime, Integer
+from sqlalchemy import create_engine, Column, String, DateTime, Integer, LargeBinary, Text
 from sqlalchemy.orm import sessionmaker, declarative_base
 import pandas as pd 
 import streamlit as st 
@@ -14,6 +14,22 @@ from utils import hash_password
 
 # Criação do Base para uso no modelo declarativo
 Base = declarative_base()
+
+class TabelaMensagens(Base):
+    """
+    Armazena as mensagens criadas por coordenadores/superusuários.
+    """
+    __tablename__ = 'mensagens'
+
+    id_mensagem = Column(Integer, primary_key=True, autoincrement=True)
+    grupo = Column(String(50), nullable=False)
+    cota = Column(String(15), nullable=False, default='AC')
+    posicao_min = Column(Integer, nullable=False)
+    posicao_max = Column(Integer, nullable=False)
+    titulo = Column(String(255), nullable=False)
+    conteudo = Column(Text, nullable=False)
+    data_criacao = Column(DateTime, default=datetime.now)
+    autor = Column(String(100), nullable=False)
 
 
 class TabelaUsuario(Base):
@@ -40,6 +56,7 @@ class TabelaUsuario(Base):
     opcao = Column(String(50), nullable=False)
     role = Column(String(25), default='usuario')
     cota = Column(String(15), default='AC')
+    opcao_contato = Column(String(50), default='Não desejo receber')
 
 
 class TabelaAprovados(Base):
@@ -65,41 +82,70 @@ class TabelaGrupos(Base):
     link = Column(String(255), nullable=False)
     cota = Column(String(15), primary_key=True, nullable=False, default='AC')
 
+class TabelaDocumentos(Base):
+    """
+    Classe que representa a tabela "documentos" no banco de dados.
+    """
+    __tablename__ = 'documentos'
+
+    id_documento = Column(Integer, primary_key=True, autoincrement=True)
+    n_inscr = Column(String(50), nullable=False, index=True)
+    nome_arquivo = Column(String(255), nullable=False)
+    conteudo = Column(LargeBinary, nullable=False)  # Para armazenar o arquivo em binário
+    data_upload = Column(DateTime, default=datetime.now, nullable=False)
+
+
+@st.cache_resource
+def get_engine(db_url):
+    # Cria a engine com pool de conexões (reduz overhead de conexões repetidas)
+    engine = create_engine(db_url, echo=False, pool_size=5, max_overflow=10)
+    return engine
+
+
+
 
 class Database:
     """
     Classe que gerencia a conexão com o banco de dados e fornece sessões para CRUD.
     """
-    def __init__(self, db_url: str = "sqlite:///usuarios.db"):
+    def __init__(self, db_url: str = None):
         """
-        Pode receber uma URL de conexão do SQLAlchemy. Por padrão, utiliza um 
-        banco local chamado 'usuarios.db'.
+        - db_url: URL de conexão do SQLAlchemy.
+          Se não informada, tenta buscar em st.secrets["DB_URL"].
         """
-        self.db_url = db_url
-        self.engine = create_engine(self.db_url, echo=False)
-        self.SessionLocal = sessionmaker(
-            autocommit=False,
-            autoflush=False,
-            bind=self.engine
-        )
+        # Se não for fornecido, buscarmos do st.secrets
+        if not db_url:
+            self.db_url = st.secrets["DB_URL"]
+        
+        self.engine = get_engine(self.db_url)
 
         # Cria as tabelas no banco (caso não existam)
         Base.metadata.create_all(bind=self.engine)
 
+    def get_session(self):
+        engine = get_engine(self.db_url)  # Recupera do cache
+        SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+        return SessionLocal()
+                
+    def create_all_tables_once(self):
+        """
+        Cria as tabelas se não existirem e insere dados iniciais (apenas se estiver vazio).
+        """
+        # Cria as tabelas (se não existir)
+        Base.metadata.create_all(bind=self.engine)
+
+        # Se a TabelaAprovados está vazia, só então insere
         if self.retornarTabela(TabelaAprovados).empty:
             self._inserir_tabela_aprovados()
 
+        # Se a TabelaGrupos está vazia, só então insere
         if self.retornarTabela(TabelaGrupos).empty:
             self._inserir_grupos()
 
+        # Garante a existência de um superusuário padrão
         self._verificar_superusuario_padrao()
-                
 
-    def get_session(self):
-        """
-        Fornece uma instância de sessão para interagir com o banco.
-        """
-        return self.SessionLocal()
+    
     
     def retornarTabela(self, model_class) -> pd.DataFrame:
         """
@@ -181,38 +227,15 @@ class Database:
 
         return data
 
-
-    def retornarListaUsuariosNaFrente(self, grupo: str, posicao: int, cota: str) -> pd.DataFrame:
-        """
-        Retorna todos os registros da tabela 'usuarios' que estejam na frente de uma determinada inscrição para um certo grupo
-        """
-        with self.get_session() as session:
-            # Query que filtra pela data_criacao > reference_date
-            results = (
-                session.query(TabelaUsuario)
-                .filter(TabelaUsuario.grupo == grupo)       #
-                .filter(TabelaUsuario.posicao < posicao)
-                .filter(TabelaUsuario.cota == cota)
-                .all()
-            )
-
-            data = []
-            for obj in results:
-                row_dict = {
-                    column.name: getattr(obj, column.name)
-                    for column in obj.__table__.columns
-                }
-                data.append(row_dict)
-
-        return pd.DataFrame(data)
+    
 
     def _inserir_tabela_aprovados(self):
-        aprovados = pd.read_csv('aprovados.csv')  # Certifique-se de ter a coluna "cota"
+        aprovados = pd.read_csv('aprovados.csv', sep=';')  # Certifique-se de ter a coluna "cota"
 
         for _, row in aprovados.iterrows():
-            numero_inscricao = row['n_inscr']
+            numero_inscricao = str(row['n_inscr'])
             nome = row['nome']
-            posicao = row['posicao']
+            posicao = str(row['posicao'])
             grupo = row['grupo']
 
             # Se o CSV tiver a coluna "cota", usar:
@@ -291,37 +314,33 @@ class Database:
             self.inserirDados(TabelaUsuario, dados_para_inserir)
             print("Superusuário koriptnueve criado com sucesso.")
 
-    # Exemplo de uso
-if __name__ == "__main__":
-    db = Database()
+@st.cache_data
+def retornarAprovados(_db: Database) -> pd.DataFrame:
+    """ Método para otimizar o retorno de aprovados, com cache do streamlit """
+    return _db.retornarTabela(TabelaAprovados)
 
-    # 1. Inserir um usuário de teste (se ainda não existir)
-    with db.get_session() as session:
-        usuario_exemplo = session.query(TabelaUsuario).filter_by(n_inscr="999").one_or_none()
-        if not usuario_exemplo:
-            usuario_exemplo = TabelaUsuario(
-                n_inscr="999",
-                nome="Nome Antigo",
-                senha="senha_hash",
-                email="exemplo@example.com",
-                telefone="(11) 99999-9999",
-                grupo="TI",
-                opcao="Alguma Opção"
-            )
-            session.add(usuario_exemplo)
-            session.commit()
 
-    # 2. Atualizar dados do usuário com n_inscr = "999"
-    atualizado = db.atualizarTabela(
-        TabelaUsuario, 
-        filter_dict={"n_inscr": "999"}, 
-        update_dict={"nome": "Nome Novo", "email": "novoemail@example.com"}
-    )
-    if atualizado:
-        print("Registro atualizado com sucesso!")
-    else:
-        print("Registro não encontrado.")
+@st.cache_data
+def retornarListaUsuariosNaFrente(_db: Database, grupo: str, posicao: int, cota: str) -> pd.DataFrame:
+    """
+    Retorna todos os registros da tabela 'usuarios' que estejam na frente de uma determinada inscrição para um certo grupo
+    """
+    with _db.get_session() as session:
+        # Query que filtra pela data_criacao > reference_date
+        results = (
+            session.query(TabelaUsuario)
+            .filter(TabelaUsuario.grupo == grupo)       #
+            .filter(TabelaUsuario.posicao < posicao)
+            .filter(TabelaUsuario.cota == cota)
+            .all()
+        )
 
-    # 3. Exibir a tabela completa como DataFrame
-    df_usuarios = db.retornarTabela(TabelaUsuario)
-    print(df_usuarios)
+        data = []
+        for obj in results:
+            row_dict = {
+                column.name: getattr(obj, column.name)
+                for column in obj.__table__.columns
+            }
+            data.append(row_dict)
+
+    return pd.DataFrame(data)

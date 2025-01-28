@@ -65,45 +65,9 @@ def administrar_web_app(db: Database):
         else:
             st.error("Por favor, forneça um número de inscrição válido.")
 
-    # ---------------------------------------------------------
-    # 4. Verificar arquivo do usuário (descriptografar e baixar)
-    # ---------------------------------------------------------
-    st.write("### Verificar Arquivo do Usuário")
-    n_inscr_arquivo = st.text_input("Número de Inscrição para Verificar Arquivo", key="arquivo_user_input")
-    if st.button("Ver Arquivo"):
-        pasta_destino = "documentos_auditoria"
-        if not os.path.exists(pasta_destino):
-            st.error("Pasta de documentos não existe ou não há nenhum arquivo ainda.")
-            return
-
-        arquivos = [f for f in os.listdir(pasta_destino) if n_inscr_arquivo in f]
-        if arquivos:
-            st.success(f"Arquivo(s) encontrado(s): {arquivos}")
-            arquivo_escolhido = arquivos[0]
-            caminho_arquivo = os.path.join(pasta_destino, arquivo_escolhido)
-
-            try:
-                chave = carregar_chave_criptografia()
-            except ValueError as e:
-                st.error(str(e))
-                return
-
-            with open(caminho_arquivo, "rb") as f:
-                conteudo_criptografado = f.read()
-
-            conteudo_decriptado = decriptar_arquivo(conteudo_criptografado, chave)
-
-            nome_original = arquivo_escolhido.replace(".enc", "")
-            st.download_button(
-                label="Baixar Arquivo Descriptografado",
-                data=conteudo_decriptado,
-                file_name=nome_original
-            )
-        else:
-            st.error("Nenhum arquivo encontrado para este usuário.")
 
     # ---------------------------------------------------------
-    # 5. Exportar informações de usuários (CSV ou Excel)
+    # 4. Exportar informações de usuários (CSV ou Excel)
     # ---------------------------------------------------------
     st.write("### Exportar Usuários Cadastrados")
     formato = st.selectbox("Escolha o formato de exportação", ["CSV", "Excel"], key="export_format")
@@ -124,7 +88,7 @@ def administrar_web_app(db: Database):
             )
 
     # ---------------------------------------------------------
-    # 6. Atribuir Role (usuario / coordenador / superuser)
+    # 5. Atribuir Role (usuario / coordenador / superuser)
     # ---------------------------------------------------------
     st.write("### Atribuir Role a um Usuário")
     n_inscr_role = st.text_input("Número de Inscrição do usuário para mudar a role", key="role_user_input")

@@ -1,205 +1,820 @@
-posicao,n_inscr,nome,grupo,cota
-1,850002304,Benedito Daniel Nunes Da Silva,Gestão,Racial
-2,850000911,Rachid Elias Arab,Gestão,AC
-3,850001898,Julio Moreira Sampaio,Gestão,AC
-4,850002515,Arthur Henrique Rézio Santos,Gestão,AC
-5,850003654,Pedro Augusto Rossi De Camargo,Gestão,AC
-6,850001919,Ricardo Durso Marcal,Gestão,AC
-7,850000122,Jonadas Pires De Souza,Gestão,AC
-8,850000631,Leonardo Cardoso De Araujo,Gestão,AC
-9,850000686,Álvaro De Lima Rodrigues,Gestão,AC
-10,850001168,Frederico César Dias Martins,Gestão,AC
-11,850003341,Paulo Sandro Gomes De Lacerda Filho,Gestão,AC
-12,850002546,Arthur Marques Octaviano Almeida,Gestão,AC
-13,850003445,Vitor Merli De Azevedo,Gestão,AC
-14,850001326,Luiz Guilherme Melo Machado Filho,Gestão,AC
-15,850000896,Augusto Luiz Oliveira Rosa Araujo,Gestão,AC
-16,850002716,Daniel Silveira Da Rocha,Gestão,AC
-17,850003145,Italo Siqueira Rodrigues,Gestão,AC
-18,850002422,Henrique Chacra Sabino,Gestão,AC
-19,850000905,Matheus Guidoni Pereira,Gestão,AC
-20,850001054,Thaynara Oliveira Dos Santos,Gestão,AC
-21,850002223,Rubens Cavilha De Souza,Gestão,AC
-22,850002357,Carlos Eduardo De Souza,Gestão,AC
-23,850003798,PEDRO MENEZES DE SOUZA,Gestão,AC
-24,850000397,Mário Otávio Lacerda E Miranda,Gestão,AC
-25,850001288,Gabriel Mendonça Santana,Gestão,AC
-26,850001109,Juliana Pereira Da Silva,Gestão,AC
-27,850001423,Juliana De Albuquerque Silveira,Gestão,AC
-28,850001267,Rodrigo Solano Correa De Oliveira,Gestão,AC
-29,850000541,Priscila Paropato Camargo E Almeida,Gestão,AC
-30,850002740,José Antonio Pontes Da Silva Filho,Gestão,Racial
-31,850001911,Herbert Meneses Carvalho,Gestão,Racial
-32,850003248,Bruno Lopes De Abreu,Gestão,AC
-33,850002098,Gabriel Augusto Schiochet,Gestão,AC
-34,850000451,Kéren Adriane Vidal Marchesin Garcia Rúbio Faria,Gestão,AC
-35,850001259,Elton Nunes De Paula,Gestão,AC
-36,850000459,Paulo Roberto De Albuquerque Filho,Gestão,AC
-37,850003594,Helio Fernandes Pacheco,Gestão,AC
-38,850001447,Raphael Carlos Ferreira Do Fundo,Gestão,AC
-39,850002511,Marcos Rafael Nascimento Dos Santos,Gestão,AC
-40,850000303,Thiago Soares Ribeiro,Gestão,AC
-41,850001217,Fabricia Luzia De Almeida,Gestão,AC
-42,850001585,Débora Cristina Pires De Miranda,Gestão,Racial
-43,850002177,Lais Tassinari Nogueira Campos,Gestão,AC
-44,850003513,Jonathan José Cordeiro Da Silva,Gestão,AC
-45,850003471,Nataniel Almeida Pereira,Gestão,Racial
-46,850002927,Alderio Gerarde Borges Junior,Gestão,Racial
-47,850002039,Roberto Mori Filho,Gestão,AC
-48,850001076,Bruno Tancledo De Paula,Gestão,Racial
-49,850002432,Carlos Eduardo Pereira Parente,Gestão,AC
-50,850002550,Raisa Lima De Berrêdo Martins,Gestão,AC
-51,850000057,Airton César Tavares De Souza,Gestão,AC
-52,850000374,Diogo Camargo De Barcellos,Gestão,AC
-53,850001103,Marcelo Gomes De Lima,Gestão,AC
-54,850003249,Pablo Fernando Wolhmuth,Gestão,AC
-55,850000419,Cassio Assis Dos Santos,Gestão,AC
-56,850003126,Ricardo Gonchorowski Garcia,Gestão,AC
-57,850002119,Caio Ossamu Kawamoto,Gestão,AC
-58,850002611,Túlio De Sousa Castro,Gestão,AC
-59,850003800,Laura Beatriz Lersch,Gestão,AC
-60,850000029,Douglas Jeronymo Serra,Gestão,AC
-61,850002798,Wilkson Fontes Gonçalves,Gestão,AC
-62,850000948,Otávio Augusto Batista Melo,Gestão,AC
-63,850003863,Alexandre Porto Alegre Da Fonseca,Gestão,AC
-64,850001256,Leonardo Bitencourt Rocha,Gestão,AC
-65,850002638,Thiago Guedes Barros,Gestão,AC
-66,850000044,Leandro Monteiro Do Nascimento,Gestão,AC
-67,850001412,Gabriel Melo Nunes,Gestão,AC
-68,850002513,Saint Clair Ribas Nery,Gestão,Racial
-69,850001963,Bruna Teixeira De Araújo Amorim,Gestão,Racial
-70,850003974,Luísa Teixeira Battistetti Porto,Gestão,AC
-71,850000132,Bráulio Gomes Lopes,Gestão,AC
-72,850002228,João Pedro Macêdo De Santana,Gestão,AC
-73,850003319,Romário Macedo Veloso,Gestão,Racial
-74,850000224,Iury Alves Neiva,Gestão,Racial
-75,850003042,Stephanie Campos Fraga,Gestão,AC
-76,850000223,Thayna De Souza Padilha Da Costa,Gestão,AC
-77,850003064,Daniel Sousa Da Rocha,Gestão,AC
-78,850003519,Vinícius Bravo Da Silva,Gestão,Racial
-79,850001846,Luca Dutra Signorelli,Gestão,AC
-80,850003653,Glaucio Benedito Raminhos De Melo,Gestão,Racial
-81,850000119,Bruno Augusto De Castilho Guilhermino,Gestão,AC
-82,850000151,Flávio Vinícius Ferreira,Gestão,AC
-83,850002266,Hauryson Silva Albuquerque,Gestão,AC
-84,850002637,Alexandre Dias Linhares,Gestão,Racial
-85,850000202,Jose Ribamar Barros Netto,Gestão,Racial
-86,850002812,Gracielle Campos De Souza,Gestão,Racial
-87,850000366,Diego Nogueira Costa,Gestão,Racial
-88,850000878,Carolina Lyra Da Matta Machado Fernandes,Gestão,AC
-89,850000784,Rafael Gléria Monteiro Do Nascimento,Gestão,AC
-90,850000350,Eduardo Benatti Padula,Gestão,AC
-91,850003225,Guilherme Amaral Diniz,Gestão,AC
-92,850000723,Paulo André Veras Suruagy,Gestão,AC
-93,850002208,Gabriel Cardoso Alves,Gestão,AC
-94,850000056,Diego De Mello Almeida,Gestão,AC
-95,850002763,Ricardo Francisco Pitta,Gestão,AC
-96,850001824,Willamys Barbosa Da Silva,Gestão,Racial
-97,850002326,João José De Castro Neto,Gestão,AC
-98,850003794,Alexandre Cunningham Gmyterco,Gestão,AC
-99,850000156,Filipe Ferreira Lima Nunes,Gestão,AC
-100,850004033,André Andrade Felipe,Gestão,AC
-1,850002960,Lidiane Esteves Pires,Gestão,PCD
-2,850002242,Gustavo Roberto Da Silva,Gestão,PCD
-3,850002683,Danilo Da Silva Toniato,Gestão,PCD
-4,850002730,Bruno Dias Pereira,Gestão,PCD
-1,850003378,Jimmy Paiva Gomes,TI,AC
-2,850001835,Gabriel Bressane Silva,TI,AC
-3,850002040,Bruno Da Silva Pires Lima,TI,AC
-4,850000954,Rodrigo Rianelly De Macedo Evangelista,TI,AC
-5,850003539,Breno Henrique Fernandes Lopes Dos Santos,TI,Racial
-6,850000526,Rykchard Navarro Lorca,TI,PCD
-7,850001171,Mauricio Miranda Lobo Leite,TI,AC
-8,850002613,Luciano Roberto De Oliveira Carriel,TI,AC
-9,850001878,Antônio Luís Sombra De Medeiros,TI,Racial
-10,850003037,Thadeu Argolo De Andrade,TI,AC
-11,850003951,Guilherme Matheus De Oliveira Aragão,TI,AC
-12,850000331,Antônio Carlos De Freitas Silva,TI,Racial
-13,850001199,Alan Marcos Ferreira Dias Sales,TI,AC
-14,850002374,Emílio César Weba Filho,TI,AC
-15,850000050,Jorge Edson Soledade De Santa Rosa,TI,Racial
-16,850000027,Eliomar Bento Amorim Junior,TI,AC
-17,850003174,Italo Pires De Oliveira,TI,Racial
-18,850003016,Mórmon Lima Dos Santos,TI,AC
-19,850003782,André Corrêa De Carvalho Pereira,TI,AC
-20,850000232,Barbara Trindade De Aguiar Norões,TI,AC
-21,850003753,Anderson Moulais Da Silva,TI,AC
-22,850003593,Jônatas Costa De Oliveira,TI,AC
-23,850003330,Rodolfo Duarte Alves,TI,AC
-24,850003177,André Luiz Da Silva Coube,TI,AC
-25,850002689,Rodolfo Batista De Carvalho,TI,AC
-26,850002376,Leonardo Stadler Pezzini,TI,AC
-27,850003452,Ezequiel Severiano Da Silva,TI,Racial
-28,850001095,Volmar Antonio Machado,TI,AC
-29,850000409,Fabio Yoshio Siotane,TI,AC
-30,850001316,Kleber Miranda De Araujo,TI,AC
-31,850000478,Ana Carolina Soares E Soares,TI,AC
-32,850002245,Jonas Nink Barros,TI,AC
-33,850001065,Andre Recher De Freitas,TI,AC
-34,850002252,Edson Soares Borges,TI,AC
-35,850000520,Fernando De Oliveira Moraes,TI,AC
-36,850001738,Luis Claudio Machado Junior,TI,AC
-37,850002949,Angelica Groot,TI,AC
-38,850000577,Hudson De Queiroz Alves,TI,AC
-39,850001300,Andre Marques Couto,TI,AC
-40,850000195,José Paulo De Faria Pedrosa,TI,AC
-41,850000823,Gustavo Georranys Da Silva Lins,TI,Racial
-42,850000898,Carlos Eduardo Dionizio Fiusa Junior,TI,Racial
-43,850003671,Tales Da Silva Campos,TI,AC
-44,850003706,Raphael Do Nascimento Martins,TI,Racial
-45,850003838,Rafael Villa De Macedo,TI,AC
-46,850003011,Diego Fonseca Silva,TI,Racial
-47,850000406,Paulo Augusto De Freitas Andrade,TI,AC
-48,850002748,Bruno Gustavo Janoca Oliveira Da Silva,TI,PCD
-49,850001749,Andre Stutz Soares,TI,AC
-50,850002467,Marcelo Tadayuki Hiranobe,TI,AC
-1,850003586,Amadeu Soares Corrêa,Direito,Racial
-2,850002684,Igor Silva Do Livramento,Direito,PCD
-3,850000136,Abenilton Hipolito De Araujo Junior,Direito,AC
-4,850002369,Diogo Mariani Gonçalves,Direito,AC
-5,850003437,Filipe Aquino Das Neves,Direito,AC
-6,850003907,Paulo Henrique De Freitas,Direito,Racial
-7,850001785,Eberton De Mello Soares,Direito,AC
-8,850003886,Bruno Serafim De Souza,Direito,AC
-9,850003013,Fernanda Schneider,Direito,AC
-10,850000883,Rafael Silva Antunes Quaresma,Direito,AC
-11,850003516,Bark Heves Capistrano Dias Cardoso Bueno,Direito,AC
-12,850000242,João Henrique Souza Dos Reis,Direito,PCD
-13,850002972,Natalia Camargo Rabuske,Direito,AC
-14,850003493,Juliana Wancura Budke,Direito,AC
-15,850003019,Fernando Henrique De Sousa Lino,Direito,AC
-16,850003318,Rodrigo Lisbôa Fefin,Direito,AC
-17,850001685,Itamar Lucas Grubert,Direito,AC
-18,850000429,Dário Alves De Brito Filho,Direito,AC
-19,850000125,Ivelton Da Silva Cassemiro,Direito,PCD
-20,850001263,Thiago Alves Bernardes,Direito,AC
-21,850000598,Victor Meira Ribeiro,Direito,AC
-22,850003400,Rafael Gonçalves Rezende Cordeiro,Direito,AC
-23,850001896,Giuliano Zaros De Oliveira,Direito,AC
-24,850000679,Danilo Baudson Felix,Direito,AC
-25,850003238,Fernando Gabriel Freitas Vicente,Direito,AC
-26,850001623,Tiago Kenji Miyajima,Direito,Racial
-27,850003660,Állirson Oliveira Fortes Pereira,Direito,Racial
-28,850003597,Mendelson Da Silva Dias,Direito,Racial
-29,850003101,Sergio Martins Nunes,Direito,AC
-30,850000612,Guilherme Santiago De Oliveira Santos,Direito,PCD
-31,850002822,Jocieli De Lima Silveira,Direito,Racial
-32,850003320,Marcellus Prado Lima,Direito,AC
-33,850000363,Rafael Soares Evas,Direito,AC
-34,850001801,Rafael Fernando Moura De Andrade,Direito,Racial
-35,850000622,André Luiz De Pina E Silva,Direito,Racial
-36,850002311,Cristiano Alves Dos Anjos Souza,Direito,Racial
-37,850000892,Eduardo Rodrigues Ferreira,Direito,AC
-38,850000365,Daniel Guidão Ramos,Direito,AC
-39,850003209,Rogério Bogado Medina,Direito,AC
-40,850003899,Tales Albert Rodrigues Simões,Direito,AC
-41,850001503,Lamartino França De Oliveira Junior,Direito,PCD
-42,850003710,Márcio Conceição De Lara Cunha,Direito,Racial
-43,850002685,Galthiery Alves De Sousa Lopes,Direito,PCD
-44,850002056,Luís Octávio Teixeira Pinheiro,Direito,AC
-45,850000222,Débora Germosgeschi Luz,Direito,AC
-46,850002246,Fernando De Oliveira Pereira,Direito,Racial
-47,850003075,Eliana Martins Dos Santos,Direito,Racial
-48,850001188,Jessica Pereira,Direito,AC
-49,850001091,João Mario Diniz Cuquejo,Direito,PCD
-50,850001589,Marcos Matheus Silva Sousa,Direito,Racial
+posicao;n_inscr;nome;cota;grupo;situacao
+1;850002304;Benedito Daniel Nunes Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+2;850000911;Rachid Elias Arab;AC;Gestão;Aprovado
+3;850001898;Julio Moreira Sampaio;AC;Gestão;Aprovado
+4;850002515;Arthur Henrique Rézio Santos;AC;Gestão;Aprovado
+5;850003654;Pedro Augusto Rossi De Camargo;AC;Gestão;Aprovado
+6;850001919;Ricardo Durso Marcal;AC;Gestão;Aprovado
+7;850000122;Jonadas Pires De Souza;AC;Gestão;Aprovado
+8;850000631;Leonardo Cardoso De Araujo;AC;Gestão;Aprovado
+9;850000686;Álvaro De Lima Rodrigues;AC;Gestão;Aprovado
+10;850001168;Frederico César Dias Martins;AC;Gestão;Aprovado
+11;850003341;Paulo Sandro Gomes De Lacerda Filho;AC;Gestão;Aprovado
+12;850002546;Arthur Marques Octaviano Almeida;AC;Gestão;Aprovado
+13;850003445;Vitor Merli De Azevedo;AC;Gestão;Aprovado
+14;850001326;Luiz Guilherme Melo Machado Filho;AC;Gestão;Aprovado
+15;850000896;Augusto Luiz Oliveira Rosa Araujo;AC;Gestão;Aprovado
+16;850002716;Daniel Silveira Da Rocha;AC;Gestão;Aprovado
+17;850003145;Italo Siqueira Rodrigues;AC;Gestão;Aprovado
+18;850002422;Henrique Chacra Sabino;AC;Gestão;Aprovado
+19;850000905;Matheus Guidoni Pereira;AC;Gestão;Aprovado
+20;850001054;Thaynara Oliveira Dos Santos;AC;Gestão;Aprovado
+21;850002223;Rubens Cavilha De Souza;AC;Gestão;Aprovado
+22;850002357;Carlos Eduardo De Souza;AC;Gestão;Aprovado
+23;850003798;PEDRO MENEZES DE SOUZA;AC;Gestão;Aprovado
+24;850000397;Mário Otávio Lacerda E Miranda;AC;Gestão;Aprovado
+25;850001288;Gabriel Mendonça Santana;AC;Gestão;Aprovado
+26;850001109;Juliana Pereira Da Silva;AC;Gestão;Aprovado
+27;850001423;Juliana De Albuquerque Silveira;AC;Gestão;Aprovado
+28;850001267;Rodrigo Solano Correa De Oliveira;AC;Gestão;Aprovado
+29;850000541;Priscila Paropato Camargo E Almeida;AC;Gestão;Aprovado
+30;850002740;José Antonio Pontes Da Silva Filho;Racial;Gestão;Aprovado Negro/Indígena
+31;850001911;Herbert Meneses Carvalho;Racial;Gestão;Aprovado Negro/Indígena
+32;850003248;Bruno Lopes De Abreu;AC;Gestão;Aprovado
+33;850002098;Gabriel Augusto Schiochet;AC;Gestão;Aprovado
+34;850000451;Kéren Adriane Vidal Marchesin Garcia Rúbio Faria;AC;Gestão;Aprovado
+35;850001259;Elton Nunes De Paula;AC;Gestão;Aprovado
+36;850000459;Paulo Roberto De Albuquerque Filho;AC;Gestão;Aprovado
+37;850003594;Helio Fernandes Pacheco;AC;Gestão;Aprovado
+38;850001447;Raphael Carlos Ferreira Do Fundo;AC;Gestão;Aprovado
+39;850002511;Marcos Rafael Nascimento Dos Santos;AC;Gestão;Aprovado
+40;850000303;Thiago Soares Ribeiro;AC;Gestão;Aprovado
+41;850001217;Fabricia Luzia De Almeida;AC;Gestão;Aprovado
+42;850001585;Débora Cristina Pires De Miranda;Racial;Gestão;Aprovado Negro/Indígena
+43;850002177;Lais Tassinari Nogueira Campos;AC;Gestão;Aprovado
+44;850003513;Jonathan José Cordeiro Da Silva;AC;Gestão;Aprovado
+45;850003471;Nataniel Almeida Pereira;Racial;Gestão;Aprovado Negro/Indígena
+46;850002927;Alderio Gerarde Borges Junior;Racial;Gestão;Aprovado Negro/Indígena
+47;850002039;Roberto Mori Filho;AC;Gestão;Aprovado
+48;850001076;Bruno Tancledo De Paula;Racial;Gestão;Aprovado Negro/Indígena
+49;850002432;Carlos Eduardo Pereira Parente;AC;Gestão;Aprovado
+50;850002550;Raisa Lima De Berrêdo Martins;AC;Gestão;Aprovado
+51;850000057;Airton César Tavares De Souza;AC;Gestão;Aprovado
+52;850000374;Diogo Camargo De Barcellos;AC;Gestão;Aprovado
+53;850001103;Marcelo Gomes De Lima;AC;Gestão;Aprovado
+54;850003249;Pablo Fernando Wolhmuth;AC;Gestão;Aprovado
+55;850000419;Cassio Assis Dos Santos;AC;Gestão;Aprovado
+56;850003126;Ricardo Gonchorowski Garcia;AC;Gestão;Aprovado
+57;850002119;Caio Ossamu Kawamoto;AC;Gestão;Aprovado
+58;850002611;Túlio De Sousa Castro;AC;Gestão;Aprovado
+59;850003800;Laura Beatriz Lersch;AC;Gestão;Aprovado
+60;850000029;Douglas Jeronymo Serra;AC;Gestão;Aprovado
+61;850002798;Wilkson Fontes Gonçalves;AC;Gestão;Aprovado
+62;850000948;Otávio Augusto Batista Melo;AC;Gestão;Aprovado
+63;850003863;Alexandre Porto Alegre Da Fonseca;AC;Gestão;Aprovado
+64;850001256;Leonardo Bitencourt Rocha;AC;Gestão;Aprovado
+65;850002638;Thiago Guedes Barros;AC;Gestão;Aprovado
+66;850000044;Leandro Monteiro Do Nascimento;AC;Gestão;Aprovado
+67;850001412;Gabriel Melo Nunes;AC;Gestão;Aprovado
+68;850002513;Saint Clair Ribas Nery;Racial;Gestão;Aprovado Negro/Indígena
+69;850001963;Bruna Teixeira De Araújo Amorim;Racial;Gestão;Aprovado Negro/Indígena
+70;850003974;Luísa Teixeira Battistetti Porto;AC;Gestão;Aprovado
+71;850000132;Bráulio Gomes Lopes;AC;Gestão;Aprovado
+72;850002228;João Pedro Macêdo De Santana;AC;Gestão;Aprovado
+73;850003319;Romário Macedo Veloso;Racial;Gestão;Aprovado Negro/Indígena
+74;850000224;Iury Alves Neiva;Racial;Gestão;Aprovado Negro/Indígena
+75;850003042;Stephanie Campos Fraga;AC;Gestão;Aprovado
+76;850000223;Thayna De Souza Padilha Da Costa;AC;Gestão;Aprovado
+77;850003064;Daniel Sousa Da Rocha;AC;Gestão;Aprovado
+78;850003519;Vinícius Bravo Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+79;850001846;Luca Dutra Signorelli;AC;Gestão;Aprovado
+80;850003653;Glaucio Benedito Raminhos De Melo;Racial;Gestão;Aprovado Negro/Indígena
+81;850000119;Bruno Augusto De Castilho Guilhermino;AC;Gestão;Aprovado
+82;850000151;Flávio Vinícius Ferreira;AC;Gestão;Aprovado
+83;850002266;Hauryson Silva Albuquerque;AC;Gestão;Aprovado
+84;850002637;Alexandre Dias Linhares;Racial;Gestão;Aprovado Negro/Indígena
+85;850000202;Jose Ribamar Barros Netto;Racial;Gestão;Aprovado Negro/Indígena
+86;850002812;Gracielle Campos De Souza;Racial;Gestão;Aprovado Negro/Indígena
+87;850000366;Diego Nogueira Costa;Racial;Gestão;Aprovado Negro/Indígena
+88;850000878;Carolina Lyra Da Matta Machado Fernandes;AC;Gestão;Aprovado
+89;850000784;Rafael Gléria Monteiro Do Nascimento;AC;Gestão;Aprovado
+90;850000350;Eduardo Benatti Padula;AC;Gestão;Aprovado
+91;850003225;Guilherme Amaral Diniz;AC;Gestão;Aprovado
+92;850000723;Paulo André Veras Suruagy;AC;Gestão;Aprovado
+93;850002208;Gabriel Cardoso Alves;AC;Gestão;Aprovado
+94;850000056;Diego De Mello Almeida;AC;Gestão;Aprovado
+95;850002763;Ricardo Francisco Pitta;AC;Gestão;Aprovado
+96;850001824;Willamys Barbosa Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+97;850002326;João José De Castro Neto;AC;Gestão;Aprovado
+98;850003794;Alexandre Cunningham Gmyterco;AC;Gestão;Aprovado
+99;850000156;Filipe Ferreira Lima Nunes;AC;Gestão;Aprovado
+100;850004033;André Andrade Felipe;AC;Gestão;Aprovado
+101;850002918;Caetano Batalha Santos;AC;Gestão;Aprovado
+102;850000417;Adriel Augusto Queiroz;AC;Gestão;Aprovado
+103;850002270;Roberto Camilo Marques Castro;AC;Gestão;Aprovado
+104;850002893;Bruna Nogueira Coutinho;AC;Gestão;Aprovado
+105;850001154;Douglas Medeiros Dias Carneiro;AC;Gestão;Aprovado
+106;850000919;Juliana Mayumi Matsuoka Dinelli;AC;Gestão;Aprovado
+107;850002700;Gabriel Couto Gonçalves;AC;Gestão;Aprovado
+108;850003829;Igor Machado Nossa;AC;Gestão;Aprovado
+109;850003342;Jean Gomes De Mesquita;AC;Gestão;Aprovado
+110;850003048;Isabela Furquim Marra;AC;Gestão;Aprovado
+111;850000115;Lucas Mendonça Reis;AC;Gestão;Aprovado
+112;850003322;Bruna Rodrigues Linck;AC;Gestão;Aprovado
+113;850002500;Jennipher Alves Rodrigues;AC;Gestão;Aprovado
+114;850003022;Giovanna Barros Sousa;AC;Gestão;Aprovado
+115;850003299;Thaygo Francisco De Andrade Rameiro;AC;Gestão;Aprovado
+116;850002100;Hugo Chaves Dias E Silva;AC;Gestão;Aprovado
+117;850003261;William Pereira De Carvalho;AC;Gestão;Aprovado
+118;850002101;Marcela Silva Rodrigues;AC;Gestão;Aprovado
+119;850003672;Akauã De França Lins;AC;Gestão;Aprovado
+120;850002824;Rafael Sartarelli Nunes De Paula;AC;Gestão;Aprovado
+121;850001141;Rodrigo Pereira Lima;AC;Gestão;Aprovado
+122;850000656;Diego Piassa De Souza;AC;Gestão;Aprovado
+123;850002482;Henio Tamanqueira Dos Santos;AC;Gestão;Aprovado
+124;850003324;Mauro Francisco De Almeida Junior;AC;Gestão;Aprovado
+125;850000682;Rafael Maia Araújo;AC;Gestão;Aprovado
+126;850003459;Juliana Suzuki Chiba;AC;Gestão;Aprovado
+127;850000437;Danielli Da Silveira Cruz Franca;AC;Gestão;Aprovado
+128;850001209;João Vítor Profeta Alves;Racial;Gestão;Aprovado Negro/Indígena
+129;850001755;Igor Vinicius Fornazieri Ferri;AC;Gestão;Aprovado
+130;850002960;Lidiane Esteves Pires;PcD;Gestão;Aprovado PcD
+131;850004006;Rafael Arruda Gomes;AC;Gestão;Aprovado
+132;850000025;Katia Stefani Gomes;AC;Gestão;Aprovado
+133;850002292;Jairo Pimenta Da Silva;AC;Gestão;Aprovado
+134;850002242;Gustavo Roberto Da Silva;PcD;Gestão;Aprovado PcD
+135;850000216;Daniel De Paula Ferreira;Racial;Gestão;Aprovado Negro/Indígena
+136;850003024;Natália Carvalho Araújo;AC;Gestão;Aprovado
+137;850003557;Claudielio Moreira Da Costa;AC;Gestão;Aprovado
+138;850003633;Roberto Clodoaldo Gomes Feitosa;AC;Gestão;Aprovado
+139;850001863;Vinicius Magaroti Fernandes Braga;AC;Gestão;Aprovado
+140;850002107;Denis Cardoso Vilela;AC;Gestão;Aprovado
+141;850002077;Adenilson Wagner Kreitlow;AC;Gestão;Aprovado
+142;850000399;Felipe Ribeiro Nascimento;AC;Gestão;Aprovado
+143;850001466;Genise Dos Santos De Castro;AC;Gestão;Aprovado
+144;850000159;Lucas Vidigal Braga;AC;Gestão;Aprovado
+145;850000024;Rodrigo Pinheiro;AC;Gestão;Aprovado
+146;850001619;Cassio Andre Aguiar;AC;Gestão;Aprovado
+147;850000183;Daiane Da Silva Martins Galvão;Racial;Gestão;Aprovado Negro/Indígena
+148;850003217;Roberto Pereira Alves Filho;AC;Gestão;Aprovado
+149;850002257;Daniel Augusto Costa Maldonado;AC;Gestão;Aprovado
+150;850000579;Bruno Antonio Gomes Barbosa Dias;Racial;Gestão;Aprovado Negro/Indígena
+151;850001309;Ricardo Afonso De Lima Martins;AC;Gestão;Aprovado
+152;850003406;Airton Pereira Dias;AC;Gestão;Aprovado
+153;850003952;Marcus Gaudino Marini;AC;Gestão;Aprovado
+154;850003291;Lucas Rebouças Maia;AC;Gestão;Aprovado
+155;850002809;Jackson Araújo Pequeno;AC;Gestão;Aprovado
+156;850000364;Leandro Cunha De Vasconcelos;AC;Gestão;Aprovado
+157;850001594;Jean Jhonny Maxwell Quixabeira Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+158;850003627;Joao Batista Tavares Netto;AC;Gestão;Aprovado
+159;850002916;Bernardo De Morais Assunção;AC;Gestão;Aprovado
+160;850000142;Bruna Vieira Rodrigues;AC;Gestão;Aprovado
+161;850002418;Paulo Roberto Maia Caires Junior;AC;Gestão;Aprovado
+162;850000375;João Daniel Guimarães De Oliveira;AC;Gestão;Aprovado
+163;850002683;Danilo Da Silva Toniato;PcD;Gestão;Aprovado PcD
+164;850000574;Guilherme Akio Sato;AC;Gestão;Aprovado
+165;850002134;Luiz Henrique Gonsalves Giribone;AC;Gestão;Aprovado
+166;850001096;Gibran Hoelzle Alves Da Costa;AC;Gestão;Aprovado
+167;850003396;Edir Rodrigues Lima;Racial;Gestão;Aprovado Negro/Indígena
+168;850000802;Jessika Nayara Silva Oliveira;AC;Gestão;Aprovado
+169;850000193;Willian Ajpert;AC;Gestão;Aprovado
+170;850003103;Luciano Ferreira Silva;AC;Gestão;Aprovado
+171;850002051;Marjorie Warla Alves De Oliveira;AC;Gestão;Aprovado
+172;850002450;Anderson Ataide Das Neves;AC;Gestão;Aprovado
+173;850000936;Vinicius Regis De Azevedo;AC;Gestão;Aprovado
+174;850003835;Pedro Guimarães Marchi;AC;Gestão;Aprovado
+175;850001424;Alexandre Silva De Oliveira;AC;Gestão;Aprovado
+176;850001497;Ismael Cavalcante Maciel Junior;Racial;Gestão;Aprovado Negro/Indígena
+177;850001541;Claudir Ewerton Costa Junior;Racial;Gestão;Aprovado Negro/Indígena
+178;850000289;Diego Martins Coutinho;AC;Gestão;Aprovado
+179;850000354;Ieda De Melo Biaggio;AC;Gestão;Aprovado
+180;850002601;Igor Rocha Frazão Nogueira;AC;Gestão;Aprovado
+181;850000782;Wallison Jane Da Silva Mendes;Racial;Gestão;Aprovado Negro/Indígena
+182;850002462;Alvaro Mares Ribeiro;AC;Gestão;Aprovado
+183;850002730;Bruno Dias Pereira;PcD;Gestão;Aprovado PcD
+184;850000067;Guilherme De Oliveira Jatobá Maia;AC;Gestão;Aprovado
+185;850001816;Antonio Jadson Ferreira Sousa;Racial;Gestão;Aprovado Negro/Indígena
+186;850002305;Patricia Xavier Do Nascimento;AC;Gestão;Aprovado
+187;850000500;Vagner Santos Dos Reis;AC;Gestão;Aprovado
+188;850003690;Deusemar Magalhães Nunes Filho;AC;Gestão;Aprovado
+189;850000862;Erick Martinez Almeida;AC;Gestão;Aprovado
+190;850000032;Ricardo Eguchi;AC;Gestão;Aprovado
+191;850000174;Jhon Wine Da Silva;AC;Gestão;Aprovado
+192;850002048;Yrlane Santos Araújo;AC;Gestão;Aprovado
+193;850000873;Rodrigo Raul Vilela Brandao;AC;Gestão;Aprovado
+194;850003305;Erika Ferreira Da Silva;AC;Gestão;Aprovado
+195;850003822;Frederico Garcia Cavalcante;AC;Gestão;Aprovado
+196;850002308;Danilo Barbosa Rezende;AC;Gestão;Aprovado
+197;850001329;Matheus Gomes Carmo;AC;Gestão;Aprovado
+198;850000869;Djalma Wilk Guimarães;AC;Gestão;Aprovado
+199;850000897;Mattheus Cristiano De Vasconcellos;AC;Gestão;Aprovado
+200;850002697;Francisco Gemaque Alvaro Neto;AC;Gestão;Aprovado
+201;850002849;Thaís Lopes Guedes De Oliveira;AC;Gestão;Aprovado
+202;850002569;Gabriel Oliveira De Souza Vicente;AC;Gestão;Aprovado
+203;850003429;Bruno Rossi Jardini;AC;Gestão;Aprovado
+204;850000010;Caio Ewerton Da Silva Ribeiro;AC;Gestão;Aprovado
+205;850002675;Caio Wellington Freitas Bezerra;AC;Gestão;Aprovado
+206;850003271;Marília Lins Cavalcanti;AC;Gestão;Aprovado
+207;850001226;Rafael Felipe Santos Ribeiro;AC;Gestão;Aprovado
+208;850003070;João Paulo Silva Amado;AC;Gestão;Aprovado
+209;850003463;Victor Fraga Ceotto;AC;Gestão;Aprovado
+210;850000018;Bruno Moreira Alves;AC;Gestão;Aprovado
+211;850002795;Karjan Pires Da Nobrega;AC;Gestão;Aprovado
+212;850001719;Josiel Francisco Alves;AC;Gestão;Aprovado
+213;850000971;Raphael Koiti Ihida;AC;Gestão;Aprovado
+214;850000229;Bruno Chaves Andrade;AC;Gestão;Aprovado
+215;850003239;Luanda Pereira;Racial;Gestão;Aprovado Negro/Indígena
+216;850000894;Guilherme Caetano Barreto;AC;Gestão;Aprovado
+217;850000349;Junio Willian Alves De Oliveira;AC;Gestão;Aprovado
+218;850000625;Marco Antonio Caseri Cardoso;AC;Gestão;Aprovado
+219;850001874;Tatiane Guimarães Dos Santos Antoniolli;AC;Gestão;Aprovado
+220;850000021;Rafael Schiavon Bolte;AC;Gestão;Aprovado
+221;850001873;Gustavo Lima Dos Santos;AC;Gestão;Aprovado
+222;850003401;Luane Borges Machado;AC;Gestão;Aprovado
+223;850001747;Matheus Daniel Duque Freire;Racial;Gestão;Aprovado Negro/Indígena
+224;850000844;Caio Vinicius Martins Goncalves;AC;Gestão;Aprovado
+225;850001807;Brasil Claudio Gonçalves;Racial;Gestão;Aprovado Negro/Indígena
+226;850002540;Gumercindo Oliveira De Andrade Junior;Racial;Gestão;Aprovado Negro/Indígena
+227;850002236;Nelson De Lima E Silva;AC;Gestão;Aprovado
+228;850002682;Francisco Batista De Lima;AC;Gestão;Aprovado
+229;850001270;Annie Louine Beserra Soares;AC;Gestão;Aprovado
+230;850003416;Juliana Gomes De Carvalho Mendes Oliveira;AC;Gestão;Aprovado
+231;850000109;Francielle Lemos Oliveira;AC;Gestão;Aprovado
+232;850001864;Tácito Mendes De Farias;AC;Gestão;Aprovado
+233;850002852;Vinicius Santos Dias;AC;Gestão;Aprovado
+234;850002218;Hugo Salomao Da Silva Marciano;AC;Gestão;Aprovado
+235;850003289;Rodrigo Palha Madureira;AC;Gestão;Aprovado
+236;850001007;Daniel Yuji Marques Murashima;AC;Gestão;Aprovado
+237;850002174;Marcos Pidorodeski;PcD;Gestão;Aprovado PcD
+238;850000658;Bruno Da Cunha Valderes;AC;Gestão;Aprovado
+239;850002516;Gylleadh De Oliveira Andres;AC;Gestão;Aprovado
+240;850002380;Francisco Canindé Da Silva Júnior;AC;Gestão;Aprovado
+241;850001669;Matheus Loan Matos Oliveira;AC;Gestão;Aprovado
+242;850003376;Frederico Arantes Neuber;AC;Gestão;Aprovado
+243;850002084;Eguinaldo Merotti Rodrigues;AC;Gestão;Aprovado
+244;850001571;Felipe Farias De Jesus;AC;Gestão;Aprovado
+245;850001102;Luis Affonso Rodrigues Dresch;AC;Gestão;Aprovado
+246;850002889;Jean Carlos Fernandes Alves;Racial;Gestão;Aprovado Negro/Indígena
+247;850000288;Raíssa Vieira De Melo Rodrigues;Racial;Gestão;Aprovado Negro/Indígena
+248;850001695;Diogo Souza De Almeida;Racial;Gestão;Aprovado Negro/Indígena
+249;850003598;Evandro Marquezim Gonçalves;AC;Gestão;Aprovado
+250;850002749;Rafael Braga Silva;Racial;Gestão;Aprovado Negro/Indígena
+251;850001991;Gabriel Martin Alves;AC;Gestão;Aprovado
+252;850000187;Lucas Matheus Bem De Andrade;PcD;Gestão;Aprovado PcD Negro/Indígena
+253;850001921;Talita De Campos Dos Santos;Racial;Gestão;Aprovado Negro/Indígena
+254;850000402;Manuella Oliveira Araújo De Almeida;AC;Gestão;Aprovado
+255;850001745;Luciano Gonçalves Motta;AC;Gestão;Aprovado
+256;850002151;Rafael Zani Da Silva;AC;Gestão;Aprovado
+257;850001924;Aristeu De Jesus Santos Neto;AC;Gestão;Aprovado
+258;850002207;Cirloanda Saracini;AC;Gestão;Aprovado
+259;850003108;Marcélio Pereira Ataíde;AC;Gestão;Aprovado
+260;850002110;Carlos Ubiratan Leal Varella Junior;Racial;Gestão;Aprovado Negro/Indígena
+261;850003107;Tatiane Monica Dutra Altmann;AC;Gestão;Aprovado
+262;850001338;Matheus De Almeida Kasper;AC;Gestão;Aprovado
+263;850000130;Nicolas Gomes Evangelista;PcD;Gestão;Aprovado PcD
+264;850001997;Tácio Lopes Rodrigues;AC;Gestão;Aprovado
+265;850000505;Cristiano Donizete Ferreira;AC;Gestão;Aprovado
+266;850002806;Israel Francisco Lima;AC;Gestão;Aprovado
+267;850002568;José Lucas Viana Morais;Racial;Gestão;Aprovado Negro/Indígena
+268;850000287;Marco Denner Nishiyamamoto De Oliveira;AC;Gestão;Aprovado
+269;850002244;Valdei De Oliveira Lima;AC;Gestão;Aprovado
+270;850000763;Willian Gabriel Ricken Almeida;PcD;Gestão;Aprovado PcD
+271;850003296;Priscila Da Silva;AC;Gestão;Aprovado
+272;850000722;Robert Wilson Dias;AC;Gestão;Aprovado
+273;850000121;Franklin Claudelino Rodrigues Junior;Racial;Gestão;Aprovado Negro/Indígena
+274;850001823;Beatriz Ribeiro Oliveira;AC;Gestão;Aprovado
+275;850002089;Renildo Aguis Borges Junior;AC;Gestão;Aprovado
+276;850003624;Breno De Souza Mendes;AC;Gestão;Aprovado
+277;850001260;Raíssa Da Costa Silva;AC;Gestão;Aprovado
+278;850001396;Marina Fernandes Maciel;AC;Gestão;Aprovado
+279;850002289;Ricardo Feitosa Gonçalves;AC;Gestão;Aprovado
+280;850003384;Luana De Paula Pereira Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+281;850002178;Marcelo Yamauchi Da Silva Gomes;AC;Gestão;Aprovado
+282;850002132;Juan Fonteles Soares;AC;Gestão;Aprovado
+283;850003000;Luiz Francisco Nascimento Junior;Racial;Gestão;Aprovado Negro/Indígena
+284;850001476;Cleverson Danilo Figueiredo Silva;Racial;Gestão;Aprovado Negro/Indígena
+285;850001023;Naytara Grotta Furlan;AC;Gestão;Aprovado
+286;850003277;Julio Cesar Simões Filho;AC;Gestão;Aprovado
+287;850004026;Lívia Brasil De Almeida;AC;Gestão;Aprovado
+288;850004000;Fernando Alves Nogueira;AC;Gestão;Aprovado
+289;850000198;Gleydson Urbano De Almeida;AC;Gestão;Aprovado
+290;850002092;Nubia Gabriela De Oliveira Kawai;AC;Gestão;Aprovado
+291;850003670;Luís Augusto Mesquita;AC;Gestão;Aprovado
+292;850002002;Pedro Henrique Abreu Davila Gonçalves;AC;Gestão;Aprovado
+293;850001829;Gabriel Leonardo Bento;AC;Gestão;Aprovado
+294;850002087;Adriene Leite De Gusmão Silva;AC;Gestão;Aprovado
+295;850003501;Marcos Henrique De Santana;Racial;Gestão;Aprovado Negro/Indígena
+296;850003268;Jose Ney Pedreira Santos;Racial;Gestão;Aprovado Negro/Indígena
+297;850001968;Ana Jessyca De Siqueira Alves Pereira;AC;Gestão;Aprovado
+298;850002448;Evandro Rodrigues França;AC;Gestão;Aprovado
+299;850003491;Marlon Cleber Benites;AC;Gestão;Aprovado
+300;850003626;Leonardo Ramos Caxias;AC;Gestão;Aprovado
+301;850002924;Roberto Gabriel Silva Santos;PcD;Gestão;Aprovado PcD
+302;850000654;Rafael De Oliveira Ferreira;AC;Gestão;Aprovado
+303;850002290;Ronald De Carvalho Mendes Júnior;AC;Gestão;Aprovado
+304;850000152;Valter Andrey Valois Cavalcante;AC;Gestão;Aprovado
+305;850003206;Murilo Vidziunas Rodrigues Da Silva;AC;Gestão;Aprovado
+306;850001268;Artur Vinicius Oliveira Goulart;AC;Gestão;Aprovado
+307;850000456;Alexandre Gomes Do Nascimento;AC;Gestão;Aprovado
+308;850001828;Raphael Pereira De Jesus Terres;AC;Gestão;Aprovado
+309;850003425;Ailton Pereira Thobias;Racial;Gestão;Aprovado Negro/Indígena
+310;850002803;Anderson Idalgo Da Rocha;AC;Gestão;Aprovado
+311;850000286;Daphne Keller Veleda;AC;Gestão;Aprovado
+312;850001384;Ana Paula Ferreira Santos;Racial;Gestão;Aprovado Negro/Indígena
+313;850003343;Cristiane Santos De Oliveira Martins;Racial;Gestão;Aprovado Negro/Indígena
+314;850002166;Thiago Lucas Alves Menezes;AC;Gestão;Aprovado
+315;850002424;Silvio Eduardo Carvalho Sousa;AC;Gestão;Aprovado
+316;850002549;Heitor Silva Paixão;AC;Gestão;Aprovado
+317;850000199;Daniel Fabrício Mathias Pinto;PcD;Gestão;Aprovado PcD
+318;850001771;Luiz Octavio Silva Ruas;AC;Gestão;Aprovado
+319;850000859;Rodrigo Tainan Alves De Sousa;Racial;Gestão;Aprovado Negro/Indígena
+320;850000416;Douglian Neves Da Silva;AC;Gestão;Aprovado
+321;850002663;Pedro Paulo Santos Cunha;AC;Gestão;Aprovado
+322;850003353;Fabio Henrique Mazzo Miorim;AC;Gestão;Aprovado
+323;850000716;Rogerio De Moura Bentes Leal;AC;Gestão;Aprovado
+324;850003313;William Carvalho Amaral De Sousa;AC;Gestão;Aprovado
+325;850001210;Filipe Rodrigues De Oliveira;AC;Gestão;Aprovado
+326;850001993;Diego Magno De Oliveira;AC;Gestão;Aprovado
+327;850000998;Aline Leticia Alves De Andrade;AC;Gestão;Aprovado
+328;850000138;Tarcio Roberto Queiroz Ribeiro Costa;AC;Gestão;Aprovado
+329;850002171;Gabriela Fernandes Menezes;AC;Gestão;Aprovado
+330;850003008;Railson Carneiro Alexandrino Rodrigues;Racial;Gestão;Aprovado Negro/Indígena
+331;850002064;Thiago Aragão Gomes Da Cunha;PcD;Gestão;Aprovado PcD
+332;850003240;Laize Lordelo Silva Rocha;AC;Gestão;Aprovado
+333;850000509;Angela Maria Da Silva;AC;Gestão;Aprovado
+334;850000321;Jonathas Nunes De Jesus;Racial;Gestão;Aprovado Negro/Indígena
+335;850002269;Sergio Bernardo Fleck Da Silva Abreu;AC;Gestão;Aprovado
+336;850003711;Sergio Manoel Soares Silva;AC;Gestão;Aprovado
+337;850003885;Gerson Koiti Kurosawa Shimizu;AC;Gestão;Aprovado
+338;850002021;Renato Brigido Santiago Melo;AC;Gestão;Aprovado
+339;850000701;Amanda Haas;AC;Gestão;Aprovado
+340;850000805;Bruno Pena Modesto;Racial;Gestão;Aprovado Negro/Indígena
+341;850000215;Devison Vieira Guimarães Das Neves;AC;Gestão;Aprovado
+342;850001928;Gabriel Dias Aquino;AC;Gestão;Aprovado
+343;850002861;Lucas Henriques Félix Nascimento;AC;Gestão;Aprovado
+344;850001247;João Vitor Bardini Gonçalves;AC;Gestão;Aprovado
+345;850002194;Marcos Vinicio Costa;AC;Gestão;Aprovado
+346;850000164;Fabiane Daniela Pereira;AC;Gestão;Aprovado
+347;850003823;Carlos Eduardo Santa Brígida;AC;Gestão;Aprovado
+348;850000322;Osias Pereira Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+349;850001850;Pedro Paulo Andrade De Barros;AC;Gestão;Aprovado
+350;850003387;Luis Antonio Rigotti;AC;Gestão;Aprovado
+351;850002799;Luiz Claudio Santos Alves;Racial;Gestão;Aprovado Negro/Indígena
+352;850000360;Sander André Hartmann;PcD;Gestão;Aprovado PcD
+353;850000276;José Rodrigues De Freitas;Racial;Gestão;Aprovado Negro/Indígena
+354;850002459;Allan Gomes Queiroz;AC;Gestão;Aprovado
+355;850002706;Lara Moura Furtado;AC;Gestão;Aprovado
+356;850002903;Pablo Miguel Garbeline;AC;Gestão;Aprovado
+357;850000448;Rafael Dapieve De Almeida;AC;Gestão;Aprovado
+358;850002209;Pedro Alcantara Eduardo;AC;Gestão;Aprovado
+359;850003559;Caio Foglia Santucci;AC;Gestão;Aprovado
+360;850003821;Davi Garcia Silva;AC;Gestão;Aprovado
+361;850000383;Vítor Jorge Santos Vieira Alves;AC;Gestão;Aprovado
+362;850002012;Ewerson Lima Fagundes;AC;Gestão;Aprovado
+363;850002659;Ernesto Mataran Neto;AC;Gestão;Aprovado
+364;850001392;Juliana Pereira De Santana;AC;Gestão;Aprovado
+365;850001413;William Gonçalves Da Silva Petrazzini;AC;Gestão;Aprovado
+366;850000404;Warney Mauro Da Costa Val Filho;Racial;Gestão;Aprovado Negro/Indígena
+367;850000315;Carlos Roberto De Araujo;AC;Gestão;Aprovado
+368;850002557;Maycom Antunes Lopes;AC;Gestão;Aprovado
+369;850001046;Brahian Rodrigues De Oliveira;Racial;Gestão;Aprovado Negro/Indígena
+370;850002005;Elton Fernandes Alzão;Racial;Gestão;Aprovado Negro/Indígena
+371;850002571;Willian Landa;AC;Gestão;Aprovado
+372;850002596;Letícia Delfino Alves;Racial;Gestão;Aprovado Negro/Indígena
+373;850000036;Ygor Assad De Lima;AC;Gestão;Aprovado
+374;850001767;Vitor Augusto Vieira Prado;AC;Gestão;Aprovado
+375;850003332;Everton Augusto De Sousa Almeida;Racial;Gestão;Aprovado Negro/Indígena
+376;850001964;Pedro Paulo Onófrio Corrêa Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+377;850001301;Leticia Fernandes Viana Morais;AC;Gestão;Aprovado
+378;850001612;Felicio Carriço Dal Col;AC;Gestão;Aprovado
+379;850000551;Cesar Augusto De Oliveira E Silva;AC;Gestão;Aprovado
+380;850002862;Orlando Schindler Junior;PcD;Gestão;Aprovado PcD
+381;850000733;Rosimeri Hubner;AC;Gestão;Aprovado
+382;850002503;Carolina Gomes Dos Santos;Racial;Gestão;Aprovado Negro/Indígena
+383;850000761;Adari Rogério De Almeida;AC;Gestão;Aprovado
+384;850003910;Clayton Martins Do Nascimento;AC;Gestão;Aprovado
+385;850000037;Luciano Marcos De Albuquerque;Racial;Gestão;Aprovado Negro/Indígena
+386;850002755;Tiago Lucas De Lima;Racial;Gestão;Aprovado Negro/Indígena
+387;850001451;Daiany Brito Dos Santos Hermenegildo;AC;Gestão;Aprovado
+388;850003258;Tatiana De Oliveira Sobrinho Pires;AC;Gestão;Aprovado
+389;850000100;Deilton Alencar Fernandes;AC;Gestão;Aprovado
+390;850000280;Bruno Renan Ferreira De Souza Maciel;AC;Gestão;Aprovado
+391;850003498;Nayara Sousa Almeida;Racial;Gestão;Aprovado Negro/Indígena
+392;850001483;Sérgio Alexander Souza De Oliveira;AC;Gestão;Aprovado
+393;850000226;Giovanna Brasil Vieira;AC;Gestão;Aprovado
+394;850001030;Augusto Cesar Lira De Amorim;Racial;Gestão;Aprovado Negro/Indígena
+395;850003251;Victor Mark Pontes Dos Santos;AC;Gestão;Aprovado
+396;850000789;Rogério Elói Gomes Bezerra;Racial;Gestão;Aprovado Negro/Indígena
+397;850003061;Vinícius Alcântara Nascimento Aguiar;AC;Gestão;Aprovado
+398;850001892;Andrezza Ribeiro Fretes;AC;Gestão;Aprovado
+399;850001331;Jun Fernando Kato;AC;Gestão;Aprovado
+400;850001457;Wesley Pablo Pinheiro Camilo;Racial;Gestão;Aprovado Negro/Indígena
+401;850000379;Gustavo Da Cunha Neves;AC;Gestão;Aprovado
+402;850002833;Alaciel Nonato Da Silva Junior;AC;Gestão;Aprovado
+403;850002466;Tiago Aparecido Ferreira;Racial;Gestão;Aprovado Negro/Indígena
+404;850001682;Josué José Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+405;850000256;Felipe Luz Cagali;AC;Gestão;Aprovado
+406;850003150;Priscila Pereira Silva;Racial;Gestão;Aprovado Negro/Indígena
+407;850002389;Rodrigo Vieira Santana;Racial;Gestão;Aprovado Negro/Indígena
+408;850001244;Anne Luiza Santos De Oliveira De Azevedo;AC;Gestão;Aprovado
+409;850000388;Eduardo Jose Da Silva;AC;Gestão;Aprovado
+410;850003283;Nádia Raquel Matos Oliveira;AC;Gestão;Aprovado
+411;850001176;Rafael Bleich;AC;Gestão;Aprovado
+412;850002734;Fabricio Guimaraes Dos Santos;AC;Gestão;Aprovado
+413;850003639;Niellys De Fátima Da Conceição Gonçalves Costa;Racial;Gestão;Aprovado Negro/Indígena
+414;850003231;Marcus Garvey Sampaio Lima;Racial;Gestão;Aprovado Negro/Indígena
+415;850003363;Hudson Hienrck Ventura Duarte;Racial;Gestão;Aprovado Negro/Indígena
+416;850000628;Patrícia Tase Ricardo;AC;Gestão;Aprovado
+417;850000124;Amauri Do Prado Justino;AC;Gestão;Aprovado
+418;850003409;Edna Isabela Teobaldo Marques;AC;Gestão;Aprovado
+419;850000011;Talys Barbosa Ribeiro Drumond;AC;Gestão;Aprovado
+420;850002653;Luciano Cheris Da Cunha Ocampos;AC;Gestão;Aprovado
+421;850000649;Suelen Simião Ventura;Racial;Gestão;Aprovado Negro/Indígena
+422;850002660;Danilo Rodrigues De Oliveira;AC;Gestão;Aprovado
+423;850003323;Matheus Leite Gavioli;AC;Gestão;Aprovado
+424;850003510;Pedro Thomaz Oliveira Fontes Lima;AC;Gestão;Aprovado
+425;850003055;Vinicius Vieira Moura;AC;Gestão;Aprovado
+426;850000110;José Soares Dos Santos Júnior;AC;Gestão;Aprovado
+427;850002143;Rafael Rodrigues Liberato;AC;Gestão;Aprovado
+428;850003888;Paulo Vinicius Pelegrini;AC;Gestão;Aprovado
+429;850001895;Gabriel Machado De Figueiredo;AC;Gestão;Aprovado
+430;850000077;Melzac Amaro Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+431;850004029;Paulo Ricardo Monteiro Dias;AC;Gestão;Aprovado
+432;850000396;Mauro Sérgio Dos Santos;Racial;Gestão;Aprovado Negro/Indígena
+433;850002680;Hugo Henrique Tenorio Lins;AC;Gestão;Aprovado
+434;850002878;Alex Diones Lopes Vieira;AC;Gestão;Aprovado
+435;850002718;Milena Barbosa Menezes;AC;Gestão;Aprovado
+436;850000146;Luciano Campos Da Silva;Racial;Gestão;Aprovado Negro/Indígena
+437;850002136;Bruno Luiz Rodrigues Da Silva;AC;Gestão;Aprovado
+438;850001004;Daniel Francisco De Morais;AC;Gestão;Aprovado
+439;850000743;Leonardo Gurgel Lacerda;AC;Gestão;Aprovado
+440;850002857;Audizio Xavier De Almeida;AC;Gestão;Aprovado
+441;850000696;Debora Alessandra Dos Santos Lima;AC;Gestão;Aprovado
+442;850002303;Ludmila Ferreira Dos Anjos;Racial;Gestão;Aprovado Negro/Indígena
+443;850001463;Cláudia Mara De Lazzari;AC;Gestão;Aprovado
+444;850000792;Monike Hellen Loiola Vasconcelos;AC;Gestão;Aprovado
+445;850003165;Tiago Lobo Gonçalves;AC;Gestão;Aprovado
+446;850000377;Gabriela Pessoa Campos;AC;Gestão;Aprovado
+447;850001071;Alexander Magno Pinheiro Costa;AC;Gestão;Aprovado
+448;850002537;Laura Verena De Campos Franco;AC;Gestão;Aprovado
+449;850002744;Ricardo Jaredy Zanette Novakowski;AC;Gestão;Aprovado
+450;850002643;Gabriel Machado Costa;AC;Gestão;Aprovado
+451;850000501;Glayverson De Melo Pereira;Racial;Gestão;Aprovado Negro/Indígena
+452;850003044;Jairo Alberto Reis;Racial;Gestão;Aprovado Negro/Indígena
+453;850003608;Mauro Antonio De Figueiredo Leite Junior;AC;Gestão;Aprovado
+454;850000850;Anna Laura Lins Teixeira;AC;Gestão;Aprovado
+455;850000271;Yan De Mendonça Da Mota;Racial;Gestão;Aprovado Negro/Indígena
+456;850000347;Andrei Albuquerque Da Silva;PcD;Gestão;Aprovado PcD
+457;850001195;Rafael José Soares Santos Dutra;AC;Gestão;Aprovado
+458;850002905;Marco Antonio Barbosa Junior;AC;Gestão;Aprovado
+459;850001545;Laís Barbosa De Noronha;AC;Gestão;Aprovado
+460;850002163;Raul Pinheiro De Oliveira Rocha;AC;Gestão;Aprovado
+461;850000356;Pedro Paulo De Paula Araujo;AC;Gestão;Aprovado
+462;850000653;Paula Cristina Gomes Furtado;AC;Gestão;Aprovado
+463;850002788;Divino José Cardoso Nazaré;AC;Gestão;Aprovado
+464;850001938;Djavan Ascari E Souza;AC;Gestão;Aprovado
+465;850003866;Gabriel Batista Da Silva;AC;Gestão;Aprovado
+466;850003385;Vanuza Leocadio De Oliveira;Racial;Gestão;Aprovado Negro/Indígena
+467;850001897;Mariane Christo;AC;Gestão;Aprovado
+468;850002575;Juliane Angioni Novaes;AC;Gestão;Aprovado
+469;850003402;Adriano Ayres Bezerra;AC;Gestão;Aprovado
+470;850001605;Flavia Pinto De Carvalho;AC;Gestão;Aprovado
+471;850004184;Vagner Nunes;AC;Gestão;Aprovado
+472;850002896;Adriana Fernandes Carneiro;PcD;Gestão;Aprovado PcD
+473;850003494;Paulo Ricardo Sales;AC;Gestão;Aprovado
+474;850003063;Diego Soares Do Nascimento;Racial;Gestão;Aprovado Negro/Indígena
+475;850003077;Eurípedes De Oliveira Júnior;AC;Gestão;Aprovado
+476;850003156;Fernanda Fernandes De Souza;AC;Gestão;Aprovado
+477;850001489;Heber Andersen Rodrigues;AC;Gestão;Aprovado
+478;850003905;Ariele Ramos Da Silva;AC;Gestão;Aprovado
+479;850001832;Marcelo Ferreira Freitas;AC;Gestão;Aprovado
+480;850000105;André Aparecido Ferruci;PcD;Gestão;Aprovado PcD
+481;850002771;Uriel Dos Santos Ferreira;AC;Gestão;Aprovado
+482;850001394;Edilson Dos Santos Araujo Junior;AC;Gestão;Aprovado
+483;850002086;Ariana Bezerra Gameleira Lindoso;AC;Gestão;Aprovado
+484;850003628;Nollon Denizard Hausen De Oliveira E Antonio Da C;AC;Gestão;Aprovado
+485;850004211;Natália Nascimento Dos Santos;AC;Gestão;Aprovado
+486;850000483;Gustavo Andrade Araujo Oliveira;AC;Gestão;Aprovado
+487;850003565;Alexandre Luis Salies;AC;Gestão;Aprovado
+488;850003146;Helio Carlos Lopes;AC;Gestão;Aprovado
+489;850001981;Giane Fabrine Stangherlin;AC;Gestão;Aprovado
+490;850001849;Rafael Nojosa De Sousa;AC;Gestão;Aprovado
+491;850003203;Rafael Rodrigues De Medeiros;AC;Gestão;Aprovado
+492;850001252;Pedro Henrique Bardini Gonçalves;AC;Gestão;Aprovado
+493;850000015;Marcus Vinicius De Amorim;AC;Gestão;Aprovado
+494;850000026;Juarez Jânio De Rezende Júnior;AC;Gestão;Aprovado
+495;850000414;Everson Gass;PcD;Gestão;Aprovado PcD
+496;850001588;Fábio José Lopes Da Cruz;Racial;Gestão;Aprovado Negro/Indígena
+497;850002324;Daniel Soto Vieira;AC;Gestão;Aprovado
+498;850002083;Mario Maranhao Caixeta;PcD;Gestão;Aprovado PcD
+499;850001806;Elias Nogueira De Aguiar;Racial;Gestão;Aprovado Negro/Indígena
+500;850003793;Alessandro Mauro De Siqueira Godoy;Racial;Gestão;Aprovado Negro/Indígena
+501;850003234;Felipe Fraga De Melo Souza;Racial;Gestão;Aprovado Negro/Indígena
+502;850000807;Edgard Tiago Lima;AC;Gestão;Aprovado
+503;850004076;Marcia Rodrigues Schadeck;Racial;Gestão;Aprovado Negro/Indígena
+504;850003391;Gustavo Henrique Silva;Racial;Gestão;Aprovado Negro/Indígena
+505;850000013;Eduardo Vinicius Ferreira Pereira E Cardoso De So;AC;Gestão;Aprovado
+506;850004122;Adelmo Irineu Severino;AC;Gestão;Aprovado
+507;850001751;Antonio Igor Ferreira;AC;Gestão;Aprovado
+508;850002260;Willian Batista Dos Reis;AC;Gestão;Aprovado
+509;850001538;Gustavo Campanha Fernandes;AC;Gestão;Aprovado
+510;850001934;Antonio Batista De Souza;AC;Gestão;Aprovado
+511;850003237;Alexsander Lima Dos Santos;AC;Gestão;Aprovado
+512;850000371;Soraia Nadaline;PcD;Gestão;Aprovado PcD
+513;850001844;Matheus Rodrigues Assunção;AC;Gestão;Aprovado
+514;850003479;Alencar Da Rosa Bravo;AC;Gestão;Aprovado
+515;850003255;Eduardo Fonseca Nogueira;AC;Gestão;Aprovado
+516;850003953;Isadora Araújo Ribeiro;AC;Gestão;Aprovado
+517;850003202;Andrey Thales Figueiredo;AC;Gestão;Aprovado
+518;850000264;Diego Candido Da Silva;PcD;Gestão;Aprovado PcD
+519;850000104;Jairo Ferreira Pinto Lopes;Racial;Gestão;Aprovado Negro/Indígena
+520;850000553;Thulio Cesar Bezerra Magassy;AC;Gestão;Aprovado
+521;850003181;Jamir Gonçalves Dos Santos Júnior;AC;Gestão;Aprovado
+522;850002609;Danilo Jose De Toledo Filho;AC;Gestão;Aprovado
+523;850002777;Ilza Alves De Amorim;Racial;Gestão;Aprovado Negro/Indígena
+524;850001121;Daniely Batista Rabaioli;Racial;Gestão;Aprovado Negro/Indígena
+525;850001868;Denize Rafael Da Luz;Racial;Gestão;Aprovado Negro/Indígena
+526;850003432;Alice Cristina Lopes Magalhães;AC;Gestão;Aprovado
+527;850001581;Paulo Sérgio Alexandre Pereira;AC;Gestão;Aprovado
+528;850000163;Ludmila Patriota Muniz;AC;Gestão;Aprovado
+529;850001975;Rausenn Campos Alves;Racial;Gestão;Aprovado Negro/Indígena
+530;850004265;Ádila De Jesus Alves;AC;Gestão;Aprovado
+531;850000523;Franklin Barbosa Junior;Racial;Gestão;Aprovado Negro/Indígena
+532;850000685;Alice Ramos De Vargas;AC;Gestão;Aprovado
+533;850000206;Jessiel Henrique Da Silva;AC;Gestão;Aprovado
+534;850002719;Gabriel Vitoreli De Oliveira;AC;Gestão;Aprovado
+535;850002577;Thayvan De Souza Spadetti;AC;Gestão;Aprovado
+536;850003009;Carlos Matheus Alves Coelho;AC;Gestão;Aprovado
+537;850002815;Flaviane Francisco De Souza;AC;Gestão;Aprovado
+538;850001752;Altair Gomes Nunes Junior;AC;Gestão;Aprovado
+539;850000266;Sueli Sampaio Da Silveira;AC;Gestão;Aprovado
+540;850003977;Marcelo Dias Câmara;AC;Gestão;Aprovado
+541;850001474;Magno Alexandre De Oliveira Rodrigues;Racial;Gestão;Aprovado Negro/Indígena
+542;850003801;Mariana Elisa Ferreira Rocha;AC;Gestão;Aprovado
+543;850000620;Yuri Tomezak;AC;Gestão;Aprovado
+544;850000664;Roberto César Alves;AC;Gestão;Aprovado
+545;850003824;Allexander Barbosa Camargo Santos De Andrade;Racial;Gestão;Aprovado Negro/Indígena
+546;850000472;Patricia Araujo Kogut Mendes;AC;Gestão;Aprovado
+547;850003623;Marcus Vinicius Mota Marques Da Silva;AC;Gestão;Aprovado
+548;850002170;Lígia Callejas Reichert;AC;Gestão;Aprovado
+549;850003050;Paulo Vittor Neves Miranda;Racial;Gestão;Aprovado Negro/Indígena
+550;850000233;Marcos Wellber Araújo Ribeiro;PcD;Gestão;Aprovado PcD Negro/Indígena
+551;850001525;Adna Cristina Lacerda De Rezende;AC;Gestão;Aprovado
+552;850003158;Fabiano Queiroz Brandao;AC;Gestão;Aprovado
+553;850003366;Kaio Lopes Borges;Racial;Gestão;Aprovado Negro/Indígena
+554;850001730;Érica Rodrigues Menezes;AC;Gestão;Aprovado
+555;850003958;Icaro Igor De Carvalho Araujo;AC;Gestão;Aprovado
+556;850002256;Isabella Lopes Ribeiro Gonçalves;AC;Gestão;Aprovado
+557;850001936;Idinéia Débora Birkheuer;PcD;Gestão;Aprovado PcD
+558;850000633;Alisson Douglas Fernandes Goulart;AC;Gestão;Aprovado
+559;850002011;Eduardo Roberto Souza De Almeida;PcD;Gestão;Aprovado PcD
+560;850000225;Vinícius De Freitas Mascarenhas Garcia;AC;Gestão;Aprovado
+561;850000192;Lucas Lopes Magalhães;AC;Gestão;Aprovado
+562;850003164;Amanda Maria Vieira Ramalho;AC;Gestão;Aprovado
+563;850002687;Adriano Cavalcante Da Silva;PcD;Gestão;Aprovado PcD
+564;850003360;Renato Alves Olimpio De Mendonca;AC;Gestão;Aprovado
+565;850002586;Ivan Latorraca Dos Santos;AC;Gestão;Aprovado
+566;850003173;Cleomir Borher Santana;AC;Gestão;Aprovado
+567;850002704;Marcone Santiago Nabor De Arruda;AC;Gestão;Aprovado
+568;850003500;Rodrigo Marques Neto;AC;Gestão;Aprovado
+569;850004262;Gabriel Prata Ferreira;AC;Gestão;Aprovado
+570;850003562;Alisson Nery Souza;AC;Gestão;Aprovado
+571;850002070;Marcos Vitor Silva Moraes Araujo;PcD;Gestão;Aprovado PcD
+572;850003381;Guilherme Moreira Da Fonseca Gonzaga;AC;Gestão;Aprovado
+573;850003383;Roberto Silva De Matos;PcD;Gestão;Aprovado PcD
+574;850002333;Éder José Gabriel;Racial;Gestão;Aprovado Negro/Indígena
+575;850000673;Maria Inês Lage Rodrigues De Araujo;AC;Gestão;Aprovado
+576;850003891;Julia Feldhaus Poubel;AC;Gestão;Aprovado
+577;850002286;Márcio Reis Da Rocha Valério;AC;Gestão;Aprovado
+578;850003678;Verônica Katia De Oliveira;AC;Gestão;Aprovado
+579;850003752;Daniel Figueredo Pimentel;Racial;Gestão;Aprovado Negro/Indígena
+580;850002017;Otavio Munaro Xavier;AC;Gestão;Aprovado
+581;850003017;Sebastiao Da Silva Campos Junior;AC;Gestão;Aprovado
+582;850002190;Danillo Danclas Cantuario Caires;Racial;Gestão;Aprovado Negro/Indígena
+583;850002129;Wagner Fernando Sanches Filho;AC;Gestão;Aprovado
+584;850001245;Emerson Frank Uemura;AC;Gestão;Aprovado
+585;850000231;Wesley Andrey De Souza;PcD;Gestão;Aprovado PcD
+586;850002758;Tales De Mileto Pagiolli;AC;Gestão;Aprovado
+587;850003068;Olga Lucia Da Costa Oliveira;AC;Gestão;Aprovado
+588;850000493;Mariana Monsores Laplagne;AC;Gestão;Aprovado
+589;850003595;Danielle Keler Correia De Araujo;AC;Gestão;Aprovado
+590;850002678;Rafael Anderson Tenorio Frischeisen;AC;Gestão;Aprovado
+591;850000239;Bruno Oliveira Do Nascimento;Racial;Gestão;Aprovado Negro/Indígena
+592;850002068;Rafael Siqueira Telles De Souza Campos;AC;Gestão;Aprovado
+593;850003746;Joseanne Pereira Leite Dos Reis;AC;Gestão;Aprovado
+594;850003454;Aline Gonçalves Oliveira;PcD;Gestão;Aprovado PcD
+595;850001460;Rodrigo Ferreira Neumam;Racial;Gestão;Aprovado Negro/Indígena
+596;850003826;Carlos Antonio De Sousa;AC;Gestão;Aprovado
+597;850003229;Oscar Da Silva Almeida;AC;Gestão;Aprovado
+598;850004190;Leticia Aparecida De Campos Meneses Garcia;AC;Gestão;Aprovado
+599;850003917;Lucas Consolaro Loureiro;AC;Gestão;Aprovado
+600;850003265;Antônio Carlos Zanuto Júnior;AC;Gestão;Aprovado
+601;850002510;Bruna Alves Barbosa;AC;Gestão;Aprovado
+602;850001971;Henrique Lima Saraiva;AC;Gestão;Aprovado
+603;850002381;Ivan Lucas De Azevedo;AC;Gestão;Aprovado
+604;850003779;Abel Bomfim Nunes;AC;Gestão;Aprovado
+605;850003927;Wagner Bueno Vieira;AC;Gestão;Aprovado
+606;850002451;Pedro Tiago Silva Farias;AC;Gestão;Aprovado
+607;850001966;Gabriel Caetano Barreto;AC;Gestão;Aprovado
+608;850003086;Fernanda Inda De Albuquerque;AC;Gestão;Aprovado
+609;850002047;Ari Albuquerque De Camargos;AC;Gestão;Aprovado
+610;850003589;Ana Leticia Teixeira Ferreira;AC;Gestão;Aprovado
+611;850002220;Graciela Aparecida De Oliveira;AC;Gestão;Aprovado
+612;850003989;Rosangela Pereira Valuar;AC;Gestão;Aprovado
+613;850002123;Henrique Guedes Oliveira;AC;Gestão;Aprovado
+614;850002834;Ricardo Barbosa;Racial;Gestão;Aprovado Negro/Indígena
+615;850002807;Fernando Hidetaro Siqueira Sato;AC;Gestão;Aprovado
+616;850004206;João Rubens Da Silva Leite;AC;Gestão;Aprovado
+617;850003227;Mario Shiniti Kuniyoshi;AC;Gestão;Aprovado
+618;850000309;Douglas Vinícius De Oliveira;AC;Gestão;Aprovado
+619;850002863;Cleiton Ferreira Da Silva;AC;Gestão;Aprovado
+620;850000496;Ueslei Santana Guidini;AC;Gestão;Aprovado
+621;850000007;Fernando Muti De Oliveira;AC;Gestão;Aprovado
+622;850003338;Nicolas Cal Do Nascimento Miranda;AC;Gestão;Aprovado
+623;850000392;Rafael Brito Menezes;AC;Gestão;Aprovado
+624;850000179;Laís Cristine De Souza;Racial;Gestão;Aprovado Negro/Indígena
+625;850003828;Antonio José Moura Briano;AC;Gestão;Aprovado
+626;850001274;Wellington Vinicius Afonso Viana Filho;AC;Gestão;Aprovado
+627;850000504;Lelio Rodrigues Da Cruz;Racial;Gestão;Aprovado Negro/Indígena
+628;850000735;Geane Pinheiro Da Silva;AC;Gestão;Aprovado
+629;850003464;Leonardo Nydaie De Brito Almeida;AC;Gestão;Aprovado
+630;850003923;Robinson Kazunari Hotta;AC;Gestão;Aprovado
+631;850000910;Lucas Leite Bernardes;AC;Gestão;Aprovado
+632;850004244;Igor Joate Freitas Da Trindade;AC;Gestão;Aprovado
+633;850004105;Luann Monahan Sousa Ferreira;AC;Gestão;Aprovado
+634;850004051;Pamella Zeni Meneghetti;AC;Gestão;Aprovado
+635;850000340;Fabio Tomokazu Shinzato;AC;Gestão;Aprovado
+636;850003201;Ezequiel De Souza;AC;Gestão;Aprovado
+637;850002650;José Carlos Santos Ferreira;AC;Gestão;Aprovado
+638;850002351;Taro Tanaka;AC;Gestão;Aprovado
+639;850001496;Luana Carminatti Balestrin;AC;Gestão;Aprovado
+640;850003942;Jonathan Mariano Da Silva;AC;Gestão;Aprovado
+641;850001318;Leonardo Pires Da Silva;AC;Gestão;Aprovado
+642;850003737;Jof Andrade Bezerra;AC;Gestão;Aprovado
+643;850000385;Luiz Fernando Moroni Mendes;AC;Gestão;Aprovado
+644;850002062;Rodrigo Monteiro De Assunção;Racial;Gestão;Aprovado Negro/Indígena
+645;850000926;Maria Adriana Mesquita Lima;AC;Gestão;Aprovado
+646;850001317;João Pedro De Souza Vicentino;AC;Gestão;Aprovado
+647;850002498;Harley Fabiano Moraes Soares;AC;Gestão;Aprovado
+648;850003264;Alberto Ferreira Alves;AC;Gestão;Aprovado
+649;850003995;Alexandre Gomes Ávila;AC;Gestão;Aprovado
+650;850000008;Deyvid Alves Maciel Bonfim;Racial;Gestão;Aprovado Negro/Indígena
+651;850001995;Paulo Vitor Marcondes Alves De Souza;AC;Gestão;Aprovado
+652;850000411;Diogo Pereira Dos Santos;AC;Gestão;Aprovado
+653;850002082;Yuri De Oliveira;AC;Gestão;Aprovado
+654;850002880;Tales Lima Mazzoccante;AC;Gestão;Aprovado
+655;850002384;Rodrigo Panarali De Oliveira Turato;AC;Gestão;Aprovado
+656;850001836;Matheus Augusto Dos Santos;AC;Gestão;Aprovado
+657;850003769;Paulo Fernando Garcia;AC;Gestão;Aprovado
+658;850000432;Jonathan Inácio Da Veiga Walendolf;AC;Gestão;Aprovado
+659;850001590;Felipe Cássio Alves Da Silva;AC;Gestão;Aprovado
+660;850001795;Alisson Jose Pereira De Araujo;AC;Gestão;Aprovado
+661;850000788;Karina Costa Lima Campos;Racial;Gestão;Aprovado Negro/Indígena
+662;850003204;Fabiano Pires De Paiva;AC;Gestão;Aprovado
+663;850004046;Pedro Vinícius Juchem Herrera;AC;Gestão;Aprovado
+664;850000986;Anderson Emanuel De Freitas Cantanhêde;AC;Gestão;Aprovado
+665;850000468;Rosanny Ribeiro Martins;Racial;Gestão;Aprovado Negro/Indígena
+666;850003696;Felipe Moya Scarsi;AC;Gestão;Aprovado
+667;850001901;Carlos Henrique Tavares De Freitas;AC;Gestão;Aprovado
+1;850003586;Amadeu Soares Corrêa;Racial;Direito;Aprovado Negro/Indígena
+2;850002684;Igor Silva Do Livramento;PcD;Direito;Aprovado PcD Negro/Indígena
+3;850000136;Abenilton Hipolito De Araujo Junior;AC;Direito;Aprovado
+4;850002369;Diogo Mariani Gonçalves;AC;Direito;Aprovado
+5;850003437;Filipe Aquino Das Neves;AC;Direito;Aprovado
+6;850003907;Paulo Henrique De Freitas;Racial;Direito;Aprovado Negro/Indígena
+7;850001785;Eberton De Mello Soares;AC;Direito;Aprovado
+8;850003886;Bruno Serafim De Souza;AC;Direito;Aprovado
+9;850003013;Fernanda Schneider;AC;Direito;Aprovado
+10;850000883;Rafael Silva Antunes Quaresma;AC;Direito;Aprovado
+11;850003516;Bark Heves Capistrano Dias Cardoso Bueno;AC;Direito;Aprovado
+12;850000242;João Henrique Souza Dos Reis;PcD;Direito;Aprovado PcD
+13;850002972;Natalia Camargo Rabuske;AC;Direito;Aprovado
+14;850003493;Juliana Wancura Budke;AC;Direito;Aprovado
+15;850003019;Fernando Henrique De Sousa Lino;AC;Direito;Aprovado
+16;850003318;Rodrigo Lisbôa Fefin;AC;Direito;Aprovado
+17;850001685;Itamar Lucas Grubert;AC;Direito;Aprovado
+18;850000429;Dário Alves De Brito Filho;AC;Direito;Aprovado
+19;850000125;Ivelton Da Silva Cassemiro;PcD;Direito;Aprovado PcD Negro/Indígena
+20;850001263;Thiago Alves Bernardes;AC;Direito;Aprovado
+21;850000598;Victor Meira Ribeiro;AC;Direito;Aprovado
+22;850003400;Rafael Gonçalves Rezende Cordeiro;AC;Direito;Aprovado
+23;850001896;Giuliano Zaros De Oliveira;AC;Direito;Aprovado
+24;850000679;Danilo Baudson Felix;AC;Direito;Aprovado
+25;850003238;Fernando Gabriel Freitas Vicente;AC;Direito;Aprovado
+26;850001623;Tiago Kenji Miyajima;Racial;Direito;Aprovado Negro/Indígena
+27;850003660;Állirson Oliveira Fortes Pereira;Racial;Direito;Aprovado Negro/Indígena
+28;850003597;Mendelson Da Silva Dias;Racial;Direito;Aprovado Negro/Indígena
+29;850003101;Sergio Martins Nunes;AC;Direito;Aprovado
+30;850000612;Guilherme Santiago De Oliveira Santos;PcD;Direito;Aprovado PcD
+31;850002822;Jocieli De Lima Silveira;Racial;Direito;Aprovado Negro/Indígena
+32;850003320;Marcellus Prado Lima;AC;Direito;Aprovado
+33;850000363;Rafael Soares Evas;AC;Direito;Aprovado
+34;850001801;Rafael Fernando Moura De Andrade;Racial;Direito;Aprovado Negro/Indígena
+35;850000622;André Luiz De Pina E Silva;Racial;Direito;Aprovado Negro/Indígena
+36;850002311;Cristiano Alves Dos Anjos Souza;Racial;Direito;Aprovado Negro/Indígena
+37;850000892;Eduardo Rodrigues Ferreira;AC;Direito;Aprovado
+38;850000365;Daniel Guidão Ramos;AC;Direito;Aprovado
+39;850003209;Rogério Bogado Medina;AC;Direito;Aprovado
+40;850003899;Tales Albert Rodrigues Simões;AC;Direito;Aprovado
+41;850001503;Lamartino França De Oliveira Junior;PcD;Direito;Aprovado PcD
+42;850003710;Márcio Conceição De Lara Cunha;Racial;Direito;Aprovado Negro/Indígena
+43;850002685;Galthiery Alves De Sousa Lopes;#N/A;Direito;Aprovado Sub Judice PcD
+44;850002056;Luís Octávio Teixeira Pinheiro;AC;Direito;Aprovado
+45;850000222;Débora Germosgeschi Luz;AC;Direito;Aprovado
+46;850002246;Fernando De Oliveira Pereira;Racial;Direito;Aprovado Negro/Indígena
+47;850003075;Eliana Martins Dos Santos;Racial;Direito;Aprovado Negro/Indígena
+48;850001188;Jessica Pereira;AC;Direito;Aprovado
+49;850001091;João Mario Diniz Cuquejo;PcD;Direito;Aprovado PcD
+50;850001589;Marcos Matheus Silva Sousa;Racial;Direito;Aprovado Negro/Indígena
+51;850001551;Lissandra Esnarriaga De Freitas;PcD;Direito;Aprovado PcD
+52;850002754;Jonas Martinho Loffler;AC;Direito;Aprovado
+53;850001554;Daniel De Souza Rosa;AC;Direito;Aprovado
+54;850004107;Lucas Buba De Siqueira Cavalcanti Veras;AC;Direito;Aprovado
+55;850002521;Fábio Gonçalves Ortega;AC;Direito;Aprovado
+56;850003686;Francisco De Assis Ferreira Pimenta;AC;Direito;Aprovado
+57;850000886;Apoenna Ketilly Gonçalves Da Silva;Racial;Direito;Aprovado Negro/Indígena
+58;850003630;Alexandre Félix Gonçalves;AC;Direito;Aprovado
+59;850002267;Camila Cavalcante Alencar;AC;Direito;Aprovado
+60;850003664;Dalvo Hoffstaedter;AC;Direito;Aprovado
+61;850003415;Hugo Vinicius Figueiredo Guimaraes;AC;Direito;Aprovado
+62;850000680;Cristiane Barbosa De Carvalho;PcD;Direito;Aprovado PcD
+63;850002701;Claudiney Gomes;AC;Direito;Aprovado
+64;850002832;Miriane Saddi Becker;AC;Direito;Aprovado
+65;850004157;Bruno Assis Côgo;AC;Direito;Aprovado
+66;850003756;Jairo Felix;Racial;Direito;Aprovado Negro/Indígena
+67;850003457;João Maria Silva De Melo;AC;Direito;Aprovado
+68;850002193;Carlos Eduardo Fernandes Butinhoni;AC;Direito;Aprovado
+69;850003809;Vilson Pedro Nery;AC;Direito;Aprovado
+70;850003054;Fabiana De Simone E Souza Lira;AC;Direito;Aprovado
+71;850003915;Marcio Sanches Bertazo;AC;Direito;Aprovado
+72;850004106;Gilmara Rodrigues De Oliveira Mattos;PcD;Direito;Aprovado PcD
+73;850000442;Carla Michele Alves De Arruda;AC;Direito;Aprovado
+74;850003596;Gustavo de Sena de Lima;Racial;Direito;Aprovado Negro/Indígena
+75;850002679;Matheus Amorim De Abreu E Silva;AC;Direito;Aprovado
+76;850004148;Reinaldo Reis Regis;AC;Direito;Aprovado
+77;850001473;Priscilla Aline Gonçalves Marques;Racial;Direito;Aprovado Negro/Indígena
+1;850003378;Jimmy Paiva Gomes;AC;TI;Aprovado
+2;850001835;Gabriel Bressane Silva;AC;TI;Aprovado
+3;850002040;Bruno Da Silva Pires Lima;AC;TI;Aprovado
+4;850000954;Rodrigo Rianelly De Macedo Evangelista;AC;TI;Aprovado
+5;850003539;Breno Henrique Fernandes Lopes Dos Santos;Racial;TI;Aprovado Negro/Indígena
+6;850000526;Rykchard Navarro Lorca;PcD;TI;Aprovado PcD
+7;850001171;Mauricio Miranda Lobo Leite;AC;TI;Aprovado
+8;850002613;Luciano Roberto De Oliveira Carriel;AC;TI;Aprovado
+9;850001878;Antônio Luís Sombra De Medeiros;Racial;TI;Aprovado Negro/Indígena
+10;850003037;Thadeu Argolo De Andrade;AC;TI;Aprovado
+11;850003951;Guilherme Matheus De Oliveira Aragão;AC;TI;Aprovado
+12;850000331;Antônio Carlos De Freitas Silva;Racial;TI;Aprovado Negro/Indígena
+13;850001199;Alan Marcos Ferreira Dias Sales;AC;TI;Aprovado
+14;850002374;Emílio César Weba Filho;AC;TI;Aprovado
+15;850000050;Jorge Edson Soledade De Santa Rosa;Racial;TI;Aprovado Negro/Indígena
+16;850000027;Eliomar Bento Amorim Junior;AC;TI;Aprovado
+17;850003174;Italo Pires De Oliveira;Racial;TI;Aprovado Negro/Indígena
+18;850003016;Mórmon Lima Dos Santos;AC;TI;Aprovado
+19;850003782;André Corrêa De Carvalho Pereira;AC;TI;Aprovado
+20;850000232;Barbara Trindade De Aguiar Norões;AC;TI;Aprovado
+21;850003753;Anderson Moulais Da Silva;AC;TI;Aprovado
+22;850003593;Jônatas Costa De Oliveira;AC;TI;Aprovado
+23;850003330;Rodolfo Duarte Alves;AC;TI;Aprovado
+24;850003177;André Luiz Da Silva Coube;AC;TI;Aprovado
+25;850002689;Rodolfo Batista De Carvalho;AC;TI;Aprovado
+26;850002376;Leonardo Stadler Pezzini;AC;TI;Aprovado
+27;850003452;Ezequiel Severiano Da Silva;Racial;TI;Aprovado Negro/Indígena
+28;850001095;Volmar Antonio Machado;AC;TI;Aprovado
+29;850000409;Fabio Yoshio Siotane;AC;TI;Aprovado
+30;850001316;Kleber Miranda De Araujo;AC;TI;Aprovado
+31;850000478;Ana Carolina Soares E Soares;AC;TI;Aprovado
+32;850002245;Jonas Nink Barros;AC;TI;Aprovado
+33;850001065;Andre Recher De Freitas;AC;TI;Aprovado
+34;850002252;Edson Soares Borges;AC;TI;Aprovado
+35;850000520;Fernando De Oliveira Moraes;AC;TI;Aprovado
+36;850001738;Luis Claudio Machado Junior;AC;TI;Aprovado
+37;850002949;Angelica Groot;AC;TI;Aprovado
+38;850000577;Hudson De Queiroz Alves;AC;TI;Aprovado
+39;850001300;Andre Marques Couto;AC;TI;Aprovado
+40;850000195;José Paulo De Faria Pedrosa;AC;TI;Aprovado
+41;850000823;Gustavo Georranys Da Silva Lins;Racial;TI;Aprovado Negro/Indígena
+42;850000898;Carlos Eduardo Dionizio Fiusa Junior;Racial;TI;Aprovado Negro/Indígena
+43;850003671;Tales Da Silva Campos;AC;TI;Aprovado
+44;850003706;Raphael Do Nascimento Martins;Racial;TI;Aprovado Negro/Indígena
+45;850003838;Rafael Villa De Macedo;AC;TI;Aprovado
+46;850003011;Diego Fonseca Silva;Racial;TI;Aprovado Negro/Indígena
+47;850000406;Paulo Augusto De Freitas Andrade;AC;TI;Aprovado
+48;850002748;Bruno Gustavo Janoca Oliveira Da Silva;PcD;TI;Aprovado PcD
+49;850001749;Andre Stutz Soares;AC;TI;Aprovado
+50;850002467;Marcelo Tadayuki Hiranobe;AC;TI;Aprovado
+51;850000129;Aledson De Souza Moura;Racial;TI;Aprovado Negro/Indígena
+52;850003007;Andre Luis Praeiro Campos;Racial;TI;Aprovado Negro/Indígena
+53;850003581;Luciano Pimentel Pinheiro;Racial;TI;Aprovado Negro/Indígena
+54;850000819;Jhony Fernandes Ferreira;AC;TI;Aprovado
+55;850000296;Michael Santos Ribeiro;Racial;TI;Aprovado Negro/Indígena
+56;850000090;Zenilso Nunes Da Silva;Racial;TI;Aprovado Negro/Indígena
+57;850004061;Jose Inacio Dos Santos Da Silva;AC;TI;Aprovado
+58;850001063;Flivio Mauricio Cordeiro;AC;TI;Aprovado
+59;850000484;Alex Rezende;AC;TI;Aprovado
+60;850003836;Lorenne Gomes De Angelis;AC;TI;Aprovado
+61;850003113;Diego Matias Da Silva;AC;TI;Aprovado
+62;850002891;Adriano De Oliveira Lopes;Racial;TI;Aprovado Negro/Indígena
+63;850002570;Gabriel Rodrigues De Oliveira;AC;TI;Aprovado
+64;850002121;Nicholas Gustavo Duarte Carlos De Souza Basto;AC;TI;Aprovado
+65;850001953;Thiago Gabriel Silva Fassina;AC;TI;Aprovado
+66;850000749;Breno Alves Costa;AC;TI;Aprovado
+67;850004161;Eder Antunes De Brito;AC;TI;Aprovado
+68;850002014;Francisco De Assis Ribeiro Lima;Racial;TI;Aprovado Negro/Indígena
+69;850003742;Edivan Araujo Dos Reis Filho;Racial;TI;Aprovado Negro/Indígena
+70;850003984;Marco Aurelio Martini Sales;AC;TI;Aprovado
+71;850000167;Bárbara Denytra Monteiro Meira;AC;TI;Aprovado
+72;850001839;Eliane Silva De Souza;AC;TI;Aprovado
+73;850002948;Luana Gattass E Silva;AC;TI;Aprovado
+74;850003025;André Vítor Silva De Almeida;AC;TI;Aprovado
+75;850004013;Ygor De Oliveira Gonçalves;Racial;TI;Aprovado Negro/Indígena

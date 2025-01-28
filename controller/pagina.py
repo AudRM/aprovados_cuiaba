@@ -4,12 +4,12 @@ import streamlit as st
 
 # Importa as funções que já criamos para cada funcionalidade
 from controller.login import login, criar_conta
-from controller.estatisticas import verificar_estatisticas
+from controller.home import home
 from controller.dados_usuarios import gerenciar_dados_usuario
 from controller.adm import administrar_web_app
-from controller.estatisticas_grupo_coordenador import estatisticas_de_grupo_coordenador
+from controller.coordenador_grupo import estatisticas_de_grupo_coordenador, criar_mensagem
 from controller.controle_grupo import controle_de_grupo
-from data_p_config.textos import TEXTO_PROPOSITO_WEBAPP
+from data_p_config.textos import TEXTO_PROPOSITO_WEBAPP, TEXTO_MUDANCAS_ATUAIS
 
 class Pagina:
     """
@@ -52,8 +52,8 @@ class Pagina:
             }
         </style>
         """, unsafe_allow_html=True)
-        st.title("Bem-vindo ao Sistema de Gestão de Aprovados ISS Cuiabá")
-        st.text(TEXTO_PROPOSITO_WEBAPP)
+        st.title("Bem-vindo ao Sistema de Gestão de Aprovados ISS Cuiabá", help=TEXTO_PROPOSITO_WEBAPP)
+        st.text(TEXTO_MUDANCAS_ATUAIS)
         opcao = st.radio("Escolha uma opção:", ["Login", "Criar Conta"])
 
         
@@ -78,8 +78,9 @@ class Pagina:
         if conta.role == 'superuser':
             opcoes_menu = [
                 "Ver Estatísticas (Usuário)",
-                "Estatísticas de Grupo (Coordenador)",
-                "Controle de Grupo",       # NOVA OPÇÃO
+                "Gestão de Grupo (Coordenador)",
+                "Controle de Grupo",
+                "Mensagem ao Grupo",
                 "Administração (Superuser)",
                 "Gerenciar Dados de Usuário",
                 "Sair"
@@ -87,8 +88,9 @@ class Pagina:
         elif conta.role == 'coordenador':
             opcoes_menu = [
                 "Ver Estatísticas (Usuário)",
-                "Estatísticas de Grupo (Coordenador)",
-                "Controle de Grupo",       # NOVA OPÇÃO
+                "Gestão de Grupo (Coordenador)",
+                "Controle de Grupo",
+                "Mensagem ao Grupo",
                 "Gerenciar Dados de Usuário",
                 "Sair"
             ]
@@ -102,14 +104,21 @@ class Pagina:
 
         # Módulo para estatísticas do usuário (já implementado antes)
         if escolha == "Ver Estatísticas (Usuário)":
-            verificar_estatisticas(conta, self.db)
+            home(conta, self.db)
 
         # Estatísticas de grupo (coordenador / superuser)
-        elif escolha == "Estatísticas de Grupo (Coordenador)":
+        elif escolha == "Gestão de Grupo (Coordenador)":
             if conta.role in ['coordenador', 'superuser']:
                 estatisticas_de_grupo_coordenador(conta, self.db)
             else:
                 st.error("Você não tem permissão para esta seção.")
+
+        elif escolha == 'Mensagem ao Grupo':
+            if conta.role in ['coordenador', 'superuser']:
+                criar_mensagem(self.db, conta)
+            else:
+                st.error("Você não tem permissão para criar mensagens.")
+
 
         # Painel de administração (superuser)
         elif escolha == "Administração (Superuser)":

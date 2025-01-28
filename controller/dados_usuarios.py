@@ -1,10 +1,13 @@
 # controller/usuario.py
 
 import streamlit as st
+from controller.utils_page import limpar_telefone, validar_email, validar_telefone
 
 def gerenciar_dados_usuario(conta, db):
     st.subheader("Gerenciamento de Dados do Usuário")
     with st.form("Atualizar Dados"):
+        
+        
         novo_email = st.text_input("Novo E-mail", value=conta.email)
         novo_telefone = st.text_input("Novo Telefone", value=conta.telefone)
 
@@ -21,6 +24,20 @@ def gerenciar_dados_usuario(conta, db):
             index=index_opcao_atual
         )
 
+        opcoes_para_select_contato = ['Sim, por e-mail', 'Sim, por WhatsApp', 'Sim, por e-mail e WhatsApp', 'Não desejo receber']
+        try:
+            index_opcao_atual = opcoes_para_select_contato.index(conta.opcao_contato)
+        except:
+            index_opcao_atual = -1
+
+        nova_opcao_contato = st.selectbox(
+            "Você deseja receber informações a respeito do andamento das nomeações?", 
+            ['Sim, por e-mail', 'Sim, por WhatsApp', 'Sim, por e-mail e WhatsApp', 'Não desejo receber'],
+            index=index_opcao_atual
+                    )
+
+
+
         # Mapeia
         map_opcao = {
             "Não vou assumir": "Não vai assumir",
@@ -32,9 +49,30 @@ def gerenciar_dados_usuario(conta, db):
         submit = st.form_submit_button("Atualizar")
 
         if submit:
+
+            if not novo_email:
+                st.error("Por favor, insira um e-mail de contato.")
+                return
+
+            # Valida formato do e-mail
+            if not validar_email(novo_telefone):
+                st.error("O e-mail fornecido não é válido.")
+                return
+
+            if not novo_telefone:
+                st.error("Por favor, insira um telefone.")
+                return
+            
+            # Limpa o telefone e valida
+            telefone_limpo = limpar_telefone(novo_telefone)
+            if not validar_telefone(telefone_limpo):
+                st.error("O número de telefone fornecido não é válido.")
+                return
+            
+
             mudancas = {
                 'email': novo_email,
-                'telefone': novo_telefone,
+                'telefone': telefone_limpo,
                 'opcao': nova_opcao
             }
             resultado = conta.mudarDados(db=db, mudanca=mudancas)
