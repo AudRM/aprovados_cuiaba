@@ -102,12 +102,6 @@ def mostrar_link(usuario, db):
         mensagem_grupo = grupo.mostrarMensagens()
         link_grupo = grupo.mostrarLink()
 
-        st.write("### Mensagem do Grupo")
-        if mensagem_grupo['sucesso']:
-            st.text(mensagem_grupo['resultado'])
-        else:
-            st.error("Erro ao carregar mensagem")
-
         if link_grupo['sucesso']:
 
             # Validar link de grupo
