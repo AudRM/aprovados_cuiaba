@@ -6,8 +6,6 @@ from controller.utils_page import limpar_telefone, validar_email, validar_telefo
 def gerenciar_dados_usuario(conta, db):
     st.subheader("Gerenciamento de Dados do Usuário")
     with st.form("Atualizar Dados"):
-        
-        
         novo_email = st.text_input("Novo E-mail", value=conta.email)
         novo_telefone = st.text_input("Novo Telefone", value=conta.telefone)
 
@@ -28,15 +26,13 @@ def gerenciar_dados_usuario(conta, db):
         try:
             index_opcao_atual = opcoes_para_select_contato.index(conta.opcao_contato)
         except:
-            index_opcao_atual = -1
+            index_opcao_atual = 3
 
         nova_opcao_contato = st.selectbox(
-            "Você deseja receber informações a respeito do andamento das nomeações?", 
-            ['Sim, por e-mail', 'Sim, por WhatsApp', 'Sim, por e-mail e WhatsApp', 'Não desejo receber'],
+            label="Você deseja receber informações a respeito do andamento das nomeações?", 
+            options=['Sim, por e-mail', 'Sim, por WhatsApp', 'Sim, por e-mail e WhatsApp', 'Não desejo receber'],
             index=index_opcao_atual
                     )
-
-
 
         # Mapeia
         map_opcao = {
