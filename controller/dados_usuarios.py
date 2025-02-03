@@ -51,7 +51,7 @@ def gerenciar_dados_usuario(conta, db):
                 return
 
             # Valida formato do e-mail
-            if not validar_email(novo_telefone):
+            if not validar_email(novo_email):
                 st.error("O e-mail fornecido não é válido.")
                 return
 
