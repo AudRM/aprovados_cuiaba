@@ -96,7 +96,7 @@ def mostrar_link(usuario, db):
 
     # Achar limite de CR para o grupo/cota
     tabela_grupo = db.retornarTabela(TabelaGrupos)
-    tamanho_CR = tabela_grupo[(tabela_grupo['cota']==usuario.cota) & (tabela_grupo['grupo']==usuario.grupo)]['qtde_vagas'].values
+    tamanho_CR = tabela_grupo[(tabela_grupo['cota'].str.lower()==usuario.cota.lower()) & (tabela_grupo['grupo']==usuario.grupo)]['qtde_vagas'].values
 
     if total_aprov.shape[0] < tamanho_CR:  # Se tiver menos usuários à frente que vagas
         mensagem_grupo = grupo.mostrarMensagens()

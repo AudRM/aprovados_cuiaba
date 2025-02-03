@@ -115,15 +115,15 @@ class Conta:
                     'resultado': conta_usuario
                     }
         
-    def _normalizarCota(self, cota):
-        """ Método para normalizar cota, caso haja mais de uma """
-        if "PcD" in cota:
-            cota_modif = "PcD"
-        elif "Negro/Indígena" in cota:
-            cota_modif = "Racial"
-        else:
-            cota_modif = "Aprovado"
-        return cota_modif
+    # def _normalizarCota(self, cota):
+    #     """ Método para normalizar cota, caso haja mais de uma """
+    #     if "PcD" in cota:
+    #         cota_modif = "PcD"
+    #     elif "Negro/Indígena" in cota:
+    #         cota_modif = "Racial"
+    #     else:
+    #         cota_modif = "Aprovado"
+    #     return cota_modif
         
     def _existe_cadastro_previo(self, n_inscr) -> bool:
         return len(self.db.retornarValor(TabelaUsuario, filter_dict={'n_inscr': n_inscr})) != 0
