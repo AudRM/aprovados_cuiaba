@@ -59,6 +59,10 @@ class Usuario:
         if 'opcao' in mudanca.keys():
             atualizacoes['opcao'] =  mudanca['opcao']
 
+        if 'opcao_contato' in mudanca.keys():
+            atualizacoes['opcao_contato'] =  mudanca['opcao_contato']
+
+
         if len(atualizacoes) > 0:
             db.atualizarTabela(TabelaUsuario, filtros, atualizacoes)
             return {

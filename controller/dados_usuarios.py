@@ -65,15 +65,16 @@ def gerenciar_dados_usuario(conta, db):
                 st.error("O número de telefone fornecido não é válido.")
                 return
             
-
             mudancas = {
                 'email': novo_email,
                 'telefone': telefone_limpo,
-                'opcao': nova_opcao
+                'opcao': nova_opcao,
+
             }
+
             resultado = conta.mudarDados(db=db, mudanca=mudancas)
+
             if resultado['sucesso']:
                 st.success("Dados atualizados com sucesso!")
-                st.rerun()
             else:
                 st.error(resultado['resultado'])
