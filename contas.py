@@ -53,9 +53,7 @@ class Conta:
             nome = dados_aprovacao['nome']
             posicao = dados_aprovacao['posicao']
             grupo = dados_aprovacao['grupo']
-
-            # Alterado grupo para que, quando houver mais de uma cota utilizada, seja utilizada a de PcD
-            cota = self._normalizarCota(dados_aprovacao['cota'])
+            cota = dados_aprovacao['cota']
             senha_criptografada = hash_password(senha)
 
             self._adicionar_conta(nome, posicao, senha_criptografada, email, 
@@ -120,9 +118,9 @@ class Conta:
     def _normalizarCota(self, cota):
         """ Método para normalizar cota, caso haja mais de uma """
         if "PcD" in cota:
-            cota_modif = "Aprovado PcD"
+            cota_modif = "PcD"
         elif "Negro/Indígena" in cota:
-            cota_modif = "Aprovado Negro/Indígena"
+            cota_modif = "Racial"
         else:
             cota_modif = "Aprovado"
         return cota_modif

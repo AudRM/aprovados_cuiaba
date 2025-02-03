@@ -45,7 +45,7 @@ class TabelaUsuario(Base):
     email = Column(String(255), unique=True, nullable=False)
     telefone = Column(String(50), nullable=True)
     grupo = Column(String(50), nullable=False)
-    formacao_academica = Column(String(50), nullable=True)
+    formacao_academica = Column(String(255), nullable=True)
     data_criacao = Column(DateTime, default=datetime.now, nullable=False)
     data_ultima_modificacao = Column(
         DateTime,
