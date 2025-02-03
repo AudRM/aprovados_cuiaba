@@ -53,7 +53,9 @@ class Conta:
             nome = dados_aprovacao['nome']
             posicao = dados_aprovacao['posicao']
             grupo = dados_aprovacao['grupo']
-            cota = dados_aprovacao['cota']
+
+            # Alterado grupo para que, quando houver mais de uma cota utilizada, seja utilizada a de PcD
+            cota = self._normalizarCota(dados_aprovacao['cota'])
             senha_criptografada = hash_password(senha)
 
             self._adicionar_conta(nome, posicao, senha_criptografada, email, 
@@ -114,6 +116,16 @@ class Conta:
                     'sucesso': True, 
                     'resultado': conta_usuario
                     }
+        
+    def _normalizarCota(self, cota):
+        """ Método para normalizar cota, caso haja mais de uma """
+        if "PcD" in cota:
+            cota_modif = "Aprovado PcD"
+        elif "Negro/Indígena" in cota:
+            cota_modif = "Aprovado Negro/Indígena"
+        else:
+            cota_modif = "Aprovado"
+        return cota_modif
         
     def _existe_cadastro_previo(self, n_inscr) -> bool:
         return len(self.db.retornarValor(TabelaUsuario, filter_dict={'n_inscr': n_inscr})) != 0
